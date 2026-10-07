@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRYPTECTION // Web3 Threat Intelligence & $CRYPT Token Portal</title>
     
-    <!-- Custom Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
@@ -61,128 +60,39 @@
             scroll-behavior: smooth;
         }
 
-        .ticker-wrap {
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-        }
+        .ticker-wrap { width: 100%; overflow: hidden; white-space: nowrap; }
+        .ticker { display: inline-block; animation: ticker 30s linear infinite; }
+        @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
 
-        .ticker {
-            display: inline-block;
-            animation: ticker 30s linear infinite;
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #08090c; }
+        ::-webkit-scrollbar-thumb { background: #2a2d38; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff6b00; }
 
-        @keyframes ticker {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-50%, 0, 0); }
-        }
+        #toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 100; display: flex; flex-direction: column; gap: 12px; }
+        .toast { min-width: 300px; padding: 14px 20px; background: #12141a; color: #f4f4f0; border: 2px solid #2a2d38; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; box-shadow: 4px 4px 0px 0px #000; transform: translateY(20px); opacity: 0; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast.success { border-color: #00e676; } .toast.error { border-color: #ff3e3e; } .toast.info { border-color: #ff6b00; } .toast.warning { border-color: #ff9f1c; }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #08090c;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2a2d38;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff6b00;
-        }
-
-        #toast-container {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .toast {
-            min-width: 300px;
-            padding: 14px 20px;
-            background: #12141a;
-            color: #f4f4f0;
-            border: 2px solid #2a2d38;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            box-shadow: 4px 4px 0px 0px #000;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .toast.success { border-color: #00e676; }
-        .toast.error { border-color: #ff3e3e; }
-        .toast.info { border-color: #ff6b00; }
-        .toast.warning { border-color: #ff9f1c; }
-
-        .glow-bsc {
-            box-shadow: 0 0 25px rgba(243, 186, 47, 0.15);
-        }
-
-        #network-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            opacity: 0.3;
-            pointer-events: none;
-        }
+        .glow-bsc { box-shadow: 0 0 25px rgba(243, 186, 47, 0.15); }
+        #network-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; opacity: 0.3; pointer-events: none; }
 
         .radar-sweep {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200%;
-            height: 200%;
+            position: absolute; top: 50%; left: 50%; width: 200%; height: 200%;
             background: conic-gradient(from 0deg, transparent 70%, rgba(255, 62, 62, 0.1) 80%, rgba(255, 62, 62, 0.4) 100%);
-            border-radius: 50%;
-            transform-origin: center;
-            animation: sweep 4s linear infinite;
-            margin-left: -100%;
-            margin-top: -100%;
-            pointer-events: none;
+            border-radius: 50%; transform-origin: center; animation: sweep 4s linear infinite; margin-left: -100%; margin-top: -100%; pointer-events: none;
         }
+        @keyframes sweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        @keyframes sweep {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .typewriter-line {
-            overflow: hidden;
-            border-right: 2px solid #ff3e3e;
-            white-space: nowrap;
-            margin: 0 auto;
-            animation: typing 1s steps(40, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #ff3e3e; }
-        }
+        .typewriter-line { overflow: hidden; border-right: 2px solid #ff3e3e; white-space: nowrap; margin: 0 auto; animation: typing 1s steps(40, end), blink-caret .75s step-end infinite; }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #ff3e3e; } }
     </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-brand selection:text-black">
 
     <canvas id="network-canvas"></canvas>
 
-    <!-- Live Market Bar -->
     <div class="w-full bg-bsc text-black font-mono text-xs py-1.5 border-b-2 border-black font-bold uppercase tracking-wider overflow-hidden">
         <div class="ticker-wrap flex items-center">
             <div class="ticker flex gap-8">
@@ -196,7 +106,6 @@
         </div>
     </div>
 
-    <!-- Navigation Header -->
     <header class="sticky top-0 z-40 w-full bg-paper/95 backdrop-blur-md border-b-2 border-zinc-800">
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
             <div class="flex items-center justify-between w-full lg:w-auto">
@@ -206,7 +115,7 @@
                     </div>
                     <div>
                         <h1 class="font-syne text-2xl font-black tracking-tight text-ink uppercase flex items-center gap-2">
-                            CRYPT<span class="text-brand">ECTION</span>
+                            CRYPTECTION
                         </h1>
                         <p class="font-mono text-[10px] text-zinc-400 uppercase tracking-widest">cryptectionlabs.com • V2 Beta</p>
                     </div>
@@ -230,7 +139,6 @@
 
     <main class="w-full max-w-7xl mx-auto px-4 py-8 flex-grow flex flex-col gap-12">
 
-        <!-- Hero Section -->
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-4">
             <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 sm:p-10 flex flex-col justify-between shadow-[8px_8px_0px_0px_#1b1e27] relative overflow-hidden">
                 <div>
@@ -244,7 +152,7 @@
                     </h2>
 
                     <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-8">
-                        Cryptection combines real-time contract age, DexScreener market trends, holder net worth, trader win-rates, and GoPlus threat telemetry into an indispensable Web3 terminal.
+                        Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and GoPlus threat telemetry into an indispensable Web3 terminal.
                     </p>
 
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-paper border-2 border-zinc-800 mb-8 font-mono">
@@ -261,8 +169,8 @@
                             <span class="text-xl sm:text-2xl font-bold text-safe font-syne">GoPlus Labs</span>
                         </div>
                         <div>
-                            <span class="block text-[10px] text-zinc-500 uppercase">Architecture</span>
-                            <span class="text-xl sm:text-2xl font-bold text-gold font-syne">Vercel API</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase">State Data</span>
+                            <span class="text-xl sm:text-2xl font-bold text-gold font-syne">BSC Node</span>
                         </div>
                     </div>
                 </div>
@@ -326,7 +234,6 @@
             </div>
         </section>
 
-        <!-- SECTION 1: Interactive Threat Intelligence Terminal -->
         <section id="audit-terminal" class="bg-card border-2 border-zinc-800 p-6 sm:p-8 shadow-[6px_6px_0px_0px_#1b1e27] relative mt-4">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b-2 border-zinc-800 pb-4">
                 <div>
@@ -343,10 +250,9 @@
             </div>
 
             <div class="bg-paper border border-zinc-700 p-4 mb-6 font-mono text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                <strong class="text-brand">ANALYTICS ENGINE:</strong> Enter any contract or wallet address. For contracts, we report <span class="text-safe">Age, Market Cap, 24h Vol, Price Trend, and Taxes</span>. For wallets, we report <span class="text-gold">Age, Net Worth, Token Portfolio, Trader Win-Rate, and Recent Trade Logs</span>.
+                <strong class="text-brand">ANALYTICS ENGINE:</strong> Enter any contract or wallet address. The engine automatically detects byte-code presence. For contracts, we report <span class="text-safe">Age, Market Cap, Pricing & Block Explorer Forensics</span>. For wallets, we report <span class="text-gold">Age, Net Worth, Token Portfolio, & Recent Trade Logs</span>.
             </div>
 
-            <!-- Search Input Box -->
             <div class="relative w-full mb-6">
                 <div class="flex flex-col sm:flex-row gap-3">
                     <div class="relative flex-grow">
@@ -362,7 +268,6 @@
                     </button>
                 </div>
 
-                <!-- Test Targets -->
                 <div class="mt-4 flex flex-wrap items-center gap-2 font-mono text-xs text-zinc-500">
                     <span class="text-zinc-400 font-bold">Test Address Presets:</span>
                     <button type="button" onclick="testAddress('0x10ED43C718714eb63d5aA57B78B54704E256024E')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-safe hover:text-safe transition-colors">
@@ -377,10 +282,8 @@
                 </div>
             </div>
 
-            <!-- Dynamic Scan Results Panel -->
             <div id="resultPanel" class="hidden flex flex-col gap-6 pt-4 border-t-2 border-zinc-800">
                 
-                <!-- Main Header Banner -->
                 <div class="bg-paper border-2 border-zinc-800 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                         <div class="flex items-center gap-2">
@@ -397,7 +300,7 @@
                     <div id="resBadge" class="px-4 py-2 border-2 font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2"></div>
                 </div>
 
-                <!-- CONTRACT SPECIFIC MODULE -->
+                <!-- CONTRACT SPECIFIC MODULE WITH EXPLORER DATA -->
                 <div id="contractModule" class="hidden space-y-6">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
@@ -415,6 +318,32 @@
                         <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
                             <span class="text-[10px] text-zinc-500 uppercase block">24h Price Change / Trend</span>
                             <span id="cTrend" class="text-sm font-bold text-brand font-syne block mt-1">--</span>
+                        </div>
+                    </div>
+                    
+                    <!-- New: Block Explorer Forensics -->
+                    <div class="bg-card border-2 border-zinc-800 p-6">
+                        <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
+                            <span>Block Explorer Forensics</span>
+                            <span class="font-mono text-xs text-zinc-400 font-normal">Live BscScan Telemetry</span>
+                        </h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-paper border border-zinc-700 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block">Source Code Status</span>
+                                <span id="cVerified" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                            </div>
+                            <div class="bg-paper border border-zinc-700 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block">Compiler Version</span>
+                                <span id="cCompiler" class="text-sm font-bold text-ink font-syne block mt-1 truncate" title="">--</span>
+                            </div>
+                            <div class="bg-paper border border-zinc-700 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block">Open Source License</span>
+                                <span id="cLicense" class="text-sm font-bold text-ink font-syne block mt-1 truncate" title="">--</span>
+                            </div>
+                            <div class="bg-paper border border-zinc-700 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block">Code Optimization</span>
+                                <span id="cOpt" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -438,11 +367,10 @@
                         </div>
                     </div>
 
-                    <!-- Wallet Holdings Table -->
                     <div class="bg-card border-2 border-zinc-800 p-6">
                         <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
                             <span>Token Portfolio Holdings</span>
-                            <span class="font-mono text-xs text-zinc-400 font-normal">Live Telemetry</span>
+                            <span class="font-mono text-xs text-zinc-400 font-normal">Live RPC State</span>
                         </h4>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left font-mono text-xs">
@@ -459,7 +387,6 @@
                         </div>
                     </div>
 
-                    <!-- Wallet Trade Logs -->
                     <div class="bg-card border-2 border-zinc-800 p-6">
                         <h4 class="font-syne text-base font-bold text-ink uppercase mb-4">Recent On-Chain Activity Feed</h4>
                         <div id="wTradeHistory" class="space-y-3 font-mono text-xs"></div>
@@ -468,7 +395,6 @@
 
                 <!-- Composite Risk Score & Observations -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                    <!-- Left: Score & Breakdown -->
                     <div class="lg:col-span-5 space-y-6">
                         <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between items-center text-center relative overflow-hidden">
                             <span class="font-mono text-xs font-bold text-zinc-400 uppercase mb-4 z-10">Composite Risk Index</span>
@@ -504,7 +430,6 @@
                         </div>
                     </div>
 
-                    <!-- Right: Explanations -->
                     <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 flex flex-col">
                         <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Security & Behavioral Observations</h3>
                         <ul id="resConcerns" class="space-y-4 font-mono text-sm text-zinc-300 flex-grow"></ul>
@@ -513,10 +438,8 @@
             </div>
         </section>
 
-        <!-- Live Mempool Interceptor Radar -->
         <section class="mt-12 mb-8">
             <div class="flex flex-col lg:flex-row gap-6 items-stretch">
-                <!-- Radar Visualizer -->
                 <div class="lg:w-1/3 bg-card border-2 border-zinc-800 p-6 flex flex-col justify-center items-center text-center relative overflow-hidden h-64">
                     <div class="radar-sweep"></div>
                     <div class="relative z-10">
@@ -527,7 +450,6 @@
                         <h3 class="font-syne text-xl font-bold text-ink uppercase tracking-tight">Mempool Radar</h3>
                         <p class="font-mono text-[10px] text-zinc-400 uppercase mt-2">Scanning Pending Txns...</p>
                     </div>
-                    <!-- Crosshairs -->
                     <div class="absolute inset-0 pointer-events-none opacity-20">
                         <div class="w-full h-[1px] bg-brand absolute top-1/2 -translate-y-1/2"></div>
                         <div class="h-full w-[1px] bg-brand absolute left-1/2 -translate-x-1/2"></div>
@@ -535,7 +457,6 @@
                     </div>
                 </div>
 
-                <!-- Live Feed Console -->
                 <div class="lg:w-2/3 bg-paper border-2 border-zinc-800 p-6 font-mono text-xs flex flex-col h-64">
                     <div class="flex justify-between items-center border-b border-zinc-800 pb-3 mb-3">
                         <span class="text-zinc-500 font-bold uppercase tracking-wider flex items-center gap-2">
@@ -545,13 +466,11 @@
                         <span class="text-zinc-500">Nodes: 1,402 Active</span>
                     </div>
                     <div id="radar-feed" class="flex-grow overflow-hidden flex flex-col justify-end space-y-2 text-zinc-400">
-                        <!-- Feed populated by JS -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Threat Architecture Blueprint -->
         <section class="bg-card border-2 border-zinc-800 p-6 sm:p-8 relative mt-4 overflow-hidden shadow-[6px_6px_0px_0px_#1b1e27]">
             <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
                 <svg width="200" height="200" viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="2" d="M10,50 L90,50 M50,10 L50,90 M20,20 L80,80 M20,80 L80,20" /></svg>
@@ -560,13 +479,13 @@
             <div class="mb-8 border-b-2 border-zinc-800 pb-4 relative z-10">
                 <span class="font-mono text-xs text-safe font-bold uppercase tracking-wider">[ PROTOCOL ARCHITECTURE ]</span>
                 <h2 class="font-syne text-2xl sm:text-3xl font-black text-ink uppercase mt-1">How The Engine Works</h2>
-                <p class="font-mono text-xs text-zinc-400 mt-2 max-w-2xl">Cryptection doesn't rely on a single source of truth. We aggregate live RPC node states, historical threat databases, and real-time market telemetry to construct a highly accurate composite risk index.</p>
+                <p class="font-mono text-xs text-zinc-400 mt-2 max-w-2xl">Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and GoPlus threat telemetry into an indispensable Web3 terminal.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 font-mono text-xs relative z-10">
                 <div class="bg-paper border border-zinc-700 p-4">
                     <span class="text-zinc-500 font-bold block mb-2">01. INGESTION</span>
-                    <p class="text-zinc-300">Parallel queries to DexScreener, GoPlus Security, and direct BSC/ETH JSON-RPC nodes fetch raw state data.</p>
+                    <p class="text-zinc-300">Parallel queries to DexScreener, GoPlus Security, and direct BSC/ETH JSON-RPC nodes fetch raw state data via <code>eth_getCode</code>.</p>
                 </div>
                 <div class="bg-paper border border-zinc-700 p-4 relative">
                     <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
@@ -586,7 +505,6 @@
             </div>
         </section>
 
-        <!-- Pricing Tiers -->
         <section id="pricing" class="space-y-8 mt-12">
             <div class="text-center max-w-3xl mx-auto">
                 <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ REVENUE MODEL ]</span>
@@ -635,7 +553,6 @@
             </div>
         </section>
 
-        <!-- Tokenomics Section -->
         <section id="tokenomics" class="space-y-8 mt-12">
             <div class="text-center max-w-3xl mx-auto">
                 <span class="font-mono text-xs text-bsc font-bold uppercase tracking-wider">[ TOKENOMICS & UTILITY ]</span>
@@ -643,7 +560,6 @@
                 <p class="font-mono text-xs text-zinc-400 mt-2">Native BEP-20 token power structure designed for long-term sustainability and threat telemetry incentives.</p>
             </div>
 
-            <!-- Core Stats Grid -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-card border-2 border-zinc-800 p-5 font-mono">
                     <span class="text-[10px] text-zinc-500 uppercase block">Total Supply</span>
@@ -667,9 +583,7 @@
                 </div>
             </div>
 
-            <!-- Tax Allocation & Supply Distribution -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                <!-- Tax Breakdown -->
                 <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between">
                     <div>
                         <h3 class="font-syne text-xl font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2 flex items-center justify-between">
@@ -704,7 +618,6 @@
                     </div>
                 </div>
 
-                <!-- Token Allocation -->
                 <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between">
                     <div>
                         <h3 class="font-syne text-xl font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2 flex items-center justify-between">
@@ -712,7 +625,6 @@
                             <span class="font-mono text-xs text-bsc font-normal">Fair Launch Structure</span>
                         </h3>
 
-                        <!-- Multi-color progress bar -->
                         <div class="w-full h-4 bg-paper border border-zinc-700 flex overflow-hidden mb-6">
                             <div style="width: 40%" class="bg-bsc h-full" title="40% Presale"></div>
                             <div style="width: 30%" class="bg-brand h-full" title="30% DEX Liquidity"></div>
@@ -758,7 +670,6 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
         <section id="faq" class="space-y-8 mt-12">
             <div class="text-center max-w-3xl mx-auto">
                 <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ KNOWLEDGE BASE ]</span>
@@ -771,7 +682,7 @@
                         <span class="text-brand">01.</span> How does Cryptection V2 analyze contracts?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        Our engine queries real-time DexScreener liquidity pools and GoPlus Security endpoints simultaneously. We evaluate pair creation timestamps, honeypot code patterns, sell tax modifiers, proxy ownership status, and creator wallet funding trees to render a composite 0–100 threat index.
+                        Our engine queries real-time DexScreener liquidity pools, GoPlus Security endpoints, and BscScan API simultaneously while checking `eth_getCode` RPC methods to mathematically verify byte-code presence.
                     </p>
                 </div>
 
@@ -780,7 +691,7 @@
                         <span class="text-brand">02.</span> How do I unlock unlimited Pro searches?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        You can either pay $19/month or hold at least 50,000 $CRYPT tokens in your connected Web3 wallet. Holding $CRYPT grants instant Pro status, bypassing daily IP limits and unlocking full trade log feeds and net-worth breakdowns.
+                        You can either pay $19/month or hold at least 50,000 $CRYPT tokens in your connected Web3 wallet. Holding $CRYPT grants instant Pro status, bypassing daily IP limits.
                     </p>
                 </div>
 
@@ -789,7 +700,7 @@
                         <span class="text-brand">03.</span> When does the $CRYPT presale open?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        The native BEP-20 presale starts on October 8th, 2026 at 4:00 PM EST directly on Binance Smart Chain. We operate our own native presale smart contract to eliminate third-party launching platform fees.
+                        The native BEP-20 presale starts on October 8th, 2026 at 11:59:59 PM EST directly on Binance Smart Chain to eliminate third-party launching platform fees.
                     </p>
                 </div>
 
@@ -798,7 +709,7 @@
                         <span class="text-brand">04.</span> How does B2B Enterprise API integration work?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        DEX platforms, Telegram bots, and Web3 wallets can integrate our Vercel-hosted serverless endpoints (`/api/analyze`) using custom API keys to evaluate incoming user transactions and alert users before signing unsafe smart contract calls.
+                        DEX platforms, Telegram bots, and Web3 wallets can integrate our Vercel-hosted serverless endpoints using custom API keys to evaluate incoming user transactions.
                     </p>
                 </div>
             </div>
@@ -806,7 +717,6 @@
 
     </main>
 
-    <!-- Footer Section -->
     <footer class="w-full bg-paper border-t-2 border-zinc-800 mt-16 py-12">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             <div class="space-y-3 max-w-sm">
@@ -815,7 +725,7 @@
                         CP
                     </div>
                     <h2 class="font-syne text-xl font-black text-ink uppercase tracking-tight">
-                        CRYPT<span class="text-brand">ECTION</span>
+                        CRYPTECTION
                     </h2>
                 </a>
                 <p class="font-mono text-xs text-zinc-500 leading-relaxed">
@@ -862,11 +772,9 @@
         </div>
     </footer>
 
-    <!-- Toast Notifications Container -->
     <div id="toast-container"></div>
 
     <script>
-        // Background Network Canvas
         const canvas = document.getElementById('network-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
@@ -905,7 +813,6 @@
                 ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
                 ctx.fill();
 
-                // Connect particles
                 particles.forEach(p2 => {
                     const dx = p.x - p2.x;
                     const dy = p.y - p2.y;
@@ -918,7 +825,6 @@
                     }
                 });
 
-                // Connect to mouse
                 const mdx = p.x - mouse.x;
                 const mdy = p.y - mouse.y;
                 const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
@@ -939,9 +845,7 @@
         initCanvas();
         animateCanvas();
 
-        // Presale Countdown Logic (Target: Oct 8, 2026 23:59:59 EST)
         function updateCountdown() {
-            // Treat string strictly as EST (UTC-5)
             const target = new Date("October 8, 2026 23:59:59 GMT-0500").getTime();
             const now = new Date().getTime();
             const diff = target - now;
@@ -966,7 +870,6 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Simulated Live Radar Feed
         const radarFeed = document.getElementById('radar-feed');
         const simulatedLogs = [
             "<span class='text-accent'>[BLOCKED]</span> Malicious honeypot approval rejected for Wallet 0x7A...9F2",
@@ -974,7 +877,8 @@
             "<span class='text-safe'>[VERIFIED]</span> Contract 0x3B...1A4 passed multi-sig ownership check",
             "<span class='text-brand'>[API]</span> Enterprise webhook triggered by Wallet 0x99...22B",
             "<span class='text-accent'>[BLOCKED]</span> Prevented drainer execution on 43 connected wallets",
-            "<span class='text-zinc-500'>[SYS]</span> Indexed 1,420 new liquidity pairs from DexScreener"
+            "<span class='text-zinc-500'>[SYS]</span> Indexed 1,420 new liquidity pairs from DexScreener",
+            "<span class='text-warning'>[GRAPH]</span> Suspicious deployer funding tree mapped via AI tracer"
         ];
 
         function addRadarLog() {
@@ -1060,7 +964,6 @@
             document.getElementById('resAddress').textContent = data.address;
             document.getElementById('resChain').textContent = `NETWORK: ${data.chain || 'Binance Smart Chain'}`;
 
-            // Handle Contract vs Wallet Display
             const cModule = document.getElementById('contractModule');
             const wModule = document.getElementById('walletModule');
 
@@ -1075,6 +978,29 @@
                 const change = Number(data.priceChange24h || 0);
                 const trendStr = change >= 0 ? `+${change.toFixed(1)}% 📈` : `${change.toFixed(1)}% 📉`;
                 document.getElementById('cTrend').textContent = `${trendStr} (${data.trend || 'STABLE'})`;
+                
+                // Inject Block Explorer Forensics
+                if (data.explorerData) {
+                    const isV = data.explorerData.isVerified;
+                    const verifiedEl = document.getElementById('cVerified');
+                    verifiedEl.textContent = isV ? 'VERIFIED ✓' : 'UNVERIFIED ⚠';
+                    verifiedEl.className = `text-sm font-bold font-syne block mt-1 ${isV ? 'text-safe' : 'text-accent'}`;
+                    
+                    document.getElementById('cCompiler').textContent = data.explorerData.compilerVersion || 'Unknown';
+                    document.getElementById('cCompiler').title = data.explorerData.compilerVersion || '';
+                    
+                    document.getElementById('cLicense').textContent = data.explorerData.licenseType || 'None';
+                    document.getElementById('cLicense').title = data.explorerData.licenseType || '';
+                    
+                    document.getElementById('cOpt').textContent = data.explorerData.optimizationUsed || 'Unknown';
+                } else {
+                    document.getElementById('cVerified').textContent = 'UNVERIFIED ⚠';
+                    document.getElementById('cVerified').className = 'text-sm font-bold font-syne block mt-1 text-accent';
+                    document.getElementById('cCompiler').textContent = 'Unknown';
+                    document.getElementById('cLicense').textContent = 'None';
+                    document.getElementById('cOpt').textContent = 'Unknown';
+                }
+                
             } else {
                 wModule.classList.remove('hidden');
                 cModule.classList.add('hidden');
@@ -1085,7 +1011,6 @@
                 document.getElementById('wNativeBal').textContent = data.nativeBalance || '0 BNB';
                 document.getElementById('wAge').textContent = data.walletAge || 'Active Wallet';
 
-                // Holdings Table
                 const tbody = document.getElementById('wHoldingsTable');
                 tbody.innerHTML = '';
                 if (data.holdings && data.holdings.length > 0) {
@@ -1102,7 +1027,6 @@
                     });
                 }
 
-                // Trade History Feed
                 const tFeed = document.getElementById('wTradeHistory');
                 tFeed.innerHTML = '';
                 if (data.tradeHistory && data.tradeHistory.length > 0) {
@@ -1158,7 +1082,7 @@
                     const li = document.createElement('li');
                     li.textContent = concern;
                     if(concern.includes('✓')) li.className = 'text-safe font-mono';
-                    else if(concern.includes('⚠')) li.className = 'text-accent font-bold font-mono';
+                    else if(concern.includes('⚠') || concern.includes('🛑')) li.className = 'text-accent font-bold font-mono';
                     else li.className = 'text-zinc-300 font-mono';
                     concernsContainer.appendChild(li);
                 });
