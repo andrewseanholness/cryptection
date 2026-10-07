@@ -128,15 +128,65 @@
         .glow-bsc {
             box-shadow: 0 0 25px rgba(243, 186, 47, 0.15);
         }
+
+        #network-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .radar-sweep {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent 70%, rgba(255, 62, 62, 0.1) 80%, rgba(255, 62, 62, 0.4) 100%);
+            border-radius: 50%;
+            transform-origin: center;
+            animation: sweep 4s linear infinite;
+            margin-left: -100%;
+            margin-top: -100%;
+            pointer-events: none;
+        }
+
+        @keyframes sweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .typewriter-line {
+            overflow: hidden;
+            border-right: 2px solid #ff3e3e;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 1s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ff3e3e; }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-brand selection:text-black">
+
+    <canvas id="network-canvas"></canvas>
 
     <!-- Live Market Bar -->
     <div class="w-full bg-bsc text-black font-mono text-xs py-1.5 border-b-2 border-black font-bold uppercase tracking-wider overflow-hidden">
         <div class="ticker-wrap flex items-center">
             <div class="ticker flex gap-8">
-                <span>⚡ $CRYPT BEP-20 PRESALE STARTS: OCT 8TH, 2026 @ 4:00 PM EST</span>
+                <span>⚡ $CRYPT BEP-20 PRESALE STARTS: OCT 8TH, 2026 @ 11:59:59 PM EST</span>
                 <span>• BINANCE SMART CHAIN (BSC)</span>
                 <span>• SEED TARGET: $250,000</span>
                 <span>• BUY WITH BNB</span>
@@ -156,7 +206,7 @@
                     </div>
                     <div>
                         <h1 class="font-syne text-2xl font-black tracking-tight text-ink uppercase flex items-center gap-2">
-                            CRYPT<span class="text-brand">SECTION</span>
+                            CRYPT<span class="text-brand">ECTION</span>
                         </h1>
                         <p class="font-mono text-[10px] text-zinc-400 uppercase tracking-widest">cryptectionlabs.com • V2 Beta</p>
                     </div>
@@ -231,22 +281,46 @@
                         <span class="font-mono text-[11px] text-bsc font-bold uppercase tracking-wider">BSC LAUNCH</span>
                         <h3 class="font-syne text-2xl font-black text-ink uppercase">Native Presale</h3>
                     </div>
-                    <span class="px-2.5 py-1 bg-bsc/20 border border-bsc text-bsc font-mono text-xs font-bold uppercase">Oct 8, 2026</span>
+                    <span class="px-2.5 py-1 bg-bsc/20 border border-bsc text-bsc font-mono text-xs font-bold uppercase flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-bsc animate-pulse"></span>
+                        Live Countdown
+                    </span>
                 </div>
 
                 <div class="mb-6 space-y-3">
-                    <div class="flex justify-between text-xs font-mono">
-                        <span class="text-zinc-400">Status: <span class="text-warning">Awaiting Launch</span></span>
-                        <span class="text-bsc font-bold">Hard Cap: $250,000</span>
+                    <p class="font-mono text-xs text-zinc-400 text-center mb-2">T-MINUS UNTIL SMART CONTRACT DEPLOYMENT</p>
+                    <div class="grid grid-cols-4 gap-2 text-center">
+                        <div class="bg-paper border-2 border-zinc-800 py-3 relative overflow-hidden">
+                            <span id="cd-days" class="font-syne text-3xl font-black text-ink z-10 relative">00</span>
+                            <span class="block text-[9px] text-zinc-500 uppercase font-mono font-bold mt-1">Days</span>
+                        </div>
+                        <div class="bg-paper border-2 border-zinc-800 py-3 relative overflow-hidden">
+                            <span id="cd-hours" class="font-syne text-3xl font-black text-ink z-10 relative">00</span>
+                            <span class="block text-[9px] text-zinc-500 uppercase font-mono font-bold mt-1">Hours</span>
+                        </div>
+                        <div class="bg-paper border-2 border-zinc-800 py-3 relative overflow-hidden">
+                            <span id="cd-mins" class="font-syne text-3xl font-black text-ink z-10 relative">00</span>
+                            <span class="block text-[9px] text-zinc-500 uppercase font-mono font-bold mt-1">Mins</span>
+                        </div>
+                        <div class="bg-paper border-2 border-zinc-800 py-3 relative overflow-hidden">
+                            <span id="cd-secs" class="font-syne text-3xl font-black text-bsc z-10 relative">00</span>
+                            <span class="block text-[9px] text-zinc-500 uppercase font-mono font-bold mt-1">Secs</span>
+                        </div>
                     </div>
-                    <div class="w-full bg-paper border border-zinc-700 h-5 p-0.5 relative overflow-hidden">
+                    
+                    <div class="flex justify-between text-xs font-mono mt-4">
+                        <span class="text-zinc-400">Target: <span class="text-ink font-bold">Oct 8, 11:59:59 PM EST</span></span>
+                        <span class="text-bsc font-bold">Cap: $250k</span>
+                    </div>
+                    <div class="w-full bg-paper border border-zinc-700 h-5 p-0.5 relative overflow-hidden mt-1">
                         <div class="h-full bg-zinc-800 w-full transition-all flex items-center justify-center font-mono text-[10px] text-zinc-500">0% FILLED</div>
                     </div>
                 </div>
 
                 <div class="space-y-3 mt-auto">
-                    <button onclick="showToast('Presale opens Oct 8th, 2026. Have BNB ready on BSC.', 'warning')" class="w-full py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all">
-                        CONNECT WALLET (OCT 8)
+                    <button onclick="showToast('Presale unlocks precisely at Oct 8th, 11:59:59 PM EST.', 'warning')" class="w-full py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex justify-center items-center gap-2">
+                        <span>CONNECT WALLET</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                     </button>
                 </div>
             </div>
@@ -435,6 +509,79 @@
                         <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Security & Behavioral Observations</h3>
                         <ul id="resConcerns" class="space-y-4 font-mono text-sm text-zinc-300 flex-grow"></ul>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Mempool Interceptor Radar -->
+        <section class="mt-12 mb-8">
+            <div class="flex flex-col lg:flex-row gap-6 items-stretch">
+                <!-- Radar Visualizer -->
+                <div class="lg:w-1/3 bg-card border-2 border-zinc-800 p-6 flex flex-col justify-center items-center text-center relative overflow-hidden h-64">
+                    <div class="radar-sweep"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-full border-2 border-brand/50 mx-auto flex items-center justify-center mb-4 relative">
+                            <div class="w-8 h-8 bg-brand/20 rounded-full animate-ping"></div>
+                            <svg class="w-6 h-6 text-brand absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="font-syne text-xl font-bold text-ink uppercase tracking-tight">Mempool Radar</h3>
+                        <p class="font-mono text-[10px] text-zinc-400 uppercase mt-2">Scanning Pending Txns...</p>
+                    </div>
+                    <!-- Crosshairs -->
+                    <div class="absolute inset-0 pointer-events-none opacity-20">
+                        <div class="w-full h-[1px] bg-brand absolute top-1/2 -translate-y-1/2"></div>
+                        <div class="h-full w-[1px] bg-brand absolute left-1/2 -translate-x-1/2"></div>
+                        <div class="w-32 h-32 border border-brand rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                </div>
+
+                <!-- Live Feed Console -->
+                <div class="lg:w-2/3 bg-paper border-2 border-zinc-800 p-6 font-mono text-xs flex flex-col h-64">
+                    <div class="flex justify-between items-center border-b border-zinc-800 pb-3 mb-3">
+                        <span class="text-zinc-500 font-bold uppercase tracking-wider flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                            Live Interception Feed
+                        </span>
+                        <span class="text-zinc-500">Nodes: 1,402 Active</span>
+                    </div>
+                    <div id="radar-feed" class="flex-grow overflow-hidden flex flex-col justify-end space-y-2 text-zinc-400">
+                        <!-- Feed populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Threat Architecture Blueprint -->
+        <section class="bg-card border-2 border-zinc-800 p-6 sm:p-8 relative mt-4 overflow-hidden shadow-[6px_6px_0px_0px_#1b1e27]">
+            <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+                <svg width="200" height="200" viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="2" d="M10,50 L90,50 M50,10 L50,90 M20,20 L80,80 M20,80 L80,20" /></svg>
+            </div>
+            
+            <div class="mb-8 border-b-2 border-zinc-800 pb-4 relative z-10">
+                <span class="font-mono text-xs text-safe font-bold uppercase tracking-wider">[ PROTOCOL ARCHITECTURE ]</span>
+                <h2 class="font-syne text-2xl sm:text-3xl font-black text-ink uppercase mt-1">How The Engine Works</h2>
+                <p class="font-mono text-xs text-zinc-400 mt-2 max-w-2xl">Cryptection doesn't rely on a single source of truth. We aggregate live RPC node states, historical threat databases, and real-time market telemetry to construct a highly accurate composite risk index.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 font-mono text-xs relative z-10">
+                <div class="bg-paper border border-zinc-700 p-4">
+                    <span class="text-zinc-500 font-bold block mb-2">01. INGESTION</span>
+                    <p class="text-zinc-300">Parallel queries to DexScreener, GoPlus Security, and direct BSC/ETH JSON-RPC nodes fetch raw state data.</p>
+                </div>
+                <div class="bg-paper border border-zinc-700 p-4 relative">
+                    <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
+                    <span class="text-brand font-bold block mb-2">02. HEURISTICS</span>
+                    <p class="text-zinc-300">AI Graph Traversal maps funding sources, looking for Tornado Cash usage or serial rug-pull deployer links.</p>
+                </div>
+                <div class="bg-paper border border-zinc-700 p-4 relative">
+                    <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
+                    <span class="text-warning font-bold block mb-2">03. CONSENSUS</span>
+                    <p class="text-zinc-300">Contract parameters (taxes, honeypot code) are weighed against behavioral wallet risks to form the Composite Index.</p>
+                </div>
+                <div class="bg-paper border border-zinc-700 p-4 relative shadow-[4px_4px_0px_0px_#00e676]">
+                    <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
+                    <span class="text-safe font-bold block mb-2">04. EXECUTION</span>
+                    <p class="text-zinc-300">Data is delivered to the Web Terminal and Enterprise API endpoints in &lt;1.5s to block pending malicious swaps.</p>
                 </div>
             </div>
         </section>
@@ -668,7 +815,7 @@
                         CP
                     </div>
                     <h2 class="font-syne text-xl font-black text-ink uppercase tracking-tight">
-                        CRYPT<span class="text-brand">SECTION</span>
+                        CRYPT<span class="text-brand">ECTION</span>
                     </h2>
                 </a>
                 <p class="font-mono text-xs text-zinc-500 leading-relaxed">
@@ -719,6 +866,130 @@
     <div id="toast-container"></div>
 
     <script>
+        // Background Network Canvas
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let mouse = { x: -1000, y: -1000 };
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 60; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = '#ff6b00';
+            ctx.strokeStyle = 'rgba(255, 107, 0, 0.15)';
+            ctx.lineWidth = 1;
+
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Connect particles
+                particles.forEach(p2 => {
+                    const dx = p.x - p2.x;
+                    const dy = p.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                });
+
+                // Connect to mouse
+                const mdx = p.x - mouse.x;
+                const mdy = p.y - mouse.y;
+                const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+                if (mdist < 200) {
+                    ctx.strokeStyle = 'rgba(255, 62, 62, 0.3)';
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+                    ctx.strokeStyle = 'rgba(255, 107, 0, 0.15)';
+                }
+            });
+            requestAnimationFrame(animateCanvas);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        initCanvas();
+        animateCanvas();
+
+        // Presale Countdown Logic (Target: Oct 8, 2026 23:59:59 EST)
+        function updateCountdown() {
+            // Treat string strictly as EST (UTC-5)
+            const target = new Date("October 8, 2026 23:59:59 GMT-0500").getTime();
+            const now = new Date().getTime();
+            const diff = target - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('cd-days').innerText = days.toString().padStart(2, '0');
+                document.getElementById('cd-hours').innerText = hours.toString().padStart(2, '0');
+                document.getElementById('cd-mins').innerText = mins.toString().padStart(2, '0');
+                document.getElementById('cd-secs').innerText = secs.toString().padStart(2, '0');
+            } else {
+                document.getElementById('cd-days').innerText = "00";
+                document.getElementById('cd-hours').innerText = "00";
+                document.getElementById('cd-mins').innerText = "00";
+                document.getElementById('cd-secs').innerText = "00";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Simulated Live Radar Feed
+        const radarFeed = document.getElementById('radar-feed');
+        const simulatedLogs = [
+            "<span class='text-accent'>[BLOCKED]</span> Malicious honeypot approval rejected for Wallet 0x7A...9F2",
+            "<span class='text-warning'>[ALERT]</span> High volume of Tornado Cash withdrawals detected on BSC",
+            "<span class='text-safe'>[VERIFIED]</span> Contract 0x3B...1A4 passed multi-sig ownership check",
+            "<span class='text-brand'>[API]</span> Enterprise webhook triggered by Wallet 0x99...22B",
+            "<span class='text-accent'>[BLOCKED]</span> Prevented drainer execution on 43 connected wallets",
+            "<span class='text-zinc-500'>[SYS]</span> Indexed 1,420 new liquidity pairs from DexScreener"
+        ];
+
+        function addRadarLog() {
+            if (radarFeed.children.length > 5) {
+                radarFeed.removeChild(radarFeed.firstChild);
+            }
+            const log = document.createElement('div');
+            log.className = "typewriter-line inline-block";
+            log.innerHTML = `> ${simulatedLogs[Math.floor(Math.random() * simulatedLogs.length)]} <span class='text-zinc-600 ml-2'>[${new Date().toLocaleTimeString()}]</span>`;
+            radarFeed.appendChild(log);
+            setTimeout(() => { log.classList.remove('typewriter-line'); log.style.borderRight = 'none'; }, 1000);
+        }
+        setInterval(addRadarLog, 2500);
+        addRadarLog();
+
         let devBypassActive = false;
 
         function toggleDevBypass() {
