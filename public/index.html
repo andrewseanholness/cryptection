@@ -318,7 +318,7 @@
             </div>
 
             <div class="bg-paper border border-zinc-700 p-4 mb-6 font-mono text-sm text-zinc-300">
-                <strong class="text-brand">USAGE INSTRUCTIONS:</strong> This is our V2 Beta testnet. To see how the engine breaks down risks, enter any 40-character EVM contract or wallet address starting with `0x`. You can also click the test target buttons below to simulate a live scan.
+                <strong class="text-brand">USAGE INSTRUCTIONS:</strong> To test, enter a 40-character EVM address. <br><span class="text-xs text-zinc-500">Note: To bypass daily search limits during testing, add <strong>dev:</strong> before your address (e.g., dev:0x123...).</span>
             </div>
 
             <!-- Input Box -->
@@ -358,7 +358,7 @@
                         <div class="flex items-center gap-2 mt-1">
                             <span id="resAddress" class="font-mono text-base sm:text-xl text-ink font-bold break-all">0x...</span>
                         </div>
-                        <span class="font-mono text-[11px] text-zinc-500 uppercase mt-1 block">TYPE: Contract</span>
+                        <span id="resTypeBadge" class="font-mono text-[11px] text-zinc-500 uppercase mt-1 block">TYPE: Loading...</span>
                     </div>
 
                     <div id="resBadge" class="px-4 py-2 border-2 font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2"></div>
@@ -403,11 +403,11 @@
 
                     <!-- Right: Explanations -->
                     <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 flex flex-col">
-                        <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Why We're Concerned</h3>
+                        <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Intelligence Brief</h3>
                         <ul id="resConcerns" class="space-y-4 font-mono text-sm text-zinc-300 flex-grow"></ul>
                         
                         <div class="mt-6 pt-4 border-t-2 border-zinc-800 text-xs font-mono text-zinc-500">
-                            * Intelligence provided by Cryptection Core heuristic analysis.
+                            * Intelligence provided by Cryptection Multi-Node Data Aggregation.
                         </div>
                     </div>
                 </div>
@@ -614,277 +614,3 @@
                 <div class="border border-zinc-800 bg-paper p-4">
                     <button onclick="toggleFaq('faq1')" class="w-full flex justify-between items-center text-left font-bold text-ink uppercase hover:text-brand">
                         <span>Why are there buy and sell taxes?</span>
-                        <span id="faq1-icon" class="text-brand text-lg">+</span>
-                    </button>
-                    <div id="faq1" class="accordion-content pt-3 text-zinc-400 leading-relaxed">
-                        As a grassroots project, the 5% buy/sell tax ensures we have a continuous runway to pay for RPC node data, API access, serverless hosting, development labor, and marketing to get Cryptection to the next level. Once our enterprise API generates organic revenue, we plan to lower or remove these taxes.
-                    </div>
-                </div>
-
-                <div class="border border-zinc-800 bg-paper p-4">
-                    <button onclick="toggleFaq('faq3')" class="w-full flex justify-between items-center text-left font-bold text-ink uppercase hover:text-brand">
-                        <span>When is the launch and what chain?</span>
-                        <span id="faq3-icon" class="text-brand text-lg">+</span>
-                    </button>
-                    <div id="faq3" class="accordion-content pt-3 text-zinc-400 leading-relaxed">
-                        The native presale begins October 8th, 2026 at 4:00 PM EST on the Binance Smart Chain (BSC). You will need BNB in your Web3 wallet (like MetaMask or TrustWallet) to participate.
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Modal: Report Threat Modal -->
-    <div id="reportModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-card border-2 border-zinc-700 w-full max-w-lg p-6 sm:p-8 shadow-[8px_8px_0px_0px_#ff3e3e] relative">
-            <button onclick="toggleModal('reportModal')" class="absolute top-4 right-4 text-zinc-500 hover:text-ink font-mono font-bold text-lg">✕</button>
-
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-8 h-8 bg-accent text-white flex items-center justify-center font-bold">!</div>
-                <h3 class="font-syne text-2xl font-bold text-ink uppercase">Report Malicious Target</h3>
-            </div>
-
-            <form id="reportForm" onsubmit="submitReport(event)" class="space-y-4">
-                <div>
-                    <label class="block font-mono text-xs uppercase text-zinc-400 mb-1">Target BSC/EVM Address</label>
-                    <input type="text" id="reportAddress" required
-                        class="w-full bg-paper border border-zinc-700 text-ink font-mono text-sm p-3 focus:outline-none focus:border-accent"
-                        placeholder="0x...">
-                </div>
-
-                <div>
-                    <label class="block font-mono text-xs uppercase text-zinc-400 mb-1">Incident Proof / Details</label>
-                    <textarea id="reportDetails" rows="3" required
-                        class="w-full bg-paper border border-zinc-700 text-ink font-mono text-sm p-3 focus:outline-none focus:border-accent"
-                        placeholder="Provide transaction hashes or evidence..."></textarea>
-                </div>
-
-                <div class="flex justify-end gap-3 pt-2">
-                    <button type="button" onclick="toggleModal('reportModal')" class="px-5 py-2.5 bg-paper border border-zinc-700 text-zinc-400 hover:text-ink font-mono text-xs uppercase">
-                        Cancel
-                    </button>
-                    <button type="submit" id="submitReportBtn" class="px-6 py-2.5 bg-accent hover:bg-red-600 text-white font-syne font-extrabold text-sm uppercase tracking-wider border border-black shadow-brutal-dark">
-                        Submit Incident
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Toast Notifications Container -->
-    <div id="toast-container"></div>
-
-    <!-- Footer -->
-    <footer class="w-full border-t-2 border-zinc-800 bg-paper py-12 mt-12">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 font-mono text-xs text-zinc-500">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-brand text-black font-syne font-black text-xl flex items-center justify-center border border-black">
-                    CP
-                </div>
-                <div>
-                    <span class="font-bold text-ink block">CRYPTECTION LABS</span>
-                    <span>Decentralized Web3 Threat Defense Network • cryptectionlabs.com</span>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-6">
-                <a href="#pricing" class="hover:text-brand">API Pricing</a>
-                <a href="#tokenomics" class="hover:text-brand">Tokenomics</a>
-                <a href="#faq" class="hover:text-brand">Investor FAQ</a>
-            </div>
-
-            <div>
-                © 2026 CRYPTECTION LABS. ALL RIGHTS RESERVED.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // DOM Elements
-        const scanBtn = document.getElementById('scanBtn');
-        const searchInput = document.getElementById('searchInput');
-        const scanBtnText = document.getElementById('scanBtnText');
-        const scanLoader = document.getElementById('scanLoader');
-        const resultPanel = document.getElementById('resultPanel');
-
-        // FAQ Toggle
-        function toggleFaq(id) {
-            const content = document.getElementById(id);
-            const icon = document.getElementById(`${id}-icon`);
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                icon.textContent = '+';
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                icon.textContent = '-';
-            }
-        }
-
-        function isValidAddress(address) {
-            return /^0x[a-fA-F0-9]{40}$/i.test(address);
-        }
-
-        function testAddress(addr) {
-            searchInput.value = addr;
-            analyzeWallet();
-        }
-
-        async function analyzeWallet() {
-            const address = searchInput.value.trim();
-
-            if (!isValidAddress(address)) {
-                showToast('Please enter a valid 0x EVM/BSC address.', 'error');
-                return;
-            }
-
-            setLoading(true);
-
-            try {
-                // Pointing to our Vercel Serverless Function
-                const response = await fetch(`/api/analyze?address=${encodeURIComponent(address)}`);
-                const data = await response.json();
-                
-                if (!response.ok || data.error) {
-                    showToast(data.message || data.error || 'Scan request failed.', 'error');
-                    return;
-                }
-
-                renderResults(data);
-                showToast('Intelligence gathering complete.', 'success');
-
-            } catch (err) {
-                showToast('Error communicating with API. Ensure backend is online.', 'error');
-                console.error(err);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        function renderResults(data) {
-            if (!data || typeof data.riskScore === 'undefined') {
-                showToast('Received incomplete security payload.', 'error');
-                return;
-            }
-
-            resultPanel.classList.remove('hidden');
-
-            document.getElementById('resAddress').textContent = data.address;
-            const targetScore = Number(data.riskScore) || 0;
-            animateValue("resScore", 0, targetScore, 800);
-
-            const badge = document.getElementById('resBadge');
-            const scoreObj = document.getElementById('resScore');
-            
-            if (data.status === 'SAFE') {
-                badge.className = 'px-4 py-2 border-2 border-safe text-safe bg-safe/10 font-mono text-xs font-bold uppercase flex items-center gap-2';
-                badge.innerHTML = 'RISK: SAFE';
-                scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-safe leading-none';
-            } else if (data.status === 'WARNING') {
-                badge.className = 'px-4 py-2 border-2 border-warning text-warning bg-warning/10 font-mono text-xs font-bold uppercase flex items-center gap-2';
-                badge.innerHTML = 'RISK: ELEVATED';
-                scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-warning leading-none';
-            } else {
-                badge.className = 'px-4 py-2 border-2 border-accent text-accent bg-accent/10 font-mono text-xs font-bold uppercase flex items-center gap-2 shadow-[2px_2px_0px_0px_#ff3e3e]';
-                badge.innerHTML = 'RISK: HIGH';
-                scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-accent leading-none';
-            }
-
-            document.getElementById('resContractRisk').textContent = data.contractRisk ?? 0;
-            document.getElementById('resWalletRisk').textContent = data.walletRisk ?? 0;
-            document.getElementById('resCreatorRisk').textContent = data.creatorRisk ?? 0;
-            document.getElementById('resNetworkRisk').textContent = data.networkRisk ?? 0;
-            document.getElementById('resBehavioralRisk').textContent = data.behavioralRisk ?? 0;
-
-            const concernsContainer = document.getElementById('resConcerns');
-            concernsContainer.innerHTML = '';
-            if (data.concerns && data.concerns.length > 0) {
-                data.concerns.forEach(concern => {
-                    const li = document.createElement('li');
-                    li.textContent = concern;
-                    if(concern.includes('✓')) li.className = 'text-safe';
-                    else if(concern.includes('⚠')) li.className = 'text-warning';
-                    concernsContainer.appendChild(li);
-                });
-            }
-
-            resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        async function submitReport(e) {
-            e.preventDefault();
-            const address = document.getElementById('reportAddress').value;
-            const reason = document.getElementById('reportDetails').value;
-            
-            try {
-                const response = await fetch('/api/report', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ address, reason })
-                });
-                
-                if(response.ok) {
-                    showToast('Incident report filed securely!', 'success');
-                    toggleModal('reportModal');
-                    document.getElementById('reportForm').reset();
-                } else {
-                    showToast('Failed to submit report via API.', 'error');
-                }
-            } catch (err) {
-                 showToast('Error communicating with API.', 'error');
-            }
-        }
-
-        function toggleModal(id) {
-            const modal = document.getElementById(id);
-            if (modal.classList.contains('hidden')) {
-                modal.classList.remove('hidden');
-            } else {
-                modal.classList.add('hidden');
-            }
-        }
-
-        function setLoading(isLoading) {
-            if (isLoading) {
-                scanBtnText.classList.add('hidden');
-                scanLoader.classList.remove('hidden');
-                scanBtn.disabled = true;
-            } else {
-                scanBtnText.classList.remove('hidden');
-                scanLoader.classList.add('hidden');
-                scanBtn.disabled = false;
-            }
-        }
-
-        function showToast(message, type = 'info') {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = `toast ${type}`;
-            toast.innerHTML = `> ${message}`;
-            
-            container.appendChild(toast);
-            setTimeout(() => toast.classList.add('show'), 10);
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-                setTimeout(() => toast.remove(), 200);
-            }, 4000);
-        }
-
-        function animateValue(id, start, end, duration) {
-            const obj = document.getElementById(id);
-            const numericEnd = Number(end) || 0;
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const easeOut = progress * (2 - progress);
-                obj.innerHTML = Math.floor(easeOut * (numericEnd - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-    </script>
-</body>
-</html>
