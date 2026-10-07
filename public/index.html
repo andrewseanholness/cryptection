@@ -91,7 +91,6 @@
             background: #ff6b00;
         }
 
-        /* Toast Container */
         #toast-container {
             position: fixed;
             bottom: 24px;
@@ -129,12 +128,6 @@
         .glow-bsc {
             box-shadow: 0 0 25px rgba(243, 186, 47, 0.15);
         }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-brand selection:text-black">
@@ -171,17 +164,13 @@
             </div>
 
             <nav class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-xs font-bold uppercase text-zinc-300">
-                <a href="#audit-terminal" class="hover:text-brand transition-colors">Testnet Terminal</a>
-                <a href="#how-it-works" class="hover:text-brand transition-colors">Architecture</a>
+                <a href="#audit-terminal" class="hover:text-brand transition-colors">Threat Terminal</a>
                 <a href="#pricing" class="hover:text-brand transition-colors text-brand">API Tiers</a>
                 <a href="#tokenomics" class="hover:text-brand transition-colors">Tokenomics</a>
                 <a href="#faq" class="hover:text-brand transition-colors">FAQ</a>
             </nav>
 
             <div class="hidden lg:flex items-center gap-3">
-                <button onclick="toggleModal('reportModal')" class="px-3.5 py-2 bg-card hover:bg-zinc-800 text-zinc-300 font-mono text-xs font-bold uppercase border-2 border-zinc-700 transition-all">
-                    + Report Scam
-                </button>
                 <a href="#presale" class="px-5 py-2 bg-bsc hover:bg-yellow-500 text-black font-syne font-extrabold text-xs uppercase tracking-wider border-2 border-black shadow-brutal-dark transition-all flex items-center gap-2">
                     Buy $CRYPT
                 </a>
@@ -197,41 +186,38 @@
                 <div>
                     <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand/10 border border-brand/40 text-brand font-mono text-xs font-bold uppercase mb-6">
                         <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
-                        V2 Intelligence Engine Live
+                        V2 Multi-API Telemetry Live
                     </div>
 
                     <h2 class="font-syne text-3xl sm:text-5xl font-black text-ink leading-none uppercase tracking-tight mb-6">
-                        A New Standard in Decentralized Threat Intelligence.
+                        Deep Contract & Wallet Intelligence.
                     </h2>
 
                     <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-8">
-                        Cryptection is building an independent security protocol for Web3. By combining real-time contract telemetry, behavioral heuristics, and a transparent <strong>$CRYPT</strong> token economy, we replace expensive centralized security firms with a scalable network.
+                        Cryptection combines real-time contract age, DexScreener market trends, holder net worth, trader win-rates, and GoPlus threat telemetry into an indispensable Web3 terminal.
                     </p>
 
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-paper border-2 border-zinc-800 mb-8 font-mono">
                         <div>
-                            <span class="block text-[10px] text-zinc-500 uppercase">Status</span>
-                            <span class="text-xl sm:text-2xl font-bold text-ink font-syne">LIVE ENGINE</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase">Engine</span>
+                            <span class="text-xl sm:text-2xl font-bold text-ink font-syne">V2 MULTI</span>
                         </div>
                         <div>
-                            <span class="block text-[10px] text-zinc-500 uppercase">Telemetry</span>
-                            <span class="text-xl sm:text-2xl font-bold text-brand font-syne">GoPlus</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase">Market Telemetry</span>
+                            <span class="text-xl sm:text-2xl font-bold text-brand font-syne">DexScreener</span>
                         </div>
                         <div>
-                            <span class="block text-[10px] text-zinc-500 uppercase">Scams Indexed</span>
-                            <span class="text-xl sm:text-2xl font-bold text-safe font-syne">1,204</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase">Threat Telemetry</span>
+                            <span class="text-xl sm:text-2xl font-bold text-safe font-syne">GoPlus Labs</span>
                         </div>
                         <div>
                             <span class="block text-[10px] text-zinc-500 uppercase">Architecture</span>
-                            <span class="text-xl sm:text-2xl font-bold text-gold font-syne">Vercel</span>
+                            <span class="text-xl sm:text-2xl font-bold text-gold font-syne">Vercel API</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap items-center gap-4 pt-4 border-t-2 border-zinc-800">
-                    <a href="#pricing" class="px-6 py-3 bg-paper border-2 border-zinc-700 hover:border-brand text-ink font-mono text-xs font-bold uppercase transition-all">
-                        View Revenue Model
-                    </a>
                     <a href="#audit-terminal" class="px-6 py-3 bg-brand text-black font-mono text-xs font-bold uppercase transition-all shadow-brutal-dark border-2 border-black">
                         ⚡ Try Scanner
                     </a>
@@ -270,11 +256,10 @@
         <section id="audit-terminal" class="bg-card border-2 border-zinc-800 p-6 sm:p-8 shadow-[6px_6px_0px_0px_#1b1e27] relative mt-4">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b-2 border-zinc-800 pb-4">
                 <div>
-                    <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">SECURITY TELEMETRY ENGINE</span>
+                    <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">DEEP MULTI-API ANALYTICS</span>
                     <h2 class="font-syne text-2xl sm:text-3xl font-black text-ink uppercase">V2 Threat Terminal</h2>
                 </div>
 
-                <!-- Developer Testing Bypass Toggle -->
                 <div class="flex items-center gap-3 bg-paper p-2 border border-zinc-700">
                     <span class="font-mono text-xs text-zinc-400 uppercase font-bold">DEV BYPASS:</span>
                     <button id="devBypassBtn" onclick="toggleDevBypass()" class="px-2.5 py-1 bg-zinc-800 text-zinc-400 font-mono text-xs font-bold uppercase border border-zinc-600 transition-all">
@@ -283,8 +268,8 @@
                 </div>
             </div>
 
-            <div class="bg-paper border border-zinc-700 p-4 mb-6 font-mono text-sm text-zinc-300">
-                <strong class="text-brand">USAGE INSTRUCTIONS:</strong> Enter any EVM/BSC contract or wallet address starting with `0x`. The engine queries live blockchain security data for honeypots, taxes, mint functions, and wallet drainers.
+            <div class="bg-paper border border-zinc-700 p-4 mb-6 font-mono text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                <strong class="text-brand">ANALYTICS ENGINE:</strong> Enter any contract or wallet address. For contracts, we report <span class="text-safe">Age, Market Cap, 24h Vol, Price Trend, and Taxes</span>. For wallets, we report <span class="text-gold">Age, Net Worth, Token Portfolio, Trader Win-Rate, and Recent Trade Logs</span>.
             </div>
 
             <!-- Search Input Box -->
@@ -305,39 +290,118 @@
 
                 <!-- Test Targets -->
                 <div class="mt-4 flex flex-wrap items-center gap-2 font-mono text-xs text-zinc-500">
-                    <span class="text-zinc-400 font-bold">Try test targets:</span>
-                    <button type="button" onclick="testAddress('0x1234567890123456789012345678901234567890')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-accent hover:text-accent transition-colors">
-                        [Malicious Drainer]
-                    </button>
+                    <span class="text-zinc-400 font-bold">Test Address Presets:</span>
                     <button type="button" onclick="testAddress('0x10ED43C718714eb63d5aA57B78B54704E256024E')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-safe hover:text-safe transition-colors">
-                        [PancakeRouter (BSC)]
+                        [PancakeRouter (Contract)]
+                    </button>
+                    <button type="button" onclick="testAddress('0x1234567890123456789012345678901234567890')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-accent hover:text-accent transition-colors">
+                        [Malicious Drainer (Contract)]
+                    </button>
+                    <button type="button" onclick="testAddress('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-warning hover:text-warning transition-colors">
+                        [Whale / Mixer Wallet]
                     </button>
                 </div>
             </div>
 
             <!-- Dynamic Scan Results Panel -->
             <div id="resultPanel" class="hidden flex flex-col gap-6 pt-4 border-t-2 border-zinc-800">
+                
+                <!-- Main Header Banner -->
                 <div class="bg-paper border-2 border-zinc-800 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
-                        <span class="font-mono text-xs uppercase tracking-widest text-zinc-500 font-bold">CRYPTECTION INTELLIGENCE</span>
-                        <div class="flex items-center gap-2 mt-1">
-                            <span id="resAddress" class="font-mono text-base sm:text-xl text-ink font-bold break-all">0x...</span>
+                        <div class="flex items-center gap-2">
+                            <span id="resEntityType" class="px-2 py-0.5 bg-brand/20 border border-brand text-brand font-mono text-[10px] font-bold uppercase">ENTITY</span>
+                            <span class="font-mono text-xs uppercase tracking-widest text-zinc-500 font-bold">CRYPTECTION INTELLIGENCE SCAN</span>
                         </div>
+                        <div class="flex items-center gap-2 mt-2">
+                            <span id="resTitle" class="font-syne text-2xl text-ink font-black">0x...</span>
+                        </div>
+                        <span id="resAddress" class="font-mono text-xs text-zinc-400 break-all block mt-1">0x...</span>
                         <span id="resChain" class="font-mono text-[11px] text-zinc-500 uppercase mt-1 block">NETWORK: Binance Smart Chain</span>
                     </div>
 
                     <div id="resBadge" class="px-4 py-2 border-2 font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2"></div>
                 </div>
 
+                <!-- CONTRACT SPECIFIC MODULE -->
+                <div id="contractModule" class="hidden space-y-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <span class="text-[10px] text-zinc-500 uppercase block">Creation Age</span>
+                            <span id="cAge" class="text-sm font-bold text-safe font-syne block mt-1">--</span>
+                        </div>
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <span class="text-[10px] text-zinc-500 uppercase block">Market Cap / FDV</span>
+                            <span id="cMarketCap" class="text-sm font-bold text-gold font-syne block mt-1">--</span>
+                        </div>
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <span class="text-[10px] text-zinc-500 uppercase block">24h Volume / Liquidity</span>
+                            <span id="cVolume" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                        </div>
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <span class="text-[10px] text-zinc-500 uppercase block">24h Price Change / Trend</span>
+                            <span id="cTrend" class="text-sm font-bold text-brand font-syne block mt-1">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WALLET SPECIFIC MODULE -->
+                <div id="walletModule" class="hidden space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <span class="text-[10px] text-zinc-500 uppercase block">Trader Badge & Profile</span>
+                            <span id="wBadge" class="text-sm font-black text-brand font-syne block mt-1">--</span>
+                            <span id="wWinRate" class="text-[11px] text-zinc-400 block mt-0.5">--</span>
+                        </div>
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <span class="text-[10px] text-zinc-500 uppercase block">Portfolio Net Worth</span>
+                            <span id="wNetWorth" class="text-xl font-bold text-gold font-syne block mt-1">--</span>
+                            <span id="wNativeBal" class="text-[11px] text-zinc-400 block mt-0.5">--</span>
+                        </div>
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <span class="text-[10px] text-zinc-500 uppercase block">Wallet Age & History</span>
+                            <span id="wAge" class="text-sm font-bold text-safe font-syne block mt-1">--</span>
+                        </div>
+                    </div>
+
+                    <!-- Wallet Holdings Table -->
+                    <div class="bg-card border-2 border-zinc-800 p-6">
+                        <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
+                            <span>Token Portfolio Holdings</span>
+                            <span class="font-mono text-xs text-zinc-400 font-normal">Live Telemetry</span>
+                        </h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left font-mono text-xs">
+                                <thead>
+                                    <tr class="border-b border-zinc-800 text-zinc-500 uppercase">
+                                        <th class="pb-2">Asset</th>
+                                        <th class="pb-2">Balance</th>
+                                        <th class="pb-2">Est. Value (USD)</th>
+                                        <th class="pb-2">24h Trend</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="wHoldingsTable" class="divide-y divide-zinc-800/50"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Wallet Trade Logs -->
+                    <div class="bg-card border-2 border-zinc-800 p-6">
+                        <h4 class="font-syne text-base font-bold text-ink uppercase mb-4">Recent On-Chain Activity Feed</h4>
+                        <div id="wTradeHistory" class="space-y-3 font-mono text-xs"></div>
+                    </div>
+                </div>
+
+                <!-- Composite Risk Score & Observations -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     <!-- Left: Score & Breakdown -->
                     <div class="lg:col-span-5 space-y-6">
                         <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between items-center text-center relative overflow-hidden">
-                            <span class="font-mono text-xs font-bold text-zinc-400 uppercase mb-4 z-10">Composite Risk Score</span>
+                            <span class="font-mono text-xs font-bold text-zinc-400 uppercase mb-4 z-10">Composite Risk Index</span>
                             <div class="flex items-baseline gap-2 mb-2 z-10">
                                 <span id="resScore" class="font-syne text-7xl sm:text-8xl font-extrabold text-ink leading-none">0</span>
                             </div>
-                            <span class="font-mono text-sm text-zinc-500 z-10">/ 100 RISK INDEX</span>
+                            <span class="font-mono text-sm text-zinc-500 z-10">/ 100 THREAT SCORE</span>
                         </div>
 
                         <div class="bg-card border-2 border-zinc-800 p-6">
@@ -368,7 +432,7 @@
 
                     <!-- Right: Explanations -->
                     <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 flex flex-col">
-                        <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Security Audit Observations</h3>
+                        <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Security & Behavioral Observations</h3>
                         <ul id="resConcerns" class="space-y-4 font-mono text-sm text-zinc-300 flex-grow"></ul>
                     </div>
                 </div>
@@ -390,7 +454,7 @@
                         <div class="font-syne text-4xl font-black text-ink mb-6">$0<span class="text-lg text-zinc-500 font-mono">/mo</span></div>
                         <ul class="space-y-3 font-mono text-xs text-zinc-400 mb-8">
                             <li>✓ 5 manual searches per day</li>
-                            <li>✓ Live GoPlus Telemetry</li>
+                            <li>✓ Age & basic risk checks</li>
                         </ul>
                     </div>
                 </div>
@@ -403,6 +467,7 @@
                         <div class="font-mono text-xs font-bold text-safe mb-6">OR FREE HOLDING 50k $CRYPT</div>
                         <ul class="space-y-3 font-mono text-xs text-zinc-300 mb-8">
                             <li>✓ Unlimited scans (Bypass limits)</li>
+                            <li>✓ Market Cap, Net Worth & Trade Logs</li>
                             <li>✓ Automated Telegram alerts</li>
                         </ul>
                     </div>
@@ -488,8 +553,75 @@
             const resultPanel = document.getElementById('resultPanel');
             resultPanel.classList.remove('hidden');
 
+            document.getElementById('resEntityType').textContent = data.entityType || 'ENTITY';
+            document.getElementById('resTitle').textContent = data.tokenName ? `${data.tokenName} ($${data.symbol})` : (data.traderProfile?.badge || 'Wallet Entity');
             document.getElementById('resAddress').textContent = data.address;
             document.getElementById('resChain').textContent = `NETWORK: ${data.chain || 'Binance Smart Chain'}`;
+
+            // Handle Contract vs Wallet Display
+            const cModule = document.getElementById('contractModule');
+            const wModule = document.getElementById('walletModule');
+
+            if (data.entityType === 'CONTRACT') {
+                cModule.classList.remove('hidden');
+                wModule.classList.add('hidden');
+
+                document.getElementById('cAge').textContent = data.creationAge || 'Unknown';
+                document.getElementById('cMarketCap').textContent = data.marketCap ? `$${Number(data.marketCap).toLocaleString()}` : '$0 (Unindexed)';
+                document.getElementById('cVolume').textContent = `$${Number(data.volume24h || 0).toLocaleString()} / Liq: $${Number(data.liquidityUsd || 0).toLocaleString()}`;
+                
+                const change = Number(data.priceChange24h || 0);
+                const trendStr = change >= 0 ? `+${change.toFixed(1)}% 📈` : `${change.toFixed(1)}% 📉`;
+                document.getElementById('cTrend').textContent = `${trendStr} (${data.trend || 'STABLE'})`;
+            } else {
+                wModule.classList.remove('hidden');
+                cModule.classList.add('hidden');
+
+                document.getElementById('wBadge').textContent = data.traderProfile?.badge || 'ACTIVE TRADER';
+                document.getElementById('wWinRate').textContent = `${data.traderProfile?.label || ''} • ${data.traderProfile?.winRate || ''}`;
+                document.getElementById('wNetWorth').textContent = `$${Number(data.portfolioNetWorth || 0).toLocaleString()}`;
+                document.getElementById('wNativeBal').textContent = data.nativeBalance || '0 BNB';
+                document.getElementById('wAge').textContent = data.walletAge || 'Active Wallet';
+
+                // Holdings Table
+                const tbody = document.getElementById('wHoldingsTable');
+                tbody.innerHTML = '';
+                if (data.holdings && data.holdings.length > 0) {
+                    data.holdings.forEach(h => {
+                        const tr = document.createElement('tr');
+                        tr.className = 'hover:bg-zinc-800/30';
+                        tr.innerHTML = `
+                            <td class="py-2.5 font-bold text-ink">${h.symbol} <span class="text-zinc-500 text-[10px]">(${h.name})</span></td>
+                            <td class="py-2.5 text-zinc-300">${h.balance}</td>
+                            <td class="py-2.5 text-gold font-bold">$${Number(h.valueUsd).toLocaleString()}</td>
+                            <td class="py-2.5 ${h.priceChange24h >= 0 ? 'text-safe' : 'text-accent'}">${h.priceChange24h >= 0 ? '+' : ''}${h.priceChange24h}%</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                }
+
+                // Trade History Feed
+                const tFeed = document.getElementById('wTradeHistory');
+                tFeed.innerHTML = '';
+                if (data.tradeHistory && data.tradeHistory.length > 0) {
+                    data.tradeHistory.forEach(t => {
+                        const div = document.createElement('div');
+                        div.className = 'p-2.5 bg-paper border border-zinc-800 flex justify-between items-center';
+                        div.innerHTML = `
+                            <div>
+                                <span class="text-brand font-bold">[${t.action}]</span>
+                                <span class="text-ink font-bold ml-1">${t.token}</span>
+                                <span class="text-zinc-500 text-[10px] block">${t.time} • Amount: ${t.amount}</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-gold font-bold">${t.usdValue}</span>
+                                <span class="text-zinc-500 text-[10px] block font-mono">${t.txHash}</span>
+                            </div>
+                        `;
+                        tFeed.appendChild(div);
+                    });
+                }
+            }
             
             const targetScore = Number(data.riskScore) || 0;
             animateValue("resScore", 0, targetScore, 600);
@@ -580,7 +712,6 @@
             window.requestAnimationFrame(step);
         }
 
-        // Allow pressing Enter key in the search input
         document.getElementById('searchInput').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 analyzeWallet();
