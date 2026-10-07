@@ -1,7 +1,7 @@
 const Cryptection = require('../lib/cryptection');
 
 // In-memory rate limiting store (tracks searches per IP)
-const ipSearch Tracker = new Map();
+const ipSearchTracker = new Map();
 const FREE_DAILY_LIMIT = 5;
 
 module.exports = async (req, res) => {
