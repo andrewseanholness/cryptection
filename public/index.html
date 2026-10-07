@@ -124,11 +124,8 @@
         .toast.success { border-color: #00e676; }
         .toast.error { border-color: #ff3e3e; }
         .toast.info { border-color: #ff6b00; }
+        .toast.warning { border-color: #ff9f1c; }
 
-        .glow-brand {
-            box-shadow: 0 0 25px rgba(255, 107, 0, 0.15);
-        }
-        
         .glow-bsc {
             box-shadow: 0 0 25px rgba(243, 186, 47, 0.15);
         }
@@ -142,16 +139,10 @@
 </head>
 <body class="min-h-screen flex flex-col selection:bg-brand selection:text-black">
 
-    <!-- Live Market & Threat Ticker Header Bar -->
+    <!-- Live Market Bar -->
     <div class="w-full bg-bsc text-black font-mono text-xs py-1.5 border-b-2 border-black font-bold uppercase tracking-wider overflow-hidden">
         <div class="ticker-wrap flex items-center">
             <div class="ticker flex gap-8">
-                <span>⚡ $CRYPT BEP-20 PRESALE STARTS: OCT 8TH, 2026 @ 4:00 PM EST</span>
-                <span>• BINANCE SMART CHAIN (BSC)</span>
-                <span>• SEED TARGET: $250,000</span>
-                <span>• BUY WITH BNB</span>
-                <span>• NO PINKSALE FEES</span>
-                <span>• 100% COMMUNITY OWNED</span>
                 <span>⚡ $CRYPT BEP-20 PRESALE STARTS: OCT 8TH, 2026 @ 4:00 PM EST</span>
                 <span>• BINANCE SMART CHAIN (BSC)</span>
                 <span>• SEED TARGET: $250,000</span>
@@ -162,7 +153,7 @@
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
+    <!-- Navigation Header -->
     <header class="sticky top-0 z-40 w-full bg-paper/95 backdrop-blur-md border-b-2 border-zinc-800">
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
             <div class="flex items-center justify-between w-full lg:w-auto">
@@ -172,14 +163,13 @@
                     </div>
                     <div>
                         <h1 class="font-syne text-2xl font-black tracking-tight text-ink uppercase flex items-center gap-2">
-                            CRYPT<span class="text-brand">ECTION</span>
+                            CRYPT<span class="text-brand">SECTION</span>
                         </h1>
                         <p class="font-mono text-[10px] text-zinc-400 uppercase tracking-widest">cryptectionlabs.com • V2 Beta</p>
                     </div>
                 </a>
             </div>
 
-            <!-- Nav Links -->
             <nav class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-xs font-bold uppercase text-zinc-300">
                 <a href="#audit-terminal" class="hover:text-brand transition-colors">Testnet Terminal</a>
                 <a href="#how-it-works" class="hover:text-brand transition-colors">Architecture</a>
@@ -193,7 +183,6 @@
                     + Report Scam
                 </button>
                 <a href="#presale" class="px-5 py-2 bg-bsc hover:bg-yellow-500 text-black font-syne font-extrabold text-xs uppercase tracking-wider border-2 border-black shadow-brutal-dark transition-all flex items-center gap-2">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24L0 12L12 0L24 12L12 24ZM12 18.601L18.601 12L12 5.399L5.399 12L12 18.601Z"/></svg>
                     Buy $CRYPT
                 </a>
             </div>
@@ -202,19 +191,13 @@
 
     <main class="w-full max-w-7xl mx-auto px-4 py-8 flex-grow flex flex-col gap-12">
 
-        <!-- Hero Section + Presale Card Grid -->
+        <!-- Hero Section -->
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-4">
-            
-            <!-- Left Column: Investor Pitch Core -->
             <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 sm:p-10 flex flex-col justify-between shadow-[8px_8px_0px_0px_#1b1e27] relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-6 opacity-5 font-syne text-9xl font-black select-none pointer-events-none text-zinc-400">
-                    $CRYPT
-                </div>
-
                 <div>
                     <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand/10 border border-brand/40 text-brand font-mono text-xs font-bold uppercase mb-6">
                         <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
-                        V2 Intelligence Engine in Beta
+                        V2 Intelligence Engine Live
                     </div>
 
                     <h2 class="font-syne text-3xl sm:text-5xl font-black text-ink leading-none uppercase tracking-tight mb-6">
@@ -222,19 +205,17 @@
                     </h2>
 
                     <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-8">
-                        Cryptection is building an independent, grass-roots security API for Web3. By combining behavioral heuristics, contract analysis, and a transparent <strong>$CRYPT</strong> token economy, we are replacing expensive centralized security firms with a scalable, community-owned protocol.
+                        Cryptection is building an independent security protocol for Web3. By combining real-time contract telemetry, behavioral heuristics, and a transparent <strong>$CRYPT</strong> token economy, we replace expensive centralized security firms with a scalable network.
                     </p>
 
-                    <!-- Core Traction Stats Grid (Realistic Beta Stats) -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-paper border-2 border-zinc-800 mb-8 font-mono">
                         <div>
                             <span class="block text-[10px] text-zinc-500 uppercase">Status</span>
-                            <span class="text-xl sm:text-2xl font-bold text-ink font-syne">TESTNET</span>
+                            <span class="text-xl sm:text-2xl font-bold text-ink font-syne">LIVE ENGINE</span>
                         </div>
                         <div>
-                            <span class="block text-[10px] text-zinc-500 uppercase">Threat Nodes</span>
-                            <span class="text-xl sm:text-2xl font-bold text-brand font-syne">14</span>
-                            <span class="text-[9px] text-zinc-500">BETA CLUSTER</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase">Telemetry</span>
+                            <span class="text-xl sm:text-2xl font-bold text-brand font-syne">GoPlus</span>
                         </div>
                         <div>
                             <span class="block text-[10px] text-zinc-500 uppercase">Scams Indexed</span>
@@ -243,12 +224,11 @@
                         <div>
                             <span class="block text-[10px] text-zinc-500 uppercase">Architecture</span>
                             <span class="text-xl sm:text-2xl font-bold text-gold font-syne">Vercel</span>
-                            <span class="text-[9px] text-zinc-500">SERVERLESS</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex flex-wrap items-center gap-4 pt-4 border-t-2 border-zinc-800/80">
+                <div class="flex flex-wrap items-center gap-4 pt-4 border-t-2 border-zinc-800">
                     <a href="#pricing" class="px-6 py-3 bg-paper border-2 border-zinc-700 hover:border-brand text-ink font-mono text-xs font-bold uppercase transition-all">
                         View Revenue Model
                     </a>
@@ -258,20 +238,16 @@
                 </div>
             </div>
 
-            <!-- Right Column: Interactive Upcoming Presale Portal -->
+            <!-- Presale Card -->
             <div id="presale" class="lg:col-span-5 bg-card border-2 border-bsc p-6 sm:p-8 flex flex-col justify-between shadow-brutal-bsc glow-bsc relative">
                 <div class="flex justify-between items-start mb-4 border-b-2 border-zinc-800 pb-4">
                     <div>
-                        <span class="font-mono text-[11px] text-bsc font-bold uppercase tracking-wider flex items-center gap-1.5">
-                            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24L0 12L12 0L24 12L12 24ZM12 18.601L18.601 12L12 5.399L5.399 12L12 18.601Z"/></svg>
-                            BSC LAUNCH
-                        </span>
+                        <span class="font-mono text-[11px] text-bsc font-bold uppercase tracking-wider">BSC LAUNCH</span>
                         <h3 class="font-syne text-2xl font-black text-ink uppercase">Native Presale</h3>
                     </div>
                     <span class="px-2.5 py-1 bg-bsc/20 border border-bsc text-bsc font-mono text-xs font-bold uppercase">Oct 8, 2026</span>
                 </div>
 
-                <!-- Presale Anticipation Stats -->
                 <div class="mb-6 space-y-3">
                     <div class="flex justify-between text-xs font-mono">
                         <span class="text-zinc-400">Status: <span class="text-warning">Awaiting Launch</span></span>
@@ -280,48 +256,38 @@
                     <div class="w-full bg-paper border border-zinc-700 h-5 p-0.5 relative overflow-hidden">
                         <div class="h-full bg-zinc-800 w-full transition-all flex items-center justify-center font-mono text-[10px] text-zinc-500">0% FILLED</div>
                     </div>
-                    <div class="flex justify-between items-center text-[11px] font-mono text-zinc-400 p-3 bg-paper border border-zinc-800">
-                        <div class="flex flex-col gap-1">
-                            <span class="text-zinc-500">Network:</span>
-                            <strong class="text-ink text-xs">Binance Smart Chain</strong>
-                        </div>
-                        <div class="flex flex-col gap-1 text-right">
-                            <span class="text-zinc-500">Purchase With:</span>
-                            <strong class="text-bsc text-xs">BNB</strong>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Purchase Buttons -->
                 <div class="space-y-3 mt-auto">
-                    <button onclick="showToast('Wallet connection will be enabled on October 8th. Ensure you have BNB on the Binance Smart Chain.', 'warning')" class="w-full py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-base uppercase tracking-wider border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex items-center justify-center gap-2">
+                    <button onclick="showToast('Presale opens Oct 8th, 2026. Have BNB ready on BSC.', 'warning')" class="w-full py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all">
                         CONNECT WALLET (OCT 8)
                     </button>
-                    <p class="text-center font-mono text-[11px] text-zinc-400 leading-tight">
-                        Building native custom BEP-20 smart contracts to save on Pinksale fees. You will need BNB to participate.
-                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 1: Interactive Threat Intelligence Terminal (V2 Beta) -->
+        <!-- SECTION 1: Interactive Threat Intelligence Terminal -->
         <section id="audit-terminal" class="bg-card border-2 border-zinc-800 p-6 sm:p-8 shadow-[6px_6px_0px_0px_#1b1e27] relative mt-4">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b-2 border-zinc-800 pb-4">
                 <div>
-                    <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">BETA TOOL</span>
-                    <h2 class="font-syne text-2xl sm:text-3xl font-black text-ink uppercase">V2 Intelligence Engine</h2>
+                    <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">SECURITY TELEMETRY ENGINE</span>
+                    <h2 class="font-syne text-2xl sm:text-3xl font-black text-ink uppercase">V2 Threat Terminal</h2>
                 </div>
-                <div class="flex items-center gap-2 font-mono text-xs">
-                    <span class="w-2.5 h-2.5 rounded-full bg-warning animate-ping"></span>
-                    <span class="text-zinc-400">Status: <strong class="text-warning">LOCAL / TESTNET</strong></span>
+
+                <!-- Developer Testing Bypass Toggle -->
+                <div class="flex items-center gap-3 bg-paper p-2 border border-zinc-700">
+                    <span class="font-mono text-xs text-zinc-400 uppercase font-bold">DEV BYPASS:</span>
+                    <button id="devBypassBtn" onclick="toggleDevBypass()" class="px-2.5 py-1 bg-zinc-800 text-zinc-400 font-mono text-xs font-bold uppercase border border-zinc-600 transition-all">
+                        OFF
+                    </button>
                 </div>
             </div>
 
             <div class="bg-paper border border-zinc-700 p-4 mb-6 font-mono text-sm text-zinc-300">
-                <strong class="text-brand">USAGE INSTRUCTIONS:</strong> To test, enter a 40-character EVM address. <br><span class="text-xs text-zinc-500">Note: To bypass daily search limits during testing, add <strong>dev:</strong> before your address (e.g., dev:0x123...).</span>
+                <strong class="text-brand">USAGE INSTRUCTIONS:</strong> Enter any EVM/BSC contract or wallet address starting with `0x`. The engine queries live blockchain security data for honeypots, taxes, mint functions, and wallet drainers.
             </div>
 
-            <!-- Input Box -->
+            <!-- Search Input Box -->
             <div class="relative w-full mb-6">
                 <div class="flex flex-col sm:flex-row gap-3">
                     <div class="relative flex-grow">
@@ -330,7 +296,7 @@
                             class="w-full bg-paper border-2 border-zinc-700 text-ink font-mono text-sm sm:text-base py-3.5 pl-9 pr-4 focus:outline-none focus:border-brand transition-all placeholder-zinc-600"
                             placeholder="Enter 0x... BSC contract or wallet address">
                     </div>
-                    <button id="scanBtn" onclick="analyzeWallet()" 
+                    <button id="scanBtn" type="button" onclick="analyzeWallet()" 
                         class="px-8 py-3.5 bg-brand hover:bg-orange-500 text-black font-syne font-extrabold text-base uppercase tracking-wider border-2 border-black shadow-brutal-dark transition-all flex items-center justify-center gap-2 min-w-[150px]">
                         <span id="scanBtnText">ANALYZE</span>
                         <div id="scanLoader" class="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin hidden"></div>
@@ -339,26 +305,25 @@
 
                 <!-- Test Targets -->
                 <div class="mt-4 flex flex-wrap items-center gap-2 font-mono text-xs text-zinc-500">
-                    <span class="text-zinc-400 font-bold">Try simulated test targets:</span>
-                    <button onclick="testAddress('0x1234567890123456789012345678901234567890')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-accent hover:text-accent transition-colors">
+                    <span class="text-zinc-400 font-bold">Try test targets:</span>
+                    <button type="button" onclick="testAddress('0x1234567890123456789012345678901234567890')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-accent hover:text-accent transition-colors">
                         [Malicious Drainer]
                     </button>
-                    <button onclick="testAddress('0x0000000000000000000000000000000000000000')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-safe hover:text-safe transition-colors">
-                        [Clean Protocol]
+                    <button type="button" onclick="testAddress('0x10ED43C718714eb63d5aA57B78B54704E256024E')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-safe hover:text-safe transition-colors">
+                        [PancakeRouter (BSC)]
                     </button>
                 </div>
             </div>
 
-            <!-- Dynamic Scan Results Panel (V2 Design) -->
+            <!-- Dynamic Scan Results Panel -->
             <div id="resultPanel" class="hidden flex flex-col gap-6 pt-4 border-t-2 border-zinc-800">
-                
                 <div class="bg-paper border-2 border-zinc-800 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                         <span class="font-mono text-xs uppercase tracking-widest text-zinc-500 font-bold">CRYPTECTION INTELLIGENCE</span>
                         <div class="flex items-center gap-2 mt-1">
                             <span id="resAddress" class="font-mono text-base sm:text-xl text-ink font-bold break-all">0x...</span>
                         </div>
-                        <span id="resTypeBadge" class="font-mono text-[11px] text-zinc-500 uppercase mt-1 block">TYPE: Loading...</span>
+                        <span id="resChain" class="font-mono text-[11px] text-zinc-500 uppercase mt-1 block">NETWORK: Binance Smart Chain</span>
                     </div>
 
                     <div id="resBadge" class="px-4 py-2 border-2 font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2"></div>
@@ -368,11 +333,11 @@
                     <!-- Left: Score & Breakdown -->
                     <div class="lg:col-span-5 space-y-6">
                         <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between items-center text-center relative overflow-hidden">
-                            <span class="font-mono text-xs font-bold text-zinc-400 uppercase mb-4 z-10">Composite Threat Index</span>
+                            <span class="font-mono text-xs font-bold text-zinc-400 uppercase mb-4 z-10">Composite Risk Score</span>
                             <div class="flex items-baseline gap-2 mb-2 z-10">
                                 <span id="resScore" class="font-syne text-7xl sm:text-8xl font-extrabold text-ink leading-none">0</span>
                             </div>
-                            <span class="font-mono text-sm text-zinc-500 z-10">/ 100 RISK SCORE</span>
+                            <span class="font-mono text-sm text-zinc-500 z-10">/ 100 RISK INDEX</span>
                         </div>
 
                         <div class="bg-card border-2 border-zinc-800 p-6">
@@ -403,214 +368,224 @@
 
                     <!-- Right: Explanations -->
                     <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 flex flex-col">
-                        <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Intelligence Brief</h3>
+                        <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Security Audit Observations</h3>
                         <ul id="resConcerns" class="space-y-4 font-mono text-sm text-zinc-300 flex-grow"></ul>
-                        
-                        <div class="mt-6 pt-4 border-t-2 border-zinc-800 text-xs font-mono text-zinc-500">
-                            * Intelligence provided by Cryptection Multi-Node Data Aggregation.
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: SaaS Monetization & Pricing Tiers -->
+        <!-- Pricing Tiers -->
         <section id="pricing" class="space-y-8 mt-12">
             <div class="text-center max-w-3xl mx-auto">
-                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ THE BUSINESS MODEL ]</span>
-                <h2 class="font-syne text-3xl sm:text-5xl font-black text-ink uppercase mt-1">
-                    API & Access Tiers
-                </h2>
-                <p class="text-zinc-400 text-sm mt-3">
-                    Cryptection is a real SaaS business. While the $CRYPT token funds our community and runway, our long-term revenue is generated by selling high-volume threat data to protocols, DEXs, and pro traders. Holding $CRYPT unlocks premium tools for free.
-                </p>
+                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ REVENUE MODEL ]</span>
+                <h2 class="font-syne text-3xl sm:text-5xl font-black text-ink uppercase mt-1">API & Access Tiers</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Tier 1: Free -->
                 <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between">
                     <div>
                         <span class="inline-block px-2 py-1 bg-paper border border-zinc-700 text-zinc-400 font-mono text-[10px] font-bold uppercase mb-4">Retail Users</span>
                         <h3 class="font-syne text-2xl font-bold text-ink mb-2">Community</h3>
                         <div class="font-syne text-4xl font-black text-ink mb-6">$0<span class="text-lg text-zinc-500 font-mono">/mo</span></div>
-                        <ul class="space-y-3 font-mono text-xs text-zinc-400 mb-8 list-inside">
-                            <li class="flex gap-2"><span>✓</span> 5 manual searches per day</li>
-                            <li class="flex gap-2"><span>✓</span> Basic 0-100 Risk Score</li>
-                            <li class="flex gap-2"><span>✓</span> Delayed data processing</li>
-                            <li class="flex gap-2 text-zinc-600"><span>✕</span> Visual Threat Graph</li>
-                            <li class="flex gap-2 text-zinc-600"><span>✕</span> Real-time automated alerts</li>
+                        <ul class="space-y-3 font-mono text-xs text-zinc-400 mb-8">
+                            <li>✓ 5 manual searches per day</li>
+                            <li>✓ Live GoPlus Telemetry</li>
                         </ul>
                     </div>
-                    <button class="w-full py-3 bg-paper border border-zinc-700 text-zinc-400 font-mono text-xs uppercase hover:text-ink transition-colors">Current Plan</button>
                 </div>
 
-                <!-- Tier 2: Pro (Token Utility Focus) -->
-                <div class="bg-card border-2 border-brand p-6 shadow-brutal-brand flex flex-col justify-between relative transform md:-translate-y-2">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand text-black font-mono text-[10px] font-bold uppercase border-2 border-black">Token Utility Focus</div>
+                <div class="bg-card border-2 border-brand p-6 shadow-brutal-brand flex flex-col justify-between">
                     <div>
-                        <span class="inline-block px-2 py-1 bg-brand/10 border border-brand/30 text-brand font-mono text-[10px] font-bold uppercase mb-4">Power Traders</span>
+                        <span class="inline-block px-2 py-1 bg-brand/10 border border-brand/30 text-brand font-mono text-[10px] font-bold uppercase mb-4">Token Utility</span>
                         <h3 class="font-syne text-2xl font-bold text-ink mb-2">Pro Radar</h3>
-                        
-                        <!-- Toggle pricing logic -->
-                        <div class="flex flex-col gap-1 mb-6">
-                            <div class="font-syne text-4xl font-black text-brand">$19<span class="text-lg text-zinc-500 font-mono">/mo</span></div>
-                            <div class="font-mono text-xs font-bold text-safe">OR FREE if you hold 50k $CRYPT</div>
-                        </div>
-
-                        <ul class="space-y-3 font-mono text-xs text-zinc-300 mb-8 list-inside">
-                            <li class="flex gap-2 text-brand"><span>✓</span> Unlimited manual searches</li>
-                            <li class="flex gap-2 text-brand"><span>✓</span> Full Dimensional Risk Breakdown</li>
-                            <li class="flex gap-2 text-brand"><span>✓</span> Real-time transaction scanning</li>
-                            <li class="flex gap-2 text-brand"><span>✓</span> Interactive Visual Threat Graph</li>
-                            <li class="flex gap-2 text-brand"><span>✓</span> Email/Telegram alerts for 10 wallets</li>
+                        <div class="font-syne text-4xl font-black text-brand mb-1">$19<span class="text-lg text-zinc-500 font-mono">/mo</span></div>
+                        <div class="font-mono text-xs font-bold text-safe mb-6">OR FREE HOLDING 50k $CRYPT</div>
+                        <ul class="space-y-3 font-mono text-xs text-zinc-300 mb-8">
+                            <li>✓ Unlimited scans (Bypass limits)</li>
+                            <li>✓ Automated Telegram alerts</li>
                         </ul>
                     </div>
-                    <button class="w-full py-3 bg-brand text-black font-syne font-bold text-sm uppercase border-2 border-black shadow-brutal-dark hover:bg-orange-500 transition-colors">Connect Wallet to Unlock</button>
                 </div>
 
-                <!-- Tier 3: Enterprise -->
                 <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between">
                     <div>
                         <span class="inline-block px-2 py-1 bg-paper border border-zinc-700 text-zinc-400 font-mono text-[10px] font-bold uppercase mb-4">B2B Integrations</span>
                         <h3 class="font-syne text-2xl font-bold text-ink mb-2">Enterprise API</h3>
                         <div class="font-syne text-4xl font-black text-ink mb-6">$499+<span class="text-lg text-zinc-500 font-mono">/mo</span></div>
-                        <ul class="space-y-3 font-mono text-xs text-zinc-400 mb-8 list-inside">
-                            <li class="flex gap-2"><span>✓</span> 500k+ API Calls per month</li>
-                            <li class="flex gap-2"><span>✓</span> Integrates directly into DEXs/Wallets</li>
-                            <li class="flex gap-2"><span>✓</span> Block bad transactions automatically</li>
-                            <li class="flex gap-2"><span>✓</span> Webhook support</li>
-                            <li class="flex gap-2"><span>✓</span> Dedicated technical support</li>
-                        </ul>
                     </div>
-                    <button class="w-full py-3 bg-paper border border-zinc-700 text-ink font-mono text-xs uppercase hover:bg-zinc-800 transition-colors">Contact Sales</button>
-                </div>
-            </div>
-            
-            <div class="text-center font-mono text-xs text-zinc-500 mt-4">
-                * Enterprise API revenues will be periodically used to execute market buy-backs of the $CRYPT token.
-            </div>
-        </section>
-
-        <!-- SECTION 3: How It Works / The Tech Stack -->
-        <section id="how-it-works" class="space-y-8 mt-12">
-            <div class="text-center max-w-3xl mx-auto">
-                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ THE ENGINE ]</span>
-                <h2 class="font-syne text-3xl sm:text-5xl font-black text-ink uppercase mt-1">
-                    How Cryptection Works
-                </h2>
-                <p class="text-zinc-400 text-sm mt-3">
-                    We don't just guess risk scores. Our serverless architecture aggregates real blockchain data and applies proprietary behavioral rules to spot scams before they rug.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 font-mono text-sm">
-                <!-- Step 1 -->
-                <div class="bg-card border-2 border-zinc-800 p-6 relative">
-                    <div class="absolute -top-3 -left-3 w-8 h-8 bg-brand text-black font-bold flex items-center justify-center border-2 border-black">1</div>
-                    <h3 class="font-syne text-lg font-bold text-ink mt-2 mb-3">Data Ingestion (APIs)</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">
-                        When an address is submitted, our Vercel backend pings public BSC/ETH RPC Nodes and Explorers to fetch raw transaction history and contract bytecode.
-                    </p>
-                </div>
-                <!-- Step 2 -->
-                <div class="bg-card border-2 border-zinc-800 p-6 relative">
-                    <div class="absolute -top-3 -left-3 w-8 h-8 bg-brand text-black font-bold flex items-center justify-center border-2 border-black">2</div>
-                    <h3 class="font-syne text-lg font-bold text-ink mt-2 mb-3">Security Enrichment</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">
-                        We run the bytecode against specialized endpoints (like GoPlus) to check for known malicious signatures, honeypots, or hidden tax mechanisms.
-                    </p>
-                </div>
-                <!-- Step 3 -->
-                <div class="bg-card border-2 border-zinc-800 p-6 relative">
-                    <div class="absolute -top-3 -left-3 w-8 h-8 bg-brand text-black font-bold flex items-center justify-center border-2 border-black">3</div>
-                    <h3 class="font-syne text-lg font-bold text-ink mt-2 mb-3">Heuristic Engine</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">
-                        Our behavioral rules take over. Did the dev get funded by Tornado Cash? Have they launched 5 failed tokens previously? The engine scores these actions.
-                    </p>
-                </div>
-                <!-- Step 4 -->
-                <div class="bg-card border-2 border-zinc-800 p-6 relative">
-                    <div class="absolute -top-3 -left-3 w-8 h-8 bg-brand text-black font-bold flex items-center justify-center border-2 border-black">4</div>
-                    <h3 class="font-syne text-lg font-bold text-ink mt-2 mb-3">Threat Graphing</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">
-                        If Wallet A is flagged as a scammer, and sends funds to Wallet B, Wallet B's Network Risk instantly skyrockets across our ecosystem database.
-                    </p>
                 </div>
             </div>
         </section>
+    </main>
 
-        <!-- SECTION 4: Tokenomics -->
-        <section id="tokenomics" class="space-y-8 mt-12">
-            <div class="text-center max-w-3xl mx-auto">
-                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ TOKEN ECONOMY ]</span>
-                <h2 class="font-syne text-3xl sm:text-5xl font-black text-ink uppercase mt-1">
-                    $CRYPT Tokenomics
-                </h2>
-                <p class="text-zinc-400 text-sm mt-3">
-                    As an early-stage startup without venture capital, we employ a modest transaction tax to fund protocol development, node operations, and marketing to ensure continuous growth.
-                </p>
-            </div>
+    <!-- Toast Notifications Container -->
+    <div id="toast-container"></div>
 
-            <!-- Tax Breakdown Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono">
-                <div class="bg-card border-2 border-brand p-6 shadow-[6px_6px_0px_0px_#ff6b00]">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="font-syne text-2xl font-bold text-ink uppercase">5% Buy Tax</h3>
-                        <span class="text-brand font-bold text-xl">IN</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-zinc-300">
-                        <li class="flex justify-between"><span class="text-zinc-400">Protocol Dev & Servers:</span> <strong>3%</strong></li>
-                        <li class="flex justify-between"><span class="text-zinc-400">Marketing / Growth:</span> <strong>1%</strong></li>
-                        <li class="flex justify-between"><span class="text-zinc-400">Auto-Liquidity:</span> <strong>1%</strong></li>
-                    </ul>
-                </div>
-                <div class="bg-card border-2 border-accent p-6 shadow-[6px_6px_0px_0px_#ff3e3e]">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="font-syne text-2xl font-bold text-ink uppercase">5% Sell Tax</h3>
-                        <span class="text-accent font-bold text-xl">OUT</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-zinc-300">
-                        <li class="flex justify-between"><span class="text-zinc-400">Protocol Dev & Servers:</span> <strong>3%</strong></li>
-                        <li class="flex justify-between"><span class="text-zinc-400">Marketing / Growth:</span> <strong>1%</strong></li>
-                        <li class="flex justify-between"><span class="text-zinc-400">Auto-Liquidity:</span> <strong>1%</strong></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="text-center font-mono text-xs text-zinc-500 py-2">
-                * Note: Wallet-to-Wallet transfers are tax-free. Taxes only apply to DEX Swaps.
-            </div>
-        </section>
+    <script>
+        let devBypassActive = false;
 
-        <!-- SECTION 5: Investor FAQ Section -->
-        <section id="faq" class="bg-card border-2 border-zinc-800 p-6 sm:p-8 space-y-6 mt-12">
-            <div class="border-b-2 border-zinc-800 pb-4">
-                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ KNOWLEDGE BASE ]</span>
-                <h2 class="font-syne text-2xl sm:text-4xl font-black text-ink uppercase">Frequently Asked Questions</h2>
-            </div>
+        function toggleDevBypass() {
+            devBypassActive = !devBypassActive;
+            const btn = document.getElementById('devBypassBtn');
+            if (devBypassActive) {
+                btn.textContent = 'ON [UNLIMITED]';
+                btn.className = 'px-2.5 py-1 bg-safe text-black font-mono text-xs font-bold uppercase border border-black shadow-[2px_2px_0px_0px_#000]';
+                showToast('Dev Bypass enabled: Unlimited searches active.', 'success');
+            } else {
+                btn.textContent = 'OFF';
+                btn.className = 'px-2.5 py-1 bg-zinc-800 text-zinc-400 font-mono text-xs font-bold uppercase border border-zinc-600';
+                showToast('Dev Bypass disabled.', 'info');
+            }
+        }
 
-            <div class="space-y-4 font-mono text-xs sm:text-sm">
+        function isValidAddress(address) {
+            return /^0x[a-fA-F0-9]{40}$/i.test(address) || /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(address);
+        }
+
+        function testAddress(addr) {
+            document.getElementById('searchInput').value = addr;
+            analyzeWallet();
+        }
+
+        async function analyzeWallet() {
+            const searchInput = document.getElementById('searchInput');
+            const address = searchInput.value.trim();
+
+            if (!isValidAddress(address)) {
+                showToast('Please enter a valid 0x EVM/BSC or Solana address.', 'error');
+                return;
+            }
+
+            setLoading(true);
+
+            try {
+                let url = `/api/analyze?address=${encodeURIComponent(address)}`;
+                if (devBypassActive) {
+                    url += `&bypassKey=cryptection_dev_bypass`;
+                }
+
+                const response = await fetch(url);
+                const data = await response.json();
                 
-                <div class="border border-zinc-800 bg-paper p-4">
-                    <button onclick="toggleFaq('faq-revenue')" class="w-full flex justify-between items-center text-left font-bold text-ink uppercase hover:text-brand">
-                        <span>How does Cryptection actually make money?</span>
-                        <span id="faq-revenue-icon" class="text-brand text-lg">+</span>
-                    </button>
-                    <div id="faq-revenue" class="accordion-content pt-3 text-zinc-400 leading-relaxed">
-                        Beyond the initial token taxes used for runway, we operate a B2B and B2C SaaS model. We charge volume-based fees to Enterprise clients (DEXs and Wallets) to access our API endpoints to protect their users. For retail, we offer a $19/mo "Pro Tier" subscription for unlimited real-time scans and alerts.
-                    </div>
-                </div>
+                if (!response.ok || data.error) {
+                    showToast(data.message || data.error || 'Scan request failed.', 'error');
+                    return;
+                }
 
-                <div class="border border-zinc-800 bg-paper p-4">
-                    <button onclick="toggleFaq('faq-utility')" class="w-full flex justify-between items-center text-left font-bold text-ink uppercase hover:text-brand">
-                        <span>What is the utility of the $CRYPT token?</span>
-                        <span id="faq-utility-icon" class="text-brand text-lg">+</span>
-                    </button>
-                    <div id="faq-utility" class="accordion-content pt-3 text-zinc-400 leading-relaxed">
-                        $CRYPT serves two main purposes. First, holding a specific threshold of tokens (e.g., 50k $CRYPT) entirely unlocks the "Pro Tier" for retail users, creating massive hold-pressure. Second, a portion of real-world fiat/stablecoin API revenue generated from our enterprise clients will be used to execute market buy-backs of $CRYPT.
-                    </div>
-                </div>
+                renderResults(data);
+                showToast('Intelligence scan complete.', 'success');
 
-                <div class="border border-zinc-800 bg-paper p-4">
-                    <button onclick="toggleFaq('faq1')" class="w-full flex justify-between items-center text-left font-bold text-ink uppercase hover:text-brand">
-                        <span>Why are there buy and sell taxes?</span>
+            } catch (err) {
+                showToast('Error communicating with backend API.', 'error');
+                console.error(err);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        function renderResults(data) {
+            const resultPanel = document.getElementById('resultPanel');
+            resultPanel.classList.remove('hidden');
+
+            document.getElementById('resAddress').textContent = data.address;
+            document.getElementById('resChain').textContent = `NETWORK: ${data.chain || 'Binance Smart Chain'}`;
+            
+            const targetScore = Number(data.riskScore) || 0;
+            animateValue("resScore", 0, targetScore, 600);
+
+            const badge = document.getElementById('resBadge');
+            const scoreObj = document.getElementById('resScore');
+            
+            if (data.status === 'SAFE') {
+                badge.className = 'px-4 py-2 border-2 border-safe text-safe bg-safe/10 font-mono text-xs font-bold uppercase flex items-center gap-2';
+                badge.innerHTML = 'RISK: LOW / SAFE';
+                scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-safe leading-none';
+            } else if (data.status === 'WARNING') {
+                badge.className = 'px-4 py-2 border-2 border-warning text-warning bg-warning/10 font-mono text-xs font-bold uppercase flex items-center gap-2';
+                badge.innerHTML = 'RISK: ELEVATED';
+                scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-warning leading-none';
+            } else {
+                badge.className = 'px-4 py-2 border-2 border-accent text-accent bg-accent/10 font-mono text-xs font-bold uppercase flex items-center gap-2';
+                badge.innerHTML = 'RISK: HIGH / DANGER';
+                scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-accent leading-none';
+            }
+
+            document.getElementById('resContractRisk').textContent = data.contractRisk ?? 0;
+            document.getElementById('resWalletRisk').textContent = data.walletRisk ?? 0;
+            document.getElementById('resCreatorRisk').textContent = data.creatorRisk ?? 0;
+            document.getElementById('resNetworkRisk').textContent = data.networkRisk ?? 0;
+            document.getElementById('resBehavioralRisk').textContent = data.behavioralRisk ?? 0;
+
+            const concernsContainer = document.getElementById('resConcerns');
+            concernsContainer.innerHTML = '';
+            if (data.concerns && data.concerns.length > 0) {
+                data.concerns.forEach(concern => {
+                    const li = document.createElement('li');
+                    li.textContent = concern;
+                    if(concern.includes('✓')) li.className = 'text-safe font-mono';
+                    else if(concern.includes('⚠')) li.className = 'text-accent font-bold font-mono';
+                    else li.className = 'text-zinc-300 font-mono';
+                    concernsContainer.appendChild(li);
+                });
+            }
+
+            resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function setLoading(isLoading) {
+            const scanBtn = document.getElementById('scanBtn');
+            const scanBtnText = document.getElementById('scanBtnText');
+            const scanLoader = document.getElementById('scanLoader');
+
+            if (isLoading) {
+                scanBtnText.classList.add('hidden');
+                scanLoader.classList.remove('hidden');
+                scanBtn.disabled = true;
+            } else {
+                scanBtnText.classList.remove('hidden');
+                scanLoader.classList.add('hidden');
+                scanBtn.disabled = false;
+            }
+        }
+
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `> ${message}`;
+            
+            container.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 10);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 200);
+            }, 4000);
+        }
+
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            const numericEnd = Number(end) || 0;
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const easeOut = progress * (2 - progress);
+                obj.innerHTML = Math.floor(easeOut * (numericEnd - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Allow pressing Enter key in the search input
+        document.getElementById('searchInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                analyzeWallet();
+            }
+        });
+    </script>
+</body>
+</html>
