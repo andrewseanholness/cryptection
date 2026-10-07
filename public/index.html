@@ -742,17 +742,18 @@
             try {
                 // Pointing to our Vercel Serverless Function
                 const response = await fetch(`/api/analyze?address=${encodeURIComponent(address)}`);
-                
-                if (!response.ok) {
-                    throw new Error('API request failed');
-                }
-                
                 const data = await response.json();
+                
+                if (!response.ok || data.error) {
+                    showToast(data.message || data.error || 'Scan request failed.', 'error');
+                    return;
+                }
+
                 renderResults(data);
                 showToast('Intelligence gathering complete.', 'success');
 
             } catch (err) {
-                showToast('Error communicating with API. Ensure local server is running or deploy to Vercel.', 'error');
+                showToast('Error communicating with API. Ensure backend is online.', 'error');
                 console.error(err);
             } finally {
                 setLoading(false);
@@ -760,10 +761,16 @@
         }
 
         function renderResults(data) {
+            if (!data || typeof data.riskScore === 'undefined') {
+                showToast('Received incomplete security payload.', 'error');
+                return;
+            }
+
             resultPanel.classList.remove('hidden');
 
             document.getElementById('resAddress').textContent = data.address;
-            animateValue("resScore", 0, data.riskScore, 800);
+            const targetScore = Number(data.riskScore) || 0;
+            animateValue("resScore", 0, targetScore, 800);
 
             const badge = document.getElementById('resBadge');
             const scoreObj = document.getElementById('resScore');
@@ -782,11 +789,11 @@
                 scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-accent leading-none';
             }
 
-            document.getElementById('resContractRisk').textContent = data.contractRisk || 0;
-            document.getElementById('resWalletRisk').textContent = data.walletRisk || 0;
-            document.getElementById('resCreatorRisk').textContent = data.creatorRisk || 0;
-            document.getElementById('resNetworkRisk').textContent = data.networkRisk || 0;
-            document.getElementById('resBehavioralRisk').textContent = data.behavioralRisk || 0;
+            document.getElementById('resContractRisk').textContent = data.contractRisk ?? 0;
+            document.getElementById('resWalletRisk').textContent = data.walletRisk ?? 0;
+            document.getElementById('resCreatorRisk').textContent = data.creatorRisk ?? 0;
+            document.getElementById('resNetworkRisk').textContent = data.networkRisk ?? 0;
+            document.getElementById('resBehavioralRisk').textContent = data.behavioralRisk ?? 0;
 
             const concernsContainer = document.getElementById('resConcerns');
             concernsContainer.innerHTML = '';
@@ -865,12 +872,13 @@
 
         function animateValue(id, start, end, duration) {
             const obj = document.getElementById(id);
+            const numericEnd = Number(end) || 0;
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 const easeOut = progress * (2 - progress);
-                obj.innerHTML = Math.floor(easeOut * (end - start) + start);
+                obj.innerHTML = Math.floor(easeOut * (numericEnd - start) + start);
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 }
