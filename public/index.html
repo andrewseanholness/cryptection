@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRYPTECTION // Web3 Threat Intelligence & $CRYPT Token Portal</title>
     
+    <!-- Favicon Integration -->
+    <link rel="icon" type="image/png" href="/lockonlynobg.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
@@ -109,8 +112,8 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
             <div class="flex items-center justify-between w-full lg:w-auto">
                 <a href="#" class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-brand text-black font-syne font-black text-2xl flex items-center justify-center border-2 border-black shadow-[3px_3px_0px_0px_#ff3e3e]">
-                        CP
+                    <div class="w-10 h-10 bg-brand flex items-center justify-center border-2 border-black shadow-[3px_3px_0px_0px_#ff3e3e] overflow-hidden p-1.5">
+                        <img src="/lockonlynobg.png" alt="Cryptection" class="w-full h-full object-contain">
                     </div>
                     <div>
                         <h1 class="font-syne text-2xl font-black tracking-tight text-ink uppercase flex items-center gap-2">
@@ -123,7 +126,7 @@
 
             <nav class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-xs font-bold uppercase text-zinc-300">
                 <a href="#audit-terminal" class="hover:text-brand transition-colors">Threat Terminal</a>
-                <a href="#pricing" class="hover:text-brand transition-colors text-brand">API Tiers</a>
+                <a href="#pricing" class="hover:text-brand transition-colors text-brand">Access Tiers</a>
                 <a href="#tokenomics" class="hover:text-brand transition-colors">Tokenomics</a>
                 <a href="#faq" class="hover:text-brand transition-colors">FAQ</a>
             </nav>
@@ -151,7 +154,7 @@
                     </h2>
 
                     <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-8">
-                        Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and Etherscan/BscScan threat telemetry into an indispensable Web3 terminal.
+                        Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and EVM threat telemetry into an indispensable Web3 terminal.
                     </p>
 
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6 bg-paper border-2 border-zinc-800 mb-8 font-mono">
@@ -169,7 +172,7 @@
                         </div>
                         <div class="overflow-hidden">
                             <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">State Data</span>
-                            <span class="text-lg xl:text-xl font-bold text-gold font-syne truncate block">BSC / ETH</span>
+                            <span class="text-lg xl:text-xl font-bold text-gold font-syne truncate block">Multi-Chain</span>
                         </div>
                     </div>
                 </div>
@@ -241,7 +244,7 @@
             </div>
 
             <div class="bg-paper border border-zinc-700 p-4 mb-6 font-mono text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                <strong class="text-brand">ANALYTICS ENGINE:</strong> Enter any contract or wallet address. The engine checks `eth_getCode` to detect byte-code. 
+                <strong class="text-brand">ANALYTICS ENGINE:</strong> Enter any contract or wallet address across BSC, Ethereum, Base, or Solana. The engine checks byte-code to detect threats. 
                 Use the Override buttons below if you want to bypass the auto-detector.
             </div>
 
@@ -258,7 +261,7 @@
                         <span class="absolute left-4 top-1/2 -translate-y-1/2 font-mono text-brand font-bold">$</span>
                         <input type="text" id="searchInput" 
                             class="w-full bg-paper border-2 border-zinc-700 text-ink font-mono text-sm sm:text-base py-3.5 pl-9 pr-4 focus:outline-none focus:border-brand transition-all placeholder-zinc-600"
-                            placeholder="Enter 0x... BSC contract or wallet address">
+                            placeholder="Enter EVM or Solana address...">
                     </div>
                     <div class="flex flex-col items-center gap-1">
                         <button id="scanBtn" type="button" onclick="analyzeWallet()" 
@@ -266,7 +269,7 @@
                             <span id="scanBtnText">ANALYZE</span>
                             <div id="scanLoader" class="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin hidden"></div>
                         </button>
-                        <span id="scanCounterUI" class="font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider">5/5 SCANS REMAINING</span>
+                        <span id="scanCounterUI" class="font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider">2/2 SCANS REMAINING</span>
                     </div>
                 </div>
 
@@ -312,7 +315,7 @@
                                 <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand"></span>Liquidity Pair Analytics</span>
                                 <span class="font-mono text-xs text-zinc-500 font-normal hidden sm:block">Live DEX Routing</span>
                             </h4>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 font-mono">
                                 <div class="overflow-hidden">
                                     <span class="text-[10px] text-zinc-500 uppercase block truncate">Primary DEX</span>
                                     <span id="cDexName" class="text-sm font-bold font-syne block mt-1 truncate">--</span>
@@ -501,8 +504,8 @@
 
         <section id="pricing" class="mt-12 space-y-8">
             <div class="text-center max-w-3xl mx-auto">
-                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ MONETIZATION ]</span>
-                <h2 class="font-syne text-3xl sm:text-4xl font-black text-ink uppercase mt-1">API & Access Tiers</h2>
+                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ ACCESS GATEWAY ]</span>
+                <h2 class="font-syne text-3xl sm:text-4xl font-black text-ink uppercase mt-1">API & Scanner Access</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono">
@@ -510,7 +513,7 @@
                     <h3 class="text-lg font-bold text-ink uppercase mb-1">Community</h3>
                     <span class="text-3xl font-syne font-black text-zinc-500 mb-4">$0 <span class="text-sm text-zinc-600 font-normal">/mo</span></span>
                     <ul class="space-y-3 text-xs text-zinc-400 mb-8 flex-grow">
-                        <li>✓ 5 Manual Scans per day</li>
+                        <li>✓ 2 Manual Scans per day</li>
                         <li>✓ Basic 0-100 Risk Score</li>
                         <li>✓ Cached Data (10m delay)</li>
                         <li class="text-zinc-600">✗ Realtime Mempool Data</li>
@@ -520,13 +523,13 @@
                 </div>
 
                 <div class="bg-card border-2 border-brand p-6 flex flex-col relative shadow-[4px_4px_0px_0px_#ff6b00] transform md:-translate-y-4">
-                    <div class="absolute top-0 right-0 bg-brand text-black text-[9px] font-bold px-2 py-1 uppercase">Most Popular</div>
+                    <div class="absolute top-0 right-0 bg-brand text-black text-[9px] font-bold px-2 py-1 uppercase">Crypto Native</div>
                     <h3 class="text-lg font-bold text-brand uppercase mb-1">Pro Trader</h3>
-                    <span class="text-3xl font-syne font-black text-ink mb-2">$19 <span class="text-sm text-zinc-500 font-normal">/mo</span></span>
-                    <span class="text-[10px] text-safe font-bold mb-4 block">OR HOLD 50,000 $CRYPT TO UNLOCK</span>
+                    <span class="text-3xl font-syne font-black text-ink mb-2">50,000 <span class="text-sm text-brand font-normal">$CRYPT</span></span>
+                    <span class="text-[10px] text-safe font-bold mb-4 block">HOLD TO UNLOCK FOREVER</span>
                     <ul class="space-y-3 text-xs text-zinc-300 mb-8 flex-grow">
                         <li>✓ Unlimited Manual Scans</li>
-                        <li>✓ Deep Block Explorer Forensics</li>
+                        <li>✓ Deep DEX & Heuristic Forensics</li>
                         <li>✓ Realtime JSON-RPC Querying</li>
                         <li>✓ Automated Telegram Alerts</li>
                         <li>✓ Bypasses Rate Limits</li>
@@ -553,22 +556,22 @@
             <div class="mb-8 border-b-2 border-zinc-800 pb-4 relative z-10">
                 <span class="font-mono text-xs text-safe font-bold uppercase tracking-wider">[ PROTOCOL ARCHITECTURE ]</span>
                 <h2 class="font-syne text-2xl sm:text-3xl font-black text-ink uppercase mt-1">How The Engine Works</h2>
-                <p class="font-mono text-xs text-zinc-400 mt-2 max-w-2xl">Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and Etherscan threat telemetry into an indispensable Web3 terminal.</p>
+                <p class="font-mono text-xs text-zinc-400 mt-2 max-w-2xl">Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and Multi-chain threat telemetry into an indispensable Web3 terminal.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 font-mono text-xs relative z-10">
                 <div class="bg-paper border border-zinc-700 p-4">
                     <span class="text-zinc-500 font-bold block mb-2">01. INGESTION</span>
-                    <p class="text-zinc-300">Parallel queries to DexScreener, Block Explorers, and direct BSC/ETH JSON-RPC nodes fetch raw state data via <code>eth_getCode</code>.</p>
+                    <p class="text-zinc-300">Parallel queries to DexScreener, DEX Pools, and direct EVM/Solana JSON-RPC nodes fetch raw state data.</p>
                 </div>
                 <div class="bg-paper border border-zinc-700 p-4 relative">
                     <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
                     <span class="text-brand font-bold block mb-2">02. HEURISTICS</span>
-                    <p class="text-zinc-300">AI Graph Traversal maps funding sources, looking for Tornado Cash usage or serial rug-pull deployer links.</p>
+                    <p class="text-zinc-300">Engine checks liquidity ratios, contract age, wash trading volumes, and historical wallet behaviors.</p>
                 </div>
                 <div class="bg-paper border border-zinc-700 p-4 relative">
                     <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
                     <span class="text-warning font-bold block mb-2">03. CONSENSUS</span>
-                    <p class="text-zinc-300">Contract parameters (taxes, hidden code) are weighed against behavioral wallet risks to form the Composite Index.</p>
+                    <p class="text-zinc-300">Contract anomalies (taxes, hidden code) are weighed against market metrics to form the Composite Index.</p>
                 </div>
                 <div class="bg-paper border border-zinc-700 p-4 relative shadow-[4px_4px_0px_0px_#00e676]">
                     <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
@@ -590,7 +593,7 @@
                         <span class="text-brand">01.</span> How does V2 detect threats?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        Our engine queries real-time DexScreener liquidity pools, Etherscan forensics, and direct JSON-RPC endpoints simultaneously. By checking the `eth_getCode` method, we mathematically verify byte-code presence to distinguish honeypots from harmless wallets.
+                        Our engine queries real-time DexScreener liquidity pools and direct JSON-RPC endpoints simultaneously. By analyzing liquidity depth, volume manipulation, and on-chain naming conventions, we can distinguish honeypots and rugpulls from safe trading assets.
                     </p>
                 </div>
                 <div class="bg-card border-2 border-zinc-800 p-6 space-y-2">
@@ -598,7 +601,7 @@
                         <span class="text-brand">02.</span> How do I unlock Pro searches?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        You can either pay $19/month via fiat, or simply hold at least 50,000 $CRYPT tokens in your connected Web3 wallet. Holding $CRYPT grants instant, permanent Pro status, bypassing all rate limits.
+                        You simply need to hold at least 50,000 $CRYPT tokens in your connected Web3 wallet. Holding $CRYPT grants instant, permanent Pro status, bypassing all rate limits. No monthly fiat subscriptions required.
                     </p>
                 </div>
                 <div class="bg-card border-2 border-zinc-800 p-6 space-y-2">
@@ -614,7 +617,7 @@
                         <span class="text-brand">04.</span> Why does Cryptection need a token?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        The $CRYPT token creates a decentralized ecosystem. Instead of a standard SaaS subscription, users buy our token to unlock the software. Meanwhile, B2B API revenue is used to execute market buy-backs, burning tokens to reduce supply and reward holders.
+                        The $CRYPT token creates a decentralized ecosystem. Instead of a standard SaaS subscription, retail users buy our token to unlock the software. Meanwhile, B2B API revenue is used to execute market buy-backs, burning tokens to reduce supply and reward holders.
                     </p>
                 </div>
             </div>
@@ -626,8 +629,8 @@
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             <div class="space-y-3 max-w-sm">
                 <a href="#" class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-brand text-black font-syne font-black text-xl flex items-center justify-center border-2 border-black shadow-[2px_2px_0px_0px_#ff3e3e]">
-                        CP
+                    <div class="w-8 h-8 bg-brand flex items-center justify-center border-2 border-black shadow-[2px_2px_0px_0px_#ff3e3e] overflow-hidden p-1">
+                        <img src="/lockonlynobg.png" alt="Cryptection Logo" class="w-full h-full object-contain">
                     </div>
                     <h2 class="font-syne text-xl font-black text-ink uppercase tracking-tight">
                         CRYPTECTION
@@ -672,20 +675,21 @@
             </div>
             <h3 class="font-syne text-2xl font-black text-ink uppercase mb-2">API Limit Reached</h3>
             <p class="font-mono text-xs text-zinc-400 mb-6 leading-relaxed">
-                You have exhausted your 5 free daily scans. To continue using the Threat Terminal, please upgrade to the Pro Trader tier or connect a wallet holding at least <strong class="text-brand">50,000 $CRYPT</strong>.
+                You have exhausted your 2 free daily scans. To continue using the Threat Terminal, please connect a wallet holding at least <strong class="text-brand">50,000 $CRYPT</strong>.
             </p>
             <div class="space-y-3">
                 <button onclick="showToast('Wallet connection unlocks after Presale.', 'warning')" class="w-full py-3 bg-brand text-black font-bold uppercase font-mono text-xs border-2 border-black hover:bg-orange-500 transition-colors shadow-brutal-dark">
                     Connect Web3 Wallet
                 </button>
-                <a href="#pricing" onclick="document.getElementById('paywall-modal').classList.add('hidden')" class="w-full py-3 bg-paper text-zinc-300 font-bold uppercase font-mono text-xs border border-zinc-700 hover:border-brand text-center block transition-colors">
-                    View Fiat Subscriptions
+                <a href="#presale" onclick="document.getElementById('paywall-modal').classList.add('hidden')" class="w-full py-3 bg-paper text-zinc-300 font-bold uppercase font-mono text-xs border border-zinc-700 hover:border-brand text-center block transition-colors">
+                    Buy $CRYPT on Presale
                 </a>
             </div>
         </div>
     </div>
 
     <script>
+        // Background Network Canvas Animation
         const canvas = document.getElementById('network-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
@@ -744,15 +748,14 @@
         setInterval(updateCountdown, 1000); updateCountdown();
         setTimeout(() => { document.getElementById('burn-bar').style.width = '65%'; }, 1500);
 
-        // Hyper-Realistic Mempool Radar Generator
         const radarFeed = document.getElementById('radar-feed');
         function generateDynamicLog() {
             const actions = [
-                { type: 'BLOCKED', color: 'accent', pool: ['Malicious Contract Interaction', 'Drainer Signature Matched', 'Phishing Payload Intercepted', 'Tornado Cash Deposit'] },
-                { type: 'SWAP', color: 'safe', pool: ['Aggregator DEX Routing', 'Uniswap V3 Execution', 'PancakeSwap V2 Trade', 'Cross-chain Bridge'] },
-                { type: 'ARBITRAGE', color: 'warning', pool: ['MEV Sandwich Attack Mitigated', 'Flash Loan Repayment', 'Triangular Arbitrage Attempt', 'Liquidity Pool Imbalance'] }
+                { type: 'BLOCKED', color: 'accent', pool: ['Malicious Contract Interaction', 'Drainer Signature Matched', 'Phishing Payload Intercepted', 'Tornado Cash Deposit', 'Honeypot Triggered'] },
+                { type: 'SWAP', color: 'safe', pool: ['Aggregator DEX Routing', 'Uniswap V3 Execution', 'PancakeSwap V2 Trade', 'Cross-chain Bridge', 'Liquidity Provision'] },
+                { type: 'ARBITRAGE', color: 'warning', pool: ['MEV Sandwich Attack Mitigated', 'Flash Loan Repayment', 'Triangular Arbitrage Attempt', 'Liquidity Pool Imbalance', 'Front-Run Blocked'] }
             ];
-            const tokens = ['BNB', 'USDT', 'USDC', 'ETH', 'DAI', 'LINK', 'PEPE', 'SHIB'];
+            const tokens = ['BNB', 'USDT', 'USDC', 'ETH', 'DAI', 'LINK', 'PEPE', 'SHIB', 'SOL'];
             
             const actionDef = actions[Math.floor(Math.random() * actions.length)];
             const actText = actionDef.pool[Math.floor(Math.random() * actionDef.pool.length)];
@@ -783,7 +786,7 @@
 
         // Rate Limiter Logic
         let isDevMode = localStorage.getItem('cryptection_dev') === 'true';
-        const MAX_SCANS = 5;
+        const MAX_SCANS = 2; // Strict limit updated to 2
 
         function updateScanCounterUI() {
             const count = parseInt(localStorage.getItem('cryptection_scans') || '0');
@@ -806,7 +809,6 @@
             updateScanCounterUI();
         }
 
-        // API Caller
         async function analyzeWallet() {
             if (!isDevMode) {
                 const count = parseInt(localStorage.getItem('cryptection_scans') || '0');
@@ -818,7 +820,7 @@
 
             const address = document.getElementById('searchInput').value.trim();
             if (!/^0x[a-fA-F0-9]{40}$/i.test(address) && !/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(address)) {
-                return showToast('Please enter a valid 0x EVM/BSC address.', 'error');
+                return showToast('Please enter a valid EVM or Solana address.', 'error');
             }
             
             setLoading(true);
@@ -842,13 +844,12 @@
             }
         }
 
-        // DOM Renderer
         function renderResults(data) {
             const rp = document.getElementById('resultPanel'); rp.classList.remove('hidden');
             document.getElementById('resEntityType').textContent = data.entityType || 'ENTITY';
             document.getElementById('resTitle').textContent = data.tokenName ? `${data.tokenName} ($${data.symbol})` : (data.traderProfile?.badge || 'Wallet Entity');
             document.getElementById('resAddress').textContent = data.address;
-            document.getElementById('resChain').textContent = `NETWORK: ${data.chain || 'Binance Smart Chain'}`;
+            document.getElementById('resChain').textContent = `NETWORK: ${data.chain || 'Unknown Network'}`;
 
             const cMod = document.getElementById('contractModule'), wMod = document.getElementById('walletModule');
             if (data.entityType === 'CONTRACT') {
@@ -868,7 +869,7 @@
                 document.getElementById('wBadge').textContent = data.traderProfile?.badge || 'ACTIVE TRADER';
                 document.getElementById('wWinRate').textContent = `${data.traderProfile?.label || ''} • ${data.traderProfile?.winRate || ''}`;
                 document.getElementById('wNetWorth').textContent = `$${Number(data.portfolioNetWorth || 0).toLocaleString()}`;
-                document.getElementById('wNativeBal').textContent = data.nativeBalance || '0 BNB';
+                document.getElementById('wNativeBal').textContent = data.nativeBalance || '0 Native Gas';
                 document.getElementById('wAge').textContent = data.walletAge || 'Active Wallet';
                 const tbody = document.getElementById('wHoldingsTable'); tbody.innerHTML = '';
                 (data.holdings || []).forEach(h => {
