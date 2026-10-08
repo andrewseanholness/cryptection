@@ -155,34 +155,34 @@
                         Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and GoPlus threat telemetry into an indispensable Web3 terminal.
                     </p>
 
+                    <!-- Responsive Grid Fix applied here -->
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6 bg-paper border-2 border-zinc-800 mb-8 font-mono">
                         <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1">Engine</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Engine</span>
                             <span class="text-lg xl:text-xl font-bold text-ink font-syne truncate block">V2 MULTI</span>
                         </div>
                         <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1">Market Telemetry</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Market Telemetry</span>
                             <span class="text-lg xl:text-xl font-bold text-brand font-syne truncate block">DexScreener</span>
                         </div>
                         <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1">Threat Telemetry</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Threat Telemetry</span>
                             <span class="text-lg xl:text-xl font-bold text-safe font-syne truncate block">GoPlus Labs</span>
                         </div>
                         <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1">State Data</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">State Data</span>
                             <span class="text-lg xl:text-xl font-bold text-gold font-syne truncate block">BSC Node</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap items-center gap-4 pt-4 border-t-2 border-zinc-800">
-                    <a href="#audit-terminal" class="px-6 py-3 bg-brand text-black font-mono text-xs font-bold uppercase transition-all shadow-brutal-dark border-2 border-black">
+                    <a href="#audit-terminal" class="px-6 py-3 bg-brand text-black font-mono text-xs font-bold uppercase transition-all shadow-brutal-dark border-2 border-black hover:bg-orange-500">
                         ⚡ Try Scanner
                     </a>
                 </div>
             </div>
 
-            <!-- Presale Card -->
             <div id="presale" class="lg:col-span-5 bg-card border-2 border-bsc p-6 sm:p-8 flex flex-col justify-between shadow-brutal-bsc glow-bsc relative">
                 <div class="flex justify-between items-start mb-4 border-b-2 border-zinc-800 pb-4">
                     <div>
@@ -254,6 +254,13 @@
             </div>
 
             <div class="relative w-full mb-6">
+                <!-- TARGETING OVERRIDE SELECTOR -->
+                <div class="flex flex-wrap gap-2 mb-3 font-mono text-xs font-bold uppercase">
+                    <button type="button" onclick="setScanMode('auto')" id="mode-auto" class="scan-mode-btn px-4 py-2 bg-brand text-black border border-brand shadow-[2px_2px_0px_0px_#ff6b00] transition-all">⚡ Auto-Detect</button>
+                    <button type="button" onclick="setScanMode('contract')" id="mode-contract" class="scan-mode-btn px-4 py-2 bg-paper text-zinc-500 border border-zinc-700 hover:border-brand hover:text-brand transition-all">📄 Force Contract</button>
+                    <button type="button" onclick="setScanMode('wallet')" id="mode-wallet" class="scan-mode-btn px-4 py-2 bg-paper text-zinc-500 border border-zinc-700 hover:border-brand hover:text-brand transition-all">👛 Force Wallet</button>
+                </div>
+
                 <div class="flex flex-col sm:flex-row gap-3">
                     <div class="relative flex-grow">
                         <span class="absolute left-4 top-1/2 -translate-y-1/2 font-mono text-brand font-bold">$</span>
@@ -321,7 +328,6 @@
                         </div>
                     </div>
                     
-                    <!-- New: Block Explorer Forensics -->
                     <div class="bg-card border-2 border-zinc-800 p-6">
                         <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
                             <span>Block Explorer Forensics</span>
@@ -332,11 +338,11 @@
                                 <span class="text-[10px] text-zinc-500 uppercase block">Source Code Status</span>
                                 <span id="cVerified" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
                             </div>
-                            <div class="bg-paper border border-zinc-700 p-4 font-mono">
+                            <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
                                 <span class="text-[10px] text-zinc-500 uppercase block">Compiler Version</span>
                                 <span id="cCompiler" class="text-sm font-bold text-ink font-syne block mt-1 truncate" title="">--</span>
                             </div>
-                            <div class="bg-paper border border-zinc-700 p-4 font-mono">
+                            <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
                                 <span class="text-[10px] text-zinc-500 uppercase block">Open Source License</span>
                                 <span id="cLicense" class="text-sm font-bold text-ink font-syne block mt-1 truncate" title="">--</span>
                             </div>
@@ -348,7 +354,6 @@
                     </div>
                 </div>
 
-                <!-- WALLET SPECIFIC MODULE -->
                 <div id="walletModule" class="hidden space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
@@ -393,7 +398,6 @@
                     </div>
                 </div>
 
-                <!-- Composite Risk Score & Observations -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     <div class="lg:col-span-5 space-y-6">
                         <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between items-center text-center relative overflow-hidden">
@@ -700,7 +704,7 @@
                         <span class="text-brand">03.</span> When does the $CRYPT presale open?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        The native BEP-20 presale starts on October 8th, 2026 at 11:59:59 PM EST directly on Binance Smart Chain to eliminate third-party launching platform fees.
+                        The native BEP-20 presale starts precisely on October 8th, 2026 at 11:59:59 PM EST directly on Binance Smart Chain to eliminate third-party launching platform fees.
                     </p>
                 </div>
 
@@ -709,7 +713,7 @@
                         <span class="text-brand">04.</span> How does B2B Enterprise API integration work?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        DEX platforms, Telegram bots, and Web3 wallets can integrate our Vercel-hosted serverless endpoints using custom API keys to evaluate incoming user transactions.
+                        DEX platforms, Telegram bots, and Web3 wallets can integrate our Vercel-hosted serverless endpoints using custom API keys to evaluate incoming user transactions automatically.
                     </p>
                 </div>
             </div>
@@ -846,7 +850,8 @@
         animateCanvas();
 
         function updateCountdown() {
-            const target = new Date("October 8, 2026 23:59:59 GMT-0500").getTime();
+            // Target Date: October 8, 2026 @ 11:59:59 PM EST
+            const target = new Date("October 8, 2026 23:59:59 EST").getTime();
             const now = new Date().getTime();
             const diff = target - now;
 
@@ -894,7 +899,18 @@
         setInterval(addRadarLog, 2500);
         addRadarLog();
 
+        // Target override variables
         let devBypassActive = false;
+        let currentScanMode = 'auto';
+
+        function setScanMode(mode) {
+            currentScanMode = mode;
+            document.querySelectorAll('.scan-mode-btn').forEach(btn => {
+                btn.className = 'scan-mode-btn px-4 py-2 bg-paper text-zinc-500 border border-zinc-700 hover:border-brand hover:text-brand transition-all';
+            });
+            const activeBtn = document.getElementById(`mode-${mode}`);
+            activeBtn.className = 'scan-mode-btn px-4 py-2 bg-brand text-black border border-brand shadow-[2px_2px_0px_0px_#ff6b00] transition-all';
+        }
 
         function toggleDevBypass() {
             devBypassActive = !devBypassActive;
@@ -931,7 +947,7 @@
             setLoading(true);
 
             try {
-                let url = `/api/analyze?address=${encodeURIComponent(address)}`;
+                let url = `/api/analyze?address=${encodeURIComponent(address)}&type=${currentScanMode}`;
                 if (devBypassActive) {
                     url += `&bypassKey=cryptection_dev_bypass`;
                 }
@@ -979,7 +995,7 @@
                 const trendStr = change >= 0 ? `+${change.toFixed(1)}% 📈` : `${change.toFixed(1)}% 📉`;
                 document.getElementById('cTrend').textContent = `${trendStr} (${data.trend || 'STABLE'})`;
                 
-                // Inject Block Explorer Forensics
+                // Block Explorer Forensics rendering
                 if (data.explorerData) {
                     const isV = data.explorerData.isVerified;
                     const verifiedEl = document.getElementById('cVerified');
@@ -1137,12 +1153,3 @@
             };
             window.requestAnimationFrame(step);
         }
-
-        document.getElementById('searchInput').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                analyzeWallet();
-            }
-        });
-    </script>
-</body>
-</html>
