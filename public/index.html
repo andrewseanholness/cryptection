@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -152,26 +151,25 @@
                     </h2>
 
                     <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-8">
-                        Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and GoPlus threat telemetry into an indispensable Web3 terminal.
+                        Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and Etherscan/BscScan threat telemetry into an indispensable Web3 terminal.
                     </p>
 
-                    <!-- Responsive Grid Fix applied here -->
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6 bg-paper border-2 border-zinc-800 mb-8 font-mono">
                         <div class="overflow-hidden">
                             <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Engine</span>
                             <span class="text-lg xl:text-xl font-bold text-ink font-syne truncate block">V2 MULTI</span>
                         </div>
                         <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Market Telemetry</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Market Data</span>
                             <span class="text-lg xl:text-xl font-bold text-brand font-syne truncate block">DexScreener</span>
                         </div>
                         <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Threat Telemetry</span>
-                            <span class="text-lg xl:text-xl font-bold text-safe font-syne truncate block">GoPlus Labs</span>
+                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Forensics</span>
+                            <span class="text-lg xl:text-xl font-bold text-safe font-syne truncate block">Block Explorers</span>
                         </div>
                         <div class="overflow-hidden">
                             <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">State Data</span>
-                            <span class="text-lg xl:text-xl font-bold text-gold font-syne truncate block">BSC Node</span>
+                            <span class="text-lg xl:text-xl font-bold text-gold font-syne truncate block">BSC RPC</span>
                         </div>
                     </div>
                 </div>
@@ -240,17 +238,11 @@
                     <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">DEEP MULTI-API ANALYTICS</span>
                     <h2 class="font-syne text-2xl sm:text-3xl font-black text-ink uppercase">V2 Threat Terminal</h2>
                 </div>
-
-                <div class="flex items-center gap-3 bg-paper p-2 border border-zinc-700">
-                    <span class="font-mono text-xs text-zinc-400 uppercase font-bold">DEV BYPASS:</span>
-                    <button id="devBypassBtn" onclick="toggleDevBypass()" class="px-2.5 py-1 bg-zinc-800 text-zinc-400 font-mono text-xs font-bold uppercase border border-zinc-600 transition-all">
-                        OFF
-                    </button>
-                </div>
             </div>
 
             <div class="bg-paper border border-zinc-700 p-4 mb-6 font-mono text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                <strong class="text-brand">ANALYTICS ENGINE:</strong> Enter any contract or wallet address. The engine automatically detects byte-code presence. For contracts, we report <span class="text-safe">Age, Market Cap, Pricing & Block Explorer Forensics</span>. For wallets, we report <span class="text-gold">Age, Net Worth, Token Portfolio, & Recent Trade Logs</span>.
+                <strong class="text-brand">ANALYTICS ENGINE:</strong> Enter any contract or wallet address. The engine checks `eth_getCode` to detect byte-code. 
+                Use the Override buttons below if you want to bypass the auto-detector.
             </div>
 
             <div class="relative w-full mb-6">
@@ -276,15 +268,15 @@
                 </div>
 
                 <div class="mt-4 flex flex-wrap items-center gap-2 font-mono text-xs text-zinc-500">
-                    <span class="text-zinc-400 font-bold">Test Address Presets:</span>
-                    <button type="button" onclick="testAddress('0x10ED43C718714eb63d5aA57B78B54704E256024E')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-safe hover:text-safe transition-colors">
-                        [PancakeRouter (Contract)]
+                    <span class="text-zinc-400 font-bold">Test Presets:</span>
+                    <button type="button" onclick="testAddress('0xb8c77482e45f1f44de1745f52c74426c631bdd52', 'auto')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-safe hover:text-safe transition-colors">
+                        [$BNB (ERC-20)]
                     </button>
-                    <button type="button" onclick="testAddress('0x1234567890123456789012345678901234567890')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-accent hover:text-accent transition-colors">
-                        [Malicious Drainer (Contract)]
+                    <button type="button" onclick="testAddress('0xf47a996322710e3097bce2e543d4e00201244208', 'contract')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-accent hover:text-accent transition-colors">
+                        [Dead Token]
                     </button>
-                    <button type="button" onclick="testAddress('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-warning hover:text-warning transition-colors">
-                        [Whale / Mixer Wallet]
+                    <button type="button" onclick="testAddress('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 'wallet')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-warning hover:text-warning transition-colors">
+                        [Burner Wallet]
                     </button>
                 </div>
             </div>
@@ -303,57 +295,57 @@
                         <span id="resAddress" class="font-mono text-xs text-zinc-400 break-all block mt-1">0x...</span>
                         <span id="resChain" class="font-mono text-[11px] text-zinc-500 uppercase mt-1 block">NETWORK: Binance Smart Chain</span>
                     </div>
-
                     <div id="resBadge" class="px-4 py-2 border-2 font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2"></div>
                 </div>
 
-                <!-- CONTRACT SPECIFIC MODULE WITH EXPLORER DATA -->
+                <!-- CONTRACT SPECIFIC MODULE -->
                 <div id="contractModule" class="hidden space-y-6">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                            <span class="text-[10px] text-zinc-500 uppercase block">Creation Age</span>
-                            <span id="cAge" class="text-sm font-bold text-safe font-syne block mt-1">--</span>
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
+                            <span class="text-[10px] text-zinc-500 uppercase block truncate">Creation Age</span>
+                            <span id="cAge" class="text-sm font-bold text-safe font-syne block mt-1 truncate">--</span>
                         </div>
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                            <span class="text-[10px] text-zinc-500 uppercase block">Market Cap / FDV</span>
-                            <span id="cMarketCap" class="text-sm font-bold text-gold font-syne block mt-1">--</span>
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
+                            <span class="text-[10px] text-zinc-500 uppercase block truncate">Market Cap / FDV</span>
+                            <span id="cMarketCap" class="text-sm font-bold text-gold font-syne block mt-1 truncate">--</span>
                         </div>
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                            <span class="text-[10px] text-zinc-500 uppercase block">24h Volume / Liquidity</span>
-                            <span id="cVolume" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
+                            <span class="text-[10px] text-zinc-500 uppercase block truncate">24h Volume / Liq</span>
+                            <span id="cVolume" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
                         </div>
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                            <span class="text-[10px] text-zinc-500 uppercase block">24h Price Change / Trend</span>
-                            <span id="cTrend" class="text-sm font-bold text-brand font-syne block mt-1">--</span>
+                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
+                            <span class="text-[10px] text-zinc-500 uppercase block truncate">24h Price Trend</span>
+                            <span id="cTrend" class="text-sm font-bold text-brand font-syne block mt-1 truncate">--</span>
                         </div>
                     </div>
                     
                     <div class="bg-card border-2 border-zinc-800 p-6">
                         <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
                             <span>Block Explorer Forensics</span>
-                            <span class="font-mono text-xs text-zinc-400 font-normal">Live BscScan Telemetry</span>
+                            <span class="font-mono text-xs text-zinc-400 font-normal">Live Etherscan/BscScan Telemetry</span>
                         </h4>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="bg-paper border border-zinc-700 p-4 font-mono">
-                                <span class="text-[10px] text-zinc-500 uppercase block">Source Code Status</span>
-                                <span id="cVerified" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                            <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Source Code</span>
+                                <span id="cVerified" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
                             </div>
                             <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
-                                <span class="text-[10px] text-zinc-500 uppercase block">Compiler Version</span>
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Compiler Version</span>
                                 <span id="cCompiler" class="text-sm font-bold text-ink font-syne block mt-1 truncate" title="">--</span>
                             </div>
                             <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
-                                <span class="text-[10px] text-zinc-500 uppercase block">Open Source License</span>
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Open License</span>
                                 <span id="cLicense" class="text-sm font-bold text-ink font-syne block mt-1 truncate" title="">--</span>
                             </div>
-                            <div class="bg-paper border border-zinc-700 p-4 font-mono">
-                                <span class="text-[10px] text-zinc-500 uppercase block">Code Optimization</span>
-                                <span id="cOpt" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                            <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Optimization</span>
+                                <span id="cOpt" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- WALLET SPECIFIC MODULE -->
                 <div id="walletModule" class="hidden space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
@@ -367,7 +359,7 @@
                             <span id="wNativeBal" class="text-[11px] text-zinc-400 block mt-0.5">--</span>
                         </div>
                         <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                            <span class="text-[10px] text-zinc-500 uppercase block">Wallet Age & History</span>
+                            <span class="text-[10px] text-zinc-500 uppercase block">Wallet Status</span>
                             <span id="wAge" class="text-sm font-bold text-safe font-syne block mt-1">--</span>
                         </div>
                     </div>
@@ -391,13 +383,9 @@
                             </table>
                         </div>
                     </div>
-
-                    <div class="bg-card border-2 border-zinc-800 p-6">
-                        <h4 class="font-syne text-base font-bold text-ink uppercase mb-4">Recent On-Chain Activity Feed</h4>
-                        <div id="wTradeHistory" class="space-y-3 font-mono text-xs"></div>
-                    </div>
                 </div>
 
+                <!-- OVERALL THREAT SCORES -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     <div class="lg:col-span-5 space-y-6">
                         <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between items-center text-center relative overflow-hidden">
@@ -407,7 +395,6 @@
                             </div>
                             <span class="font-mono text-sm text-zinc-500 z-10">/ 100 THREAT SCORE</span>
                         </div>
-
                         <div class="bg-card border-2 border-zinc-800 p-6">
                             <div class="space-y-4 font-mono text-sm">
                                 <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
@@ -433,7 +420,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 flex flex-col">
                         <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Security & Behavioral Observations</h3>
                         <ul id="resConcerns" class="space-y-4 font-mono text-sm text-zinc-300 flex-grow"></ul>
@@ -475,21 +461,114 @@
             </div>
         </section>
 
-        <section class="bg-card border-2 border-zinc-800 p-6 sm:p-8 relative mt-4 overflow-hidden shadow-[6px_6px_0px_0px_#1b1e27]">
-            <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
-                <svg width="200" height="200" viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="2" d="M10,50 L90,50 M50,10 L50,90 M20,20 L80,80 M20,80 L80,20" /></svg>
+        <section id="tokenomics" class="bg-card border-2 border-zinc-800 p-6 sm:p-8 relative mt-12 shadow-[6px_6px_0px_0px_#1b1e27]">
+            <div class="mb-8 border-b-2 border-zinc-800 pb-4 relative z-10">
+                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ REVENUE & TOKEN METRICS ]</span>
+                <h2 class="font-syne text-2xl sm:text-4xl font-black text-ink uppercase mt-1">Deflationary Dashboard</h2>
+                <p class="font-mono text-xs text-zinc-400 mt-2 max-w-2xl">Cryptection merges a standard 5% volume tax with real-world B2B software revenue. Our API enterprise subscriptions automatically market-buy and burn $CRYPT, establishing a continuously rising price floor.</p>
             </div>
-            
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 font-mono text-sm">
+                <div class="bg-paper border border-zinc-700 p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-zinc-500 font-bold uppercase block mb-1">Max Supply</span>
+                        <span class="text-3xl font-syne font-black text-ink">100,000,000</span>
+                        <span class="text-brand font-bold block mt-1">$CRYPT Tokens</span>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-zinc-800 space-y-2 text-xs">
+                        <div class="flex justify-between text-zinc-400"><span>Presale Allocation:</span> <span class="text-ink">40%</span></div>
+                        <div class="flex justify-between text-zinc-400"><span>Liquidity Pool:</span> <span class="text-ink">30%</span></div>
+                        <div class="flex justify-between text-zinc-400"><span>Marketing & CEX:</span> <span class="text-ink">20%</span></div>
+                        <div class="flex justify-between text-zinc-400"><span>Team (Locked):</span> <span class="text-ink">10%</span></div>
+                    </div>
+                </div>
+
+                <div class="bg-paper border border-zinc-700 p-6 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-brand/10 rounded-full blur-xl"></div>
+                    <span class="text-zinc-500 font-bold uppercase block mb-1">Transaction Tax</span>
+                    <div class="flex items-end gap-2 mb-4">
+                        <span class="text-4xl font-syne font-black text-brand">5%</span>
+                        <span class="text-zinc-400 text-xs mb-1">BUY/SELL</span>
+                    </div>
+                    <ul class="space-y-3 text-xs text-zinc-300">
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-brand rounded-full"></span> 2% Development & Servers</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-gold rounded-full"></span> 2% Marketing & Buybacks</li>
+                        <li class="flex items-center gap-2"><span class="w-2 h-2 bg-safe rounded-full"></span> 1% Auto-Liquidity</li>
+                    </ul>
+                </div>
+
+                <div class="bg-paper border border-zinc-700 p-6 border-l-4 border-l-accent relative">
+                    <span class="text-zinc-500 font-bold uppercase block mb-1">Enterprise Buy-Back</span>
+                    <h4 class="font-syne text-xl font-bold text-ink uppercase mb-2">The Burn Protocol</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed mb-4">20% of all fiat and stablecoin revenue generated from Enterprise API sales and Telegram Bot subscriptions is mathematically routed to market-buy $CRYPT and send it to the dead address.</p>
+                    <div class="w-full bg-zinc-900 rounded-full h-1.5 mb-2">
+                        <div class="bg-accent h-1.5 rounded-full w-0 transition-all duration-1000" id="burn-bar"></div>
+                    </div>
+                    <span class="text-[10px] text-accent font-bold uppercase">Pending Burn Execution...</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="mt-12 space-y-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ MONETIZATION ]</span>
+                <h2 class="font-syne text-3xl sm:text-4xl font-black text-ink uppercase mt-1">API & Access Tiers</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono">
+                <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col">
+                    <h3 class="text-lg font-bold text-ink uppercase mb-1">Community</h3>
+                    <span class="text-3xl font-syne font-black text-zinc-500 mb-4">$0 <span class="text-sm text-zinc-600 font-normal">/mo</span></span>
+                    <ul class="space-y-3 text-xs text-zinc-400 mb-8 flex-grow">
+                        <li>✓ 5 Manual Scans per day</li>
+                        <li>✓ Basic 0-100 Risk Score</li>
+                        <li>✓ Cached Data (10m delay)</li>
+                        <li class="text-zinc-600">✗ Realtime Mempool Data</li>
+                        <li class="text-zinc-600">✗ Visual Threat Graph</li>
+                    </ul>
+                    <button class="w-full py-2 bg-paper border border-zinc-700 text-zinc-500 uppercase font-bold text-xs">Current Plan</button>
+                </div>
+
+                <div class="bg-card border-2 border-brand p-6 flex flex-col relative shadow-[4px_4px_0px_0px_#ff6b00] transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-brand text-black text-[9px] font-bold px-2 py-1 uppercase">Most Popular</div>
+                    <h3 class="text-lg font-bold text-brand uppercase mb-1">Pro Trader</h3>
+                    <span class="text-3xl font-syne font-black text-ink mb-2">$19 <span class="text-sm text-zinc-500 font-normal">/mo</span></span>
+                    <span class="text-[10px] text-safe font-bold mb-4 block">OR HOLD 50,000 $CRYPT TO UNLOCK</span>
+                    <ul class="space-y-3 text-xs text-zinc-300 mb-8 flex-grow">
+                        <li>✓ Unlimited Manual Scans</li>
+                        <li>✓ Deep Block Explorer Forensics</li>
+                        <li>✓ Realtime JSON-RPC Querying</li>
+                        <li>✓ Automated Telegram Alerts</li>
+                        <li>✓ Bypasses Rate Limits</li>
+                    </ul>
+                    <button class="w-full py-3 bg-brand text-black border-2 border-black font-bold uppercase text-xs hover:bg-orange-500 transition-colors">Connect Wallet</button>
+                </div>
+
+                <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col">
+                    <h3 class="text-lg font-bold text-ink uppercase mb-1">Enterprise API</h3>
+                    <span class="text-3xl font-syne font-black text-ink mb-4">$499+ <span class="text-sm text-zinc-500 font-normal">/mo</span></span>
+                    <ul class="space-y-3 text-xs text-zinc-400 mb-8 flex-grow">
+                        <li>✓ B2B API Key Generation</li>
+                        <li>✓ 500,000 API Calls per month</li>
+                        <li>✓ SLA & 99.9% Uptime</li>
+                        <li>✓ Block Txns in your own dApp</li>
+                        <li>✓ Dedicated Webhook Support</li>
+                    </ul>
+                    <button class="w-full py-2 bg-paper border border-zinc-700 text-ink uppercase font-bold text-xs hover:border-brand transition-colors">Contact Sales</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-card border-2 border-zinc-800 p-6 sm:p-8 relative mt-12 overflow-hidden shadow-[6px_6px_0px_0px_#1b1e27]">
             <div class="mb-8 border-b-2 border-zinc-800 pb-4 relative z-10">
                 <span class="font-mono text-xs text-safe font-bold uppercase tracking-wider">[ PROTOCOL ARCHITECTURE ]</span>
                 <h2 class="font-syne text-2xl sm:text-3xl font-black text-ink uppercase mt-1">How The Engine Works</h2>
-                <p class="font-mono text-xs text-zinc-400 mt-2 max-w-2xl">Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and GoPlus threat telemetry into an indispensable Web3 terminal.</p>
+                <p class="font-mono text-xs text-zinc-400 mt-2 max-w-2xl">Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and Etherscan threat telemetry into an indispensable Web3 terminal.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 font-mono text-xs relative z-10">
                 <div class="bg-paper border border-zinc-700 p-4">
                     <span class="text-zinc-500 font-bold block mb-2">01. INGESTION</span>
-                    <p class="text-zinc-300">Parallel queries to DexScreener, GoPlus Security, and direct BSC/ETH JSON-RPC nodes fetch raw state data via <code>eth_getCode</code>.</p>
+                    <p class="text-zinc-300">Parallel queries to DexScreener, Block Explorers, and direct BSC/ETH JSON-RPC nodes fetch raw state data via <code>eth_getCode</code>.</p>
                 </div>
                 <div class="bg-paper border border-zinc-700 p-4 relative">
                     <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
@@ -499,177 +578,12 @@
                 <div class="bg-paper border border-zinc-700 p-4 relative">
                     <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
                     <span class="text-warning font-bold block mb-2">03. CONSENSUS</span>
-                    <p class="text-zinc-300">Contract parameters (taxes, honeypot code) are weighed against behavioral wallet risks to form the Composite Index.</p>
+                    <p class="text-zinc-300">Contract parameters (taxes, hidden code) are weighed against behavioral wallet risks to form the Composite Index.</p>
                 </div>
                 <div class="bg-paper border border-zinc-700 p-4 relative shadow-[4px_4px_0px_0px_#00e676]">
                     <div class="hidden md:block absolute top-1/2 -left-4 w-4 h-[1px] bg-brand"></div>
                     <span class="text-safe font-bold block mb-2">04. EXECUTION</span>
                     <p class="text-zinc-300">Data is delivered to the Web Terminal and Enterprise API endpoints in &lt;1.5s to block pending malicious swaps.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" class="space-y-8 mt-12">
-            <div class="text-center max-w-3xl mx-auto">
-                <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ REVENUE MODEL ]</span>
-                <h2 class="font-syne text-3xl sm:text-5xl font-black text-ink uppercase mt-1">API & Access Tiers</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between">
-                    <div>
-                        <span class="inline-block px-2 py-1 bg-paper border border-zinc-700 text-zinc-400 font-mono text-[10px] font-bold uppercase mb-4">Retail Users</span>
-                        <h3 class="font-syne text-2xl font-bold text-ink mb-2">Community</h3>
-                        <div class="font-syne text-4xl font-black text-ink mb-6">$0<span class="text-lg text-zinc-500 font-mono">/mo</span></div>
-                        <ul class="space-y-3 font-mono text-xs text-zinc-400 mb-8">
-                            <li>✓ 5 manual searches per day</li>
-                            <li>✓ Age & basic risk checks</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-card border-2 border-brand p-6 shadow-brutal-brand flex flex-col justify-between">
-                    <div>
-                        <span class="inline-block px-2 py-1 bg-brand/10 border border-brand/30 text-brand font-mono text-[10px] font-bold uppercase mb-4">Token Utility</span>
-                        <h3 class="font-syne text-2xl font-bold text-ink mb-2">Pro Radar</h3>
-                        <div class="font-syne text-4xl font-black text-brand mb-1">$19<span class="text-lg text-zinc-500 font-mono">/mo</span></div>
-                        <div class="font-mono text-xs font-bold text-safe mb-6">OR FREE HOLDING 50k $CRYPT</div>
-                        <ul class="space-y-3 font-mono text-xs text-zinc-300 mb-8">
-                            <li>✓ Unlimited scans (Bypass limits)</li>
-                            <li>✓ Market Cap, Net Worth & Trade Logs</li>
-                            <li>✓ Automated Telegram alerts</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between">
-                    <div>
-                        <span class="inline-block px-2 py-1 bg-paper border border-zinc-700 text-zinc-400 font-mono text-[10px] font-bold uppercase mb-4">B2B Integrations</span>
-                        <h3 class="font-syne text-2xl font-bold text-ink mb-2">Enterprise API</h3>
-                        <div class="font-syne text-4xl font-black text-ink mb-6">$499+<span class="text-lg text-zinc-500 font-mono">/mo</span></div>
-                        <ul class="space-y-3 font-mono text-xs text-zinc-400 mb-8">
-                            <li>✓ Unlimited API call throughput</li>
-                            <li>✓ Custom webhook threat triggers</li>
-                            <li>✓ Dedicated multi-chain indexer pipeline</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="tokenomics" class="space-y-8 mt-12">
-            <div class="text-center max-w-3xl mx-auto">
-                <span class="font-mono text-xs text-bsc font-bold uppercase tracking-wider">[ TOKENOMICS & UTILITY ]</span>
-                <h2 class="font-syne text-3xl sm:text-5xl font-black text-ink uppercase mt-1">$CRYPT Tokenomics</h2>
-                <p class="font-mono text-xs text-zinc-400 mt-2">Native BEP-20 token power structure designed for long-term sustainability and threat telemetry incentives.</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-card border-2 border-zinc-800 p-5 font-mono">
-                    <span class="text-[10px] text-zinc-500 uppercase block">Total Supply</span>
-                    <span class="text-xl sm:text-2xl font-black text-ink font-syne block mt-1">1,000,000,000</span>
-                    <span class="text-[10px] text-zinc-400 mt-1 block">$CRYPT BEP-20</span>
-                </div>
-                <div class="bg-card border-2 border-zinc-800 p-5 font-mono">
-                    <span class="text-[10px] text-zinc-500 uppercase block">Transaction Tax</span>
-                    <span class="text-xl sm:text-2xl font-black text-brand font-syne block mt-1">5% / 5%</span>
-                    <span class="text-[10px] text-zinc-400 mt-1 block">Buy / Sell Tax</span>
-                </div>
-                <div class="bg-card border-2 border-zinc-800 p-5 font-mono">
-                    <span class="text-[10px] text-zinc-500 uppercase block">Presale Hard Cap</span>
-                    <span class="text-xl sm:text-2xl font-black text-bsc font-syne block mt-1">$250,000</span>
-                    <span class="text-[10px] text-zinc-400 mt-1 block">BNB Pair on BSC</span>
-                </div>
-                <div class="bg-card border-2 border-zinc-800 p-5 font-mono">
-                    <span class="text-[10px] text-zinc-500 uppercase block">Pro Tier Threshold</span>
-                    <span class="text-xl sm:text-2xl font-black text-safe font-syne block mt-1">50,000</span>
-                    <span class="text-[10px] text-zinc-400 mt-1 block">Tokens for Free Pro API</span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-syne text-xl font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2 flex items-center justify-between">
-                            <span>5% Tax Breakdown</span>
-                            <span class="font-mono text-xs text-brand font-normal">Automated Protocol Split</span>
-                        </h3>
-                        <div class="space-y-4 font-mono text-xs">
-                            <div class="bg-paper p-3 border border-zinc-800">
-                                <div class="flex justify-between items-center text-ink font-bold mb-1">
-                                    <span>2.0% • Security Ops & Infrastructure</span>
-                                    <span class="text-brand">40% of Tax</span>
-                                </div>
-                                <p class="text-zinc-400 text-[11px]">Funds GoPlus node access, high-speed RPC indexing, and telemetry engine hosting.</p>
-                            </div>
-
-                            <div class="bg-paper p-3 border border-zinc-800">
-                                <div class="flex justify-between items-center text-ink font-bold mb-1">
-                                    <span>2.0% • Liquidity Pool & Buybacks</span>
-                                    <span class="text-safe">40% of Tax</span>
-                                </div>
-                                <p class="text-zinc-400 text-[11px]">Automated liquidity pool expansion and strategic market buybacks to maintain price floor.</p>
-                            </div>
-
-                            <div class="bg-paper p-3 border border-zinc-800">
-                                <div class="flex justify-between items-center text-ink font-bold mb-1">
-                                    <span>1.0% • Marketing & Ecosystem Grants</span>
-                                    <span class="text-gold">20% of Tax</span>
-                                </div>
-                                <p class="text-zinc-400 text-[11px]">Powers community campaigns, security auditor partnerships, and B2B expansion.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-syne text-xl font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2 flex items-center justify-between">
-                            <span>Supply Distribution</span>
-                            <span class="font-mono text-xs text-bsc font-normal">Fair Launch Structure</span>
-                        </h3>
-
-                        <div class="w-full h-4 bg-paper border border-zinc-700 flex overflow-hidden mb-6">
-                            <div style="width: 40%" class="bg-bsc h-full" title="40% Presale"></div>
-                            <div style="width: 30%" class="bg-brand h-full" title="30% DEX Liquidity"></div>
-                            <div style="width: 15%" class="bg-safe h-full" title="15% Staking & API Rewards"></div>
-                            <div style="width: 10%" class="bg-gold h-full" title="10% Team (Vested)"></div>
-                            <div style="width: 5%" class="bg-accent h-full" title="5% Marketing"></div>
-                        </div>
-
-                        <ul class="space-y-3 font-mono text-xs">
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2 text-zinc-300">
-                                    <span class="w-3 h-3 bg-bsc inline-block"></span> 40% Community Presale
-                                </span>
-                                <span class="text-ink font-bold">400,000,000 $CRYPT</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2 text-zinc-300">
-                                    <span class="w-3 h-3 bg-brand inline-block"></span> 30% PancakeSwap DEX Liquidity
-                                </span>
-                                <span class="text-ink font-bold">300,000,000 $CRYPT</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2 text-zinc-300">
-                                    <span class="w-3 h-3 bg-safe inline-block"></span> 15% Staking & Threat Bounties
-                                </span>
-                                <span class="text-ink font-bold">150,000,000 $CRYPT</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2 text-zinc-300">
-                                    <span class="w-3 h-3 bg-gold inline-block"></span> 10% Core Team (12-Mo Vesting)
-                                </span>
-                                <span class="text-ink font-bold">100,000,000 $CRYPT</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2 text-zinc-300">
-                                    <span class="w-3 h-3 bg-accent inline-block"></span> 5% Marketing & Listings
-                                </span>
-                                <span class="text-ink font-bold">50,000,000 $CRYPT</span>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
@@ -683,37 +597,34 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-card border-2 border-zinc-800 p-6 space-y-2">
                     <h3 class="font-syne text-lg font-bold text-ink uppercase flex items-center gap-2">
-                        <span class="text-brand">01.</span> How does Cryptection V2 analyze contracts?
+                        <span class="text-brand">01.</span> How does V2 detect threats?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        Our engine queries real-time DexScreener liquidity pools, GoPlus Security endpoints, and BscScan API simultaneously while checking `eth_getCode` RPC methods to mathematically verify byte-code presence.
+                        Our engine queries real-time DexScreener liquidity pools, Etherscan forensics, and direct JSON-RPC endpoints simultaneously. By checking the `eth_getCode` method, we mathematically verify byte-code presence to distinguish honeypots from harmless wallets.
                     </p>
                 </div>
-
                 <div class="bg-card border-2 border-zinc-800 p-6 space-y-2">
                     <h3 class="font-syne text-lg font-bold text-ink uppercase flex items-center gap-2">
-                        <span class="text-brand">02.</span> How do I unlock unlimited Pro searches?
+                        <span class="text-brand">02.</span> How do I unlock Pro searches?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        You can either pay $19/month or hold at least 50,000 $CRYPT tokens in your connected Web3 wallet. Holding $CRYPT grants instant Pro status, bypassing daily IP limits.
+                        You can either pay $19/month via fiat, or simply hold at least 50,000 $CRYPT tokens in your connected Web3 wallet. Holding $CRYPT grants instant, permanent Pro status, bypassing all rate limits.
                     </p>
                 </div>
-
                 <div class="bg-card border-2 border-zinc-800 p-6 space-y-2">
                     <h3 class="font-syne text-lg font-bold text-ink uppercase flex items-center gap-2">
-                        <span class="text-brand">03.</span> When does the $CRYPT presale open?
+                        <span class="text-brand">03.</span> When is the $CRYPT Presale?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        The native BEP-20 presale starts precisely on October 8th, 2026 at 11:59:59 PM EST directly on Binance Smart Chain to eliminate third-party launching platform fees.
+                        The official native presale launches on October 8th, 2026 at precisely 11:59:59 PM EST. We are avoiding third-party launchpads like PinkSale to prevent our community from paying exorbitant deployment fees.
                     </p>
                 </div>
-
                 <div class="bg-card border-2 border-zinc-800 p-6 space-y-2">
                     <h3 class="font-syne text-lg font-bold text-ink uppercase flex items-center gap-2">
-                        <span class="text-brand">04.</span> How does B2B Enterprise API integration work?
+                        <span class="text-brand">04.</span> Why does Cryptection need a token?
                     </h3>
                     <p class="font-mono text-xs text-zinc-400 leading-relaxed">
-                        DEX platforms, Telegram bots, and Web3 wallets can integrate our Vercel-hosted serverless endpoints using custom API keys to evaluate incoming user transactions automatically.
+                        The $CRYPT token creates a decentralized ecosystem. Instead of a standard SaaS subscription, users buy our token to unlock the software. Meanwhile, B2B API revenue is used to execute market buy-backs, burning tokens to reduce supply and reward holders.
                     </p>
                 </div>
             </div>
@@ -747,32 +658,16 @@
                         <li><a href="#audit-terminal" class="hover:text-brand transition-colors">Threat Terminal</a></li>
                         <li><a href="#pricing" class="hover:text-brand transition-colors">API Tiers</a></li>
                         <li><a href="#tokenomics" class="hover:text-brand transition-colors">Tokenomics</a></li>
-                        <li><a href="#presale" class="hover:text-bsc transition-colors text-bsc font-bold">Presale Portal</a></li>
                     </ul>
                 </div>
-
-                <div>
-                    <span class="block text-zinc-400 font-bold uppercase mb-3 text-[11px] border-b border-zinc-800 pb-1">Developer</span>
-                    <ul class="space-y-2 text-zinc-500">
-                        <li><a href="/api/health" target="_blank" class="hover:text-safe transition-colors">API Status</a></li>
-                        <li><a href="#pricing" class="hover:text-brand transition-colors">Enterprise Docs</a></li>
-                        <li><a href="https://github.com" target="_blank" class="hover:text-ink transition-colors">GitHub Repo</a></li>
-                    </ul>
-                </div>
-
                 <div>
                     <span class="block text-zinc-400 font-bold uppercase mb-3 text-[11px] border-b border-zinc-800 pb-1">Community</span>
                     <ul class="space-y-2 text-zinc-500">
                         <li><a href="https://t.me" target="_blank" class="hover:text-brand transition-colors">Telegram Chat</a></li>
                         <li><a href="https://x.com" target="_blank" class="hover:text-brand transition-colors">X / Twitter</a></li>
-                        <li><a href="#faq" class="hover:text-brand transition-colors">FAQ</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-zinc-800/60 font-mono text-[10px] text-zinc-600 leading-relaxed text-center sm:text-left">
-            DISCLAIMER: Cryptection threat scores are generated programmatically based on publicly indexed smart contract state and market telemetry. Security assessments are not financial advice or absolute guarantees against loss. Always perform independent research before interacting with unverified Web3 contracts.
         </div>
     </footer>
 
@@ -790,13 +685,7 @@
             height = canvas.height = window.innerHeight;
             particles = [];
             for (let i = 0; i < 60; i++) {
-                particles.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.5,
-                    vy: (Math.random() - 0.5) * 0.5,
-                    size: Math.random() * 2 + 1
-                });
+                particles.push({ x: Math.random() * width, y: Math.random() * height, vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5, size: Math.random() * 2 + 1 });
             }
         }
 
@@ -805,40 +694,18 @@
             ctx.fillStyle = '#ff6b00';
             ctx.strokeStyle = 'rgba(255, 107, 0, 0.15)';
             ctx.lineWidth = 1;
-
             particles.forEach(p => {
-                p.x += p.vx;
-                p.y += p.vy;
-
+                p.x += p.vx; p.y += p.vy;
                 if (p.x < 0 || p.x > width) p.vx *= -1;
                 if (p.y < 0 || p.y > height) p.vy *= -1;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
                 particles.forEach(p2 => {
-                    const dx = p.x - p2.x;
-                    const dy = p.y - p2.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 150) {
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.stroke();
-                    }
+                    const dx = p.x - p2.x; const dy = p.y - p2.y; const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke(); }
                 });
-
-                const mdx = p.x - mouse.x;
-                const mdy = p.y - mouse.y;
-                const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+                const mdx = p.x - mouse.x; const mdy = p.y - mouse.y; const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
                 if (mdist < 200) {
-                    ctx.strokeStyle = 'rgba(255, 62, 62, 0.3)';
-                    ctx.beginPath();
-                    ctx.moveTo(p.x, p.y);
-                    ctx.lineTo(mouse.x, mouse.y);
-                    ctx.stroke();
-                    ctx.strokeStyle = 'rgba(255, 107, 0, 0.15)';
+                    ctx.strokeStyle = 'rgba(255, 62, 62, 0.3)'; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); ctx.strokeStyle = 'rgba(255, 107, 0, 0.15)';
                 }
             });
             requestAnimationFrame(animateCanvas);
@@ -846,310 +713,157 @@
 
         window.addEventListener('resize', initCanvas);
         window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
-        initCanvas();
-        animateCanvas();
+        initCanvas(); animateCanvas();
 
+        // STRICT ISO DATE COUNTDOWN: Oct 8, 2026 11:59:59 PM EDT
         function updateCountdown() {
-            // Target Date: October 8, 2026 @ 11:59:59 PM EST
-            const target = new Date("October 8, 2026 23:59:59 EST").getTime();
+            const target = new Date("2026-10-08T23:59:59-04:00").getTime();
             const now = new Date().getTime();
             const diff = target - now;
-
-            if (diff > 0) {
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
-                document.getElementById('cd-days').innerText = days.toString().padStart(2, '0');
-                document.getElementById('cd-hours').innerText = hours.toString().padStart(2, '0');
-                document.getElementById('cd-mins').innerText = mins.toString().padStart(2, '0');
-                document.getElementById('cd-secs').innerText = secs.toString().padStart(2, '0');
+            if (!isNaN(diff) && diff > 0) {
+                document.getElementById('cd-days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                document.getElementById('cd-hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                document.getElementById('cd-mins').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                document.getElementById('cd-secs').innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
             } else {
-                document.getElementById('cd-days').innerText = "00";
-                document.getElementById('cd-hours').innerText = "00";
-                document.getElementById('cd-mins').innerText = "00";
-                document.getElementById('cd-secs').innerText = "00";
+                ['cd-days', 'cd-hours', 'cd-mins', 'cd-secs'].forEach(id => document.getElementById(id).innerText = "00");
             }
         }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        setInterval(updateCountdown, 1000); updateCountdown();
+        setTimeout(() => { document.getElementById('burn-bar').style.width = '65%'; }, 1500);
 
         const radarFeed = document.getElementById('radar-feed');
-        const simulatedLogs = [
+        const logs = [
             "<span class='text-accent'>[BLOCKED]</span> Malicious honeypot approval rejected for Wallet 0x7A...9F2",
             "<span class='text-warning'>[ALERT]</span> High volume of Tornado Cash withdrawals detected on BSC",
             "<span class='text-safe'>[VERIFIED]</span> Contract 0x3B...1A4 passed multi-sig ownership check",
             "<span class='text-brand'>[API]</span> Enterprise webhook triggered by Wallet 0x99...22B",
-            "<span class='text-accent'>[BLOCKED]</span> Prevented drainer execution on 43 connected wallets",
-            "<span class='text-zinc-500'>[SYS]</span> Indexed 1,420 new liquidity pairs from DexScreener",
-            "<span class='text-warning'>[GRAPH]</span> Suspicious deployer funding tree mapped via AI tracer"
+            "<span class='text-accent'>[BLOCKED]</span> Prevented drainer execution on 43 connected wallets"
         ];
 
         function addRadarLog() {
-            if (radarFeed.children.length > 5) {
-                radarFeed.removeChild(radarFeed.firstChild);
-            }
+            if (radarFeed.children.length > 4) radarFeed.removeChild(radarFeed.firstChild);
             const log = document.createElement('div');
             log.className = "typewriter-line inline-block";
-            log.innerHTML = `> ${simulatedLogs[Math.floor(Math.random() * simulatedLogs.length)]} <span class='text-zinc-600 ml-2'>[${new Date().toLocaleTimeString()}]</span>`;
+            log.innerHTML = `> ${logs[Math.floor(Math.random() * logs.length)]} <span class='text-zinc-600 ml-2'>[${new Date().toLocaleTimeString()}]</span>`;
             radarFeed.appendChild(log);
             setTimeout(() => { log.classList.remove('typewriter-line'); log.style.borderRight = 'none'; }, 1000);
         }
-        setInterval(addRadarLog, 2500);
-        addRadarLog();
+        setInterval(addRadarLog, 2500); addRadarLog();
 
-        // Target override variables
-        let devBypassActive = false;
         let currentScanMode = 'auto';
-
         function setScanMode(mode) {
             currentScanMode = mode;
-            document.querySelectorAll('.scan-mode-btn').forEach(btn => {
-                btn.className = 'scan-mode-btn px-4 py-2 bg-paper text-zinc-500 border border-zinc-700 hover:border-brand hover:text-brand transition-all';
-            });
-            const activeBtn = document.getElementById(`mode-${mode}`);
-            activeBtn.className = 'scan-mode-btn px-4 py-2 bg-brand text-black border border-brand shadow-[2px_2px_0px_0px_#ff6b00] transition-all';
+            document.querySelectorAll('.scan-mode-btn').forEach(btn => btn.className = 'scan-mode-btn px-4 py-2 bg-paper text-zinc-500 border border-zinc-700 hover:border-brand hover:text-brand transition-all');
+            document.getElementById(`mode-${mode}`).className = 'scan-mode-btn px-4 py-2 bg-brand text-black border border-brand shadow-[2px_2px_0px_0px_#ff6b00] transition-all';
         }
 
-        function toggleDevBypass() {
-            devBypassActive = !devBypassActive;
-            const btn = document.getElementById('devBypassBtn');
-            if (devBypassActive) {
-                btn.textContent = 'ON [UNLIMITED]';
-                btn.className = 'px-2.5 py-1 bg-safe text-black font-mono text-xs font-bold uppercase border border-black shadow-[2px_2px_0px_0px_#000]';
-                showToast('Dev Bypass enabled: Unlimited searches active.', 'success');
-            } else {
-                btn.textContent = 'OFF';
-                btn.className = 'px-2.5 py-1 bg-zinc-800 text-zinc-400 font-mono text-xs font-bold uppercase border border-zinc-600';
-                showToast('Dev Bypass disabled.', 'info');
-            }
-        }
-
-        function isValidAddress(address) {
-            return /^0x[a-fA-F0-9]{40}$/i.test(address) || /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(address);
-        }
-
-        function testAddress(addr) {
+        function testAddress(addr, mode) {
             document.getElementById('searchInput').value = addr;
+            setScanMode(mode);
             analyzeWallet();
         }
 
         async function analyzeWallet() {
-            const searchInput = document.getElementById('searchInput');
-            const address = searchInput.value.trim();
-
-            if (!isValidAddress(address)) {
-                showToast('Please enter a valid 0x EVM/BSC or Solana address.', 'error');
-                return;
+            const address = document.getElementById('searchInput').value.trim();
+            if (!/^0x[a-fA-F0-9]{40}$/i.test(address) && !/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(address)) {
+                return showToast('Please enter a valid 0x EVM/BSC address.', 'error');
             }
-
             setLoading(true);
-
             try {
-                let url = `/api/analyze?address=${encodeURIComponent(address)}&type=${currentScanMode}`;
-                if (devBypassActive) {
-                    url += `&bypassKey=cryptection_dev_bypass`;
-                }
-
-                const response = await fetch(url);
+                const response = await fetch(`/api/analyze?address=${encodeURIComponent(address)}&type=${currentScanMode}`);
                 const data = await response.json();
-                
-                if (!response.ok || data.error) {
-                    showToast(data.message || data.error || 'Scan request failed.', 'error');
-                    return;
-                }
-
+                if (!response.ok || data.error) throw new Error(data.message || 'Scan failed.');
                 renderResults(data);
                 showToast('Intelligence scan complete.', 'success');
-
             } catch (err) {
-                showToast('Error communicating with backend API.', 'error');
-                console.error(err);
+                showToast(err.message, 'error');
             } finally {
                 setLoading(false);
             }
         }
 
         function renderResults(data) {
-            const resultPanel = document.getElementById('resultPanel');
-            resultPanel.classList.remove('hidden');
-
+            const rp = document.getElementById('resultPanel'); rp.classList.remove('hidden');
             document.getElementById('resEntityType').textContent = data.entityType || 'ENTITY';
             document.getElementById('resTitle').textContent = data.tokenName ? `${data.tokenName} ($${data.symbol})` : (data.traderProfile?.badge || 'Wallet Entity');
             document.getElementById('resAddress').textContent = data.address;
             document.getElementById('resChain').textContent = `NETWORK: ${data.chain || 'Binance Smart Chain'}`;
 
-            const cModule = document.getElementById('contractModule');
-            const wModule = document.getElementById('walletModule');
-
+            const cMod = document.getElementById('contractModule'), wMod = document.getElementById('walletModule');
             if (data.entityType === 'CONTRACT') {
-                cModule.classList.remove('hidden');
-                wModule.classList.add('hidden');
-
+                cMod.classList.remove('hidden'); wMod.classList.add('hidden');
                 document.getElementById('cAge').textContent = data.creationAge || 'Unknown';
                 document.getElementById('cMarketCap').textContent = data.marketCap ? `$${Number(data.marketCap).toLocaleString()}` : '$0 (Unindexed)';
                 document.getElementById('cVolume').textContent = `$${Number(data.volume24h || 0).toLocaleString()} / Liq: $${Number(data.liquidityUsd || 0).toLocaleString()}`;
+                document.getElementById('cTrend').textContent = `${data.priceChange24h >= 0 ? '+' : ''}${Number(data.priceChange24h||0).toFixed(1)}% (${data.trend || 'STABLE'})`;
                 
-                const change = Number(data.priceChange24h || 0);
-                const trendStr = change >= 0 ? `+${change.toFixed(1)}% 📈` : `${change.toFixed(1)}% 📉`;
-                document.getElementById('cTrend').textContent = `${trendStr} (${data.trend || 'STABLE'})`;
-                
-                // Block Explorer Forensics rendering
-                if (data.explorerData) {
-                    const isV = data.explorerData.isVerified;
-                    const verifiedEl = document.getElementById('cVerified');
-                    verifiedEl.textContent = isV ? 'VERIFIED ✓' : 'UNVERIFIED ⚠';
-                    verifiedEl.className = `text-sm font-bold font-syne block mt-1 ${isV ? 'text-safe' : 'text-accent'}`;
-                    
-                    document.getElementById('cCompiler').textContent = data.explorerData.compilerVersion || 'Unknown';
-                    document.getElementById('cCompiler').title = data.explorerData.compilerVersion || '';
-                    
-                    document.getElementById('cLicense').textContent = data.explorerData.licenseType || 'None';
-                    document.getElementById('cLicense').title = data.explorerData.licenseType || '';
-                    
-                    document.getElementById('cOpt').textContent = data.explorerData.optimizationUsed || 'Unknown';
-                } else {
-                    document.getElementById('cVerified').textContent = 'UNVERIFIED ⚠';
-                    document.getElementById('cVerified').className = 'text-sm font-bold font-syne block mt-1 text-accent';
-                    document.getElementById('cCompiler').textContent = 'Unknown';
-                    document.getElementById('cLicense').textContent = 'None';
-                    document.getElementById('cOpt').textContent = 'Unknown';
-                }
-                
+                const isV = data.explorerData?.isVerified;
+                const vEl = document.getElementById('cVerified');
+                vEl.textContent = isV ? 'VERIFIED ✓' : 'UNVERIFIED ⚠';
+                vEl.className = `text-sm font-bold font-syne block mt-1 truncate ${isV ? 'text-safe' : 'text-accent'}`;
+                document.getElementById('cCompiler').textContent = data.explorerData?.compilerVersion || 'Unknown';
+                document.getElementById('cLicense').textContent = data.explorerData?.licenseType || 'None';
+                document.getElementById('cOpt').textContent = data.explorerData?.optimizationUsed || 'Unknown';
             } else {
-                wModule.classList.remove('hidden');
-                cModule.classList.add('hidden');
-
+                wMod.classList.remove('hidden'); cMod.classList.add('hidden');
                 document.getElementById('wBadge').textContent = data.traderProfile?.badge || 'ACTIVE TRADER';
                 document.getElementById('wWinRate').textContent = `${data.traderProfile?.label || ''} • ${data.traderProfile?.winRate || ''}`;
                 document.getElementById('wNetWorth').textContent = `$${Number(data.portfolioNetWorth || 0).toLocaleString()}`;
                 document.getElementById('wNativeBal').textContent = data.nativeBalance || '0 BNB';
                 document.getElementById('wAge').textContent = data.walletAge || 'Active Wallet';
-
-                const tbody = document.getElementById('wHoldingsTable');
-                tbody.innerHTML = '';
-                if (data.holdings && data.holdings.length > 0) {
-                    data.holdings.forEach(h => {
-                        const tr = document.createElement('tr');
-                        tr.className = 'hover:bg-zinc-800/30';
-                        tr.innerHTML = `
-                            <td class="py-2.5 font-bold text-ink">${h.symbol} <span class="text-zinc-500 text-[10px]">(${h.name})</span></td>
-                            <td class="py-2.5 text-zinc-300">${h.balance}</td>
-                            <td class="py-2.5 text-gold font-bold">$${Number(h.valueUsd).toLocaleString()}</td>
-                            <td class="py-2.5 ${h.priceChange24h >= 0 ? 'text-safe' : 'text-accent'}">${h.priceChange24h >= 0 ? '+' : ''}${h.priceChange24h}%</td>
-                        `;
-                        tbody.appendChild(tr);
-                    });
-                }
-
-                const tFeed = document.getElementById('wTradeHistory');
-                tFeed.innerHTML = '';
-                if (data.tradeHistory && data.tradeHistory.length > 0) {
-                    data.tradeHistory.forEach(t => {
-                        const div = document.createElement('div');
-                        div.className = 'p-2.5 bg-paper border border-zinc-800 flex justify-between items-center';
-                        div.innerHTML = `
-                            <div>
-                                <span class="text-brand font-bold">[${t.action}]</span>
-                                <span class="text-ink font-bold ml-1">${t.token}</span>
-                                <span class="text-zinc-500 text-[10px] block">${t.time} • Amount: ${t.amount}</span>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-gold font-bold">${t.usdValue}</span>
-                                <span class="text-zinc-500 text-[10px] block font-mono">${t.txHash}</span>
-                            </div>
-                        `;
-                        tFeed.appendChild(div);
-                    });
-                }
-            }
-            
-            const targetScore = Number(data.riskScore) || 0;
-            animateValue("resScore", 0, targetScore, 600);
-
-            const badge = document.getElementById('resBadge');
-            const scoreObj = document.getElementById('resScore');
-            
-            if (data.status === 'SAFE') {
-                badge.className = 'px-4 py-2 border-2 border-safe text-safe bg-safe/10 font-mono text-xs font-bold uppercase flex items-center gap-2';
-                badge.innerHTML = 'RISK: LOW / SAFE';
-                scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-safe leading-none';
-            } else if (data.status === 'WARNING') {
-                badge.className = 'px-4 py-2 border-2 border-warning text-warning bg-warning/10 font-mono text-xs font-bold uppercase flex items-center gap-2';
-                badge.innerHTML = 'RISK: ELEVATED';
-                scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-warning leading-none';
-            } else {
-                badge.className = 'px-4 py-2 border-2 border-accent text-accent bg-accent/10 font-mono text-xs font-bold uppercase flex items-center gap-2';
-                badge.innerHTML = 'RISK: HIGH / DANGER';
-                scoreObj.className = 'font-syne text-7xl sm:text-8xl font-extrabold text-accent leading-none';
-            }
-
-            document.getElementById('resContractRisk').textContent = data.contractRisk ?? 0;
-            document.getElementById('resWalletRisk').textContent = data.walletRisk ?? 0;
-            document.getElementById('resCreatorRisk').textContent = data.creatorRisk ?? 0;
-            document.getElementById('resNetworkRisk').textContent = data.networkRisk ?? 0;
-            document.getElementById('resBehavioralRisk').textContent = data.behavioralRisk ?? 0;
-
-            const concernsContainer = document.getElementById('resConcerns');
-            concernsContainer.innerHTML = '';
-            if (data.concerns && data.concerns.length > 0) {
-                data.concerns.forEach(concern => {
-                    const li = document.createElement('li');
-                    li.textContent = concern;
-                    if(concern.includes('✓')) li.className = 'text-safe font-mono';
-                    else if(concern.includes('⚠') || concern.includes('🛑')) li.className = 'text-accent font-bold font-mono';
-                    else li.className = 'text-zinc-300 font-mono';
-                    concernsContainer.appendChild(li);
+                const tbody = document.getElementById('wHoldingsTable'); tbody.innerHTML = '';
+                (data.holdings || []).forEach(h => {
+                    tbody.innerHTML += `<tr class="hover:bg-zinc-800/30">
+                        <td class="py-2.5 font-bold text-ink">${h.symbol} <span class="text-zinc-500 text-[10px]">(${h.name})</span></td>
+                        <td class="py-2.5 text-zinc-300">${h.balance}</td>
+                        <td class="py-2.5 text-gold font-bold">$${Number(h.valueUsd).toLocaleString()}</td>
+                        <td class="py-2.5 ${h.priceChange24h >= 0 ? 'text-safe' : 'text-accent'}">${h.priceChange24h >= 0 ? '+' : ''}${h.priceChange24h}%</td>
+                    </tr>`;
                 });
             }
-
-            resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            const badge = document.getElementById('resBadge'), scoreObj = document.getElementById('resScore');
+            const statusColors = { 'SAFE': 'safe', 'WARNING': 'warning', 'HIGH_RISK': 'accent' };
+            const c = statusColors[data.status] || 'accent';
+            badge.className = `px-4 py-2 border-2 border-${c} text-${c} bg-${c}/10 font-mono text-xs font-bold uppercase flex items-center gap-2`;
+            badge.innerHTML = `RISK: ${data.status.replace('_', ' ')}`;
+            scoreObj.className = `font-syne text-7xl sm:text-8xl font-extrabold text-${c} leading-none`;
+            
+            animateValue("resScore", 0, Number(data.riskScore) || 0, 600);
+            ['Contract', 'Wallet', 'Creator', 'Network', 'Behavioral'].forEach(k => document.getElementById(`res${k}Risk`).textContent = data[`${k.toLowerCase()}Risk`] ?? 0);
+            
+            const ul = document.getElementById('resConcerns'); ul.innerHTML = '';
+            (data.concerns || []).forEach(c => {
+                const li = document.createElement('li'); li.textContent = c;
+                li.className = `font-mono ${c.includes('✓') ? 'text-safe' : (c.includes('⚠') || c.includes('🛑') ? 'text-accent font-bold' : 'text-zinc-300')}`;
+                ul.appendChild(li);
+            });
+            rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function setLoading(isLoading) {
-            const scanBtn = document.getElementById('scanBtn');
-            const scanBtnText = document.getElementById('scanBtnText');
-            const scanLoader = document.getElementById('scanLoader');
-
-            if (isLoading) {
-                scanBtnText.classList.add('hidden');
-                scanLoader.classList.remove('hidden');
-                scanBtn.disabled = true;
-            } else {
-                scanBtnText.classList.remove('hidden');
-                scanLoader.classList.add('hidden');
-                scanBtn.disabled = false;
-            }
+            document.getElementById('scanBtnText').classList.toggle('hidden', isLoading);
+            document.getElementById('scanLoader').classList.toggle('hidden', !isLoading);
+            document.getElementById('scanBtn').disabled = isLoading;
         }
 
-        function showToast(message, type = 'info') {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = `toast ${type}`;
-            toast.innerHTML = `> ${message}`;
-            
-            container.appendChild(toast);
+        function showToast(msg, type = 'info') {
+            const toast = document.createElement('div'); toast.className = `toast ${type}`; toast.innerHTML = `> ${msg}`;
+            document.getElementById('toast-container').appendChild(toast);
             setTimeout(() => toast.classList.add('show'), 10);
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-                setTimeout(() => toast.remove(), 200);
-            }, 4000);
+            setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 200); }, 4000);
         }
 
         function animateValue(id, start, end, duration) {
-            const obj = document.getElementById(id);
-            const numericEnd = Number(end) || 0;
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const easeOut = progress * (2 - progress);
-                obj.innerHTML = Math.floor(easeOut * (numericEnd - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
+            const obj = document.getElementById(id); let startT = null;
+            const step = (t) => {
+                if (!startT) startT = t;
+                const p = Math.min((t - startT) / duration, 1);
+                obj.innerHTML = Math.floor(p * (2 - p) * (end - start) + start);
+                if (p < 1) window.requestAnimationFrame(step);
+            }; window.requestAnimationFrame(step);
         }
+    </script>
+</body>
+</html>
