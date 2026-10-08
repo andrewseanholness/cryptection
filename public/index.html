@@ -325,9 +325,9 @@
                                     <span class="text-[10px] text-zinc-500 uppercase block truncate">Pair Created</span>
                                     <span id="cPairCreated" class="text-xs text-zinc-300 block mt-1 truncate">--</span>
                                 </div>
-                                <div class="overflow-hidden">
+                                <div>
                                     <span class="text-[10px] text-zinc-500 uppercase block truncate">Pair Address</span>
-                                    <span id="cPairAddress" class="text-xs text-zinc-300 block mt-1 truncate">--</span>
+                                    <span id="cPairAddress" onclick="copyToClipboard(this.innerText)" class="text-xs text-zinc-300 block mt-1 break-all cursor-pointer hover:text-brand transition-colors" title="Click to copy address">--</span>
                                 </div>
                             </div>
                         </div>
@@ -911,6 +911,15 @@
             document.getElementById('toast-container').appendChild(toast);
             setTimeout(() => toast.classList.add('show'), 10);
             setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 200); }, 4000);
+        }
+
+        function copyToClipboard(text) {
+            if (text === '--' || text === 'N/A' || text === 'Unknown') return;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Pair address copied to clipboard!', 'success');
+            }).catch(err => {
+                showToast('Failed to copy.', 'error');
+            });
         }
 
         function animateValue(id, start, end, duration) {
