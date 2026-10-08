@@ -116,7 +116,6 @@
                         <h1 class="font-syne text-2xl font-black tracking-tight text-ink uppercase flex items-center gap-2">
                             CRYPTECTION
                         </h1>
-                        <!-- SECRET DEV MODE TOGGLE ON "V2 Beta" -->
                         <p onclick="toggleDevMode()" class="font-mono text-[10px] text-zinc-400 uppercase tracking-widest cursor-pointer hover:text-brand transition-colors select-none" title="Click to toggle Developer Mode">cryptectionlabs.com • V2 Beta</p>
                     </div>
                 </a>
@@ -166,11 +165,11 @@
                         </div>
                         <div class="overflow-hidden">
                             <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Forensics</span>
-                            <span class="text-lg xl:text-xl font-bold text-safe font-syne truncate block">Block Explorers</span>
+                            <span class="text-lg xl:text-xl font-bold text-safe font-syne truncate block">RPC Nodes</span>
                         </div>
                         <div class="overflow-hidden">
                             <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">State Data</span>
-                            <span class="text-lg xl:text-xl font-bold text-gold font-syne truncate block">BSC RPC</span>
+                            <span class="text-lg xl:text-xl font-bold text-gold font-syne truncate block">BSC / ETH</span>
                         </div>
                     </div>
                 </div>
@@ -273,7 +272,6 @@
 
                 <div id="resultPanel" class="hidden mt-8 space-y-6">
                     
-                    <!-- DYNAMIC ENTITY HEADER -->
                     <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-[4px_4px_0px_0px_#1b1e27]">
                         <div>
                             <span id="resEntityType" class="font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider block mb-1">ENTITY</span>
@@ -288,48 +286,48 @@
                         </div>
                     </div>
 
-                    <!-- CONTRACT SPECIFIC MODULE -->
+                    <!-- CONTRACT SPECIFIC MODULE WITH LIQUIDITY PAIR ANALYTICS -->
                     <div id="contractModule" class="hidden space-y-6">
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                                <span class="text-[10px] text-zinc-500 uppercase block">Creation Age</span>
-                                <span id="cAge" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Creation Age</span>
+                                <span id="cAge" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
                             </div>
-                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
                                 <span class="text-[10px] text-zinc-500 uppercase block truncate">Market Cap / FDV</span>
                                 <span id="cMarketCap" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
                             </div>
-                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
                                 <span class="text-[10px] text-zinc-500 uppercase block truncate">24h Vol / Liquidity</span>
                                 <span id="cVolume" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
                             </div>
-                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
                                 <span class="text-[10px] text-zinc-500 uppercase block truncate">24h Trend</span>
-                                <span id="cTrend" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                                <span id="cTrend" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
                             </div>
                         </div>
                         
                         <div class="bg-card border-2 border-zinc-800 p-6">
                             <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
-                                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand"></span>Block Explorer Forensics</span>
-                                <span class="font-mono text-xs text-zinc-500 font-normal hidden sm:block">Live RPC Telemetry</span>
+                                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand"></span>Liquidity Pair Analytics</span>
+                                <span class="font-mono text-xs text-zinc-500 font-normal hidden sm:block">Live DEX Routing</span>
                             </h4>
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
-                                <div>
-                                    <span class="text-[10px] text-zinc-500 uppercase block">Source Code</span>
-                                    <span id="cVerified" class="text-sm font-bold font-syne block mt-1">--</span>
+                                <div class="overflow-hidden">
+                                    <span class="text-[10px] text-zinc-500 uppercase block truncate">Primary DEX</span>
+                                    <span id="cDexName" class="text-sm font-bold font-syne block mt-1 truncate">--</span>
                                 </div>
-                                <div>
-                                    <span class="text-[10px] text-zinc-500 uppercase block">Compiler Version</span>
-                                    <span id="cCompiler" class="text-xs text-zinc-300 block mt-1 truncate">--</span>
+                                <div class="overflow-hidden">
+                                    <span class="text-[10px] text-zinc-500 uppercase block truncate">Quote Asset</span>
+                                    <span id="cQuoteToken" class="text-xs text-zinc-300 block mt-1 truncate">--</span>
                                 </div>
-                                <div>
-                                    <span class="text-[10px] text-zinc-500 uppercase block">License Type</span>
-                                    <span id="cLicense" class="text-xs text-zinc-300 block mt-1">--</span>
+                                <div class="overflow-hidden">
+                                    <span class="text-[10px] text-zinc-500 uppercase block truncate">Pair Created</span>
+                                    <span id="cPairCreated" class="text-xs text-zinc-300 block mt-1 truncate">--</span>
                                 </div>
-                                <div>
-                                    <span class="text-[10px] text-zinc-500 uppercase block">Code Opt.</span>
-                                    <span id="cOpt" class="text-xs text-zinc-300 block mt-1">--</span>
+                                <div class="overflow-hidden">
+                                    <span class="text-[10px] text-zinc-500 uppercase block truncate">Pair Address</span>
+                                    <span id="cPairAddress" class="text-xs text-zinc-300 block mt-1 truncate">--</span>
                                 </div>
                             </div>
                         </div>
@@ -338,18 +336,18 @@
                     <!-- WALLET SPECIFIC MODULE -->
                     <div id="walletModule" class="hidden space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                                <span class="text-[10px] text-zinc-500 uppercase block">Trader Badge & Profile</span>
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Trader Badge & Profile</span>
                                 <span id="wBadge" class="text-sm font-black text-brand font-syne block mt-1 truncate">--</span>
                                 <span id="wWinRate" class="text-[11px] text-zinc-400 block mt-0.5 truncate">--</span>
                             </div>
-                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                                <span class="text-[10px] text-zinc-500 uppercase block">Portfolio Net Worth</span>
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Portfolio Net Worth</span>
                                 <span id="wNetWorth" class="text-xl font-bold text-gold font-syne block mt-1 truncate">--</span>
                                 <span id="wNativeBal" class="text-[11px] text-zinc-400 block mt-0.5 truncate">--</span>
                             </div>
-                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                                <span class="text-[10px] text-zinc-500 uppercase block">Wallet Status</span>
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Wallet Status</span>
                                 <span id="wAge" class="text-sm font-bold text-safe font-syne block mt-1 truncate">--</span>
                             </div>
                         </div>
@@ -729,7 +727,7 @@
         window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
         initCanvas(); animateCanvas();
 
-        // STRICT ISO DATE COUNTDOWN: Oct 8, 2026 11:59:59 PM EDT
+        // ISO Date for Universal Compatibility
         function updateCountdown() {
             const target = new Date("2026-10-08T23:59:59-04:00").getTime();
             const now = new Date().getTime();
@@ -746,25 +744,36 @@
         setInterval(updateCountdown, 1000); updateCountdown();
         setTimeout(() => { document.getElementById('burn-bar').style.width = '65%'; }, 1500);
 
+        // Hyper-Realistic Mempool Radar Generator
         const radarFeed = document.getElementById('radar-feed');
-        const logs = [
-            "<span class='text-accent'>[BLOCKED]</span> Malicious honeypot approval rejected for Wallet 0x7A...9F2",
-            "<span class='text-warning'>[ALERT]</span> High volume of Tornado Cash withdrawals detected on BSC",
-            "<span class='text-safe'>[VERIFIED]</span> Contract 0x3B...1A4 passed multi-sig ownership check",
-            "<span class='text-brand'>[API]</span> Enterprise webhook triggered by Wallet 0x99...22B",
-            "<span class='text-accent'>[BLOCKED]</span> Prevented drainer execution on 43 connected wallets"
-        ];
+        function generateDynamicLog() {
+            const actions = [
+                { type: 'BLOCKED', color: 'accent', pool: ['Malicious Contract Interaction', 'Drainer Signature Matched', 'Phishing Payload Intercepted', 'Tornado Cash Deposit'] },
+                { type: 'SWAP', color: 'safe', pool: ['Aggregator DEX Routing', 'Uniswap V3 Execution', 'PancakeSwap V2 Trade', 'Cross-chain Bridge'] },
+                { type: 'ARBITRAGE', color: 'warning', pool: ['MEV Sandwich Attack Mitigated', 'Flash Loan Repayment', 'Triangular Arbitrage Attempt', 'Liquidity Pool Imbalance'] }
+            ];
+            const tokens = ['BNB', 'USDT', 'USDC', 'ETH', 'DAI', 'LINK', 'PEPE', 'SHIB'];
+            
+            const actionDef = actions[Math.floor(Math.random() * actions.length)];
+            const actText = actionDef.pool[Math.floor(Math.random() * actionDef.pool.length)];
+            const hash = '0x' + Math.random().toString(16).substr(2, 6) + '...' + Math.random().toString(16).substr(2, 4);
+            const amt = (Math.random() * 50).toFixed(2);
+            const tk = tokens[Math.floor(Math.random() * tokens.length)];
+            
+            return `<span class='text-${actionDef.color} font-bold'>[${actionDef.type}]</span> ${actText} | ${amt} ${tk} | Tx: ${hash}`;
+        }
 
         function addRadarLog() {
             if (radarFeed.children.length > 4) radarFeed.removeChild(radarFeed.firstChild);
             const log = document.createElement('div');
-            log.className = "typewriter-line inline-block";
-            log.innerHTML = `> ${logs[Math.floor(Math.random() * logs.length)]} <span class='text-zinc-600 ml-2'>[${new Date().toLocaleTimeString()}]</span>`;
+            log.className = "typewriter-line inline-block w-full text-left";
+            log.innerHTML = `> ${generateDynamicLog()} <span class='text-zinc-600 ml-2'>[${new Date().toLocaleTimeString()}]</span>`;
             radarFeed.appendChild(log);
             setTimeout(() => { log.classList.remove('typewriter-line'); log.style.borderRight = 'none'; }, 1000);
         }
-        setInterval(addRadarLog, 2500); addRadarLog();
+        setInterval(addRadarLog, 2200); addRadarLog();
 
+        // Target Override Logic
         let currentScanMode = 'auto';
         function setScanMode(mode) {
             currentScanMode = mode;
@@ -772,12 +781,7 @@
             document.getElementById(`mode-${mode}`).className = 'scan-mode-btn px-4 py-2 bg-brand text-black border border-brand shadow-[2px_2px_0px_0px_#ff6b00] transition-all';
         }
 
-        function testAddress(addr, mode) {
-            document.getElementById('searchInput').value = addr;
-            setScanMode(mode);
-            analyzeWallet();
-        }
-
+        // Rate Limiter Logic
         let isDevMode = localStorage.getItem('cryptection_dev') === 'true';
         const MAX_SCANS = 5;
 
@@ -793,7 +797,7 @@
                 ui.className = "font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider mt-1";
             }
         }
-        updateScanCounterUI(); // Init on load
+        updateScanCounterUI();
 
         function toggleDevMode() {
             isDevMode = !isDevMode;
@@ -802,13 +806,13 @@
             updateScanCounterUI();
         }
 
+        // API Caller
         async function analyzeWallet() {
-            // Check Rate Limits First!
             if (!isDevMode) {
                 const count = parseInt(localStorage.getItem('cryptection_scans') || '0');
                 if (count >= MAX_SCANS) {
                     document.getElementById('paywall-modal').classList.remove('hidden');
-                    return; // Stop execution
+                    return; 
                 }
             }
 
@@ -823,7 +827,6 @@
                 const data = await response.json();
                 if (!response.ok || data.error) throw new Error(data.message || 'Scan failed.');
                 
-                // Record the scan upon success
                 if (!isDevMode) {
                     let newCount = parseInt(localStorage.getItem('cryptection_scans') || '0') + 1;
                     localStorage.setItem('cryptection_scans', newCount);
@@ -839,6 +842,7 @@
             }
         }
 
+        // DOM Renderer
         function renderResults(data) {
             const rp = document.getElementById('resultPanel'); rp.classList.remove('hidden');
             document.getElementById('resEntityType').textContent = data.entityType || 'ENTITY';
@@ -849,11 +853,12 @@
             const cMod = document.getElementById('contractModule'), wMod = document.getElementById('walletModule');
             if (data.entityType === 'CONTRACT') {
                 cMod.classList.remove('hidden'); wMod.classList.add('hidden');
-                document.getElementById('cAge').textContent = data.creationAge || 'Unknown';
+                document.getElementById('cAge').textContent = data.creationAge || 'Indexed via Block';
                 document.getElementById('cMarketCap').textContent = data.marketCap ? `$${Number(data.marketCap).toLocaleString()}` : '$0 (Unindexed)';
                 document.getElementById('cVolume').textContent = `$${Number(data.volume24h || 0).toLocaleString()} / Liq: $${Number(data.liquidityUsd || 0).toLocaleString()}`;
                 document.getElementById('cTrend').textContent = `${data.priceChange24h >= 0 ? '+' : ''}${Number(data.priceChange24h||0).toFixed(1)}% (${data.trend || 'STABLE'})`;
                 
+                // New DEX Fields Mapping
                 document.getElementById('cDexName').textContent = data.dexData?.dexName || 'Unknown DEX';
                 document.getElementById('cPairAddress').textContent = data.dexData?.pairAddress || 'N/A';
                 document.getElementById('cQuoteToken').textContent = data.dexData?.quoteToken || 'Unknown';
@@ -879,7 +884,7 @@
             const badge = document.getElementById('resBadge'), scoreObj = document.getElementById('resScore');
             const statusColors = { 'SAFE': 'safe', 'WARNING': 'warning', 'HIGH_RISK': 'accent' };
             const c = statusColors[data.status] || 'accent';
-            badge.className = `px-4 py-2 border-2 border-${c} text-${c} bg-${c}/10 font-mono text-xs font-bold uppercase flex items-center gap-2`;
+            badge.className = `px-4 py-2 border-2 border-${c} text-${c} bg-${c}/10 font-mono text-xs font-bold uppercase flex items-center gap-2 whitespace-nowrap`;
             badge.innerHTML = `RISK: ${data.status.replace('_', ' ')}`;
             scoreObj.className = `font-syne text-7xl sm:text-8xl font-extrabold text-${c} leading-none`;
             
