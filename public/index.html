@@ -271,85 +271,151 @@
                     </div>
                 </div>
 
-                <!-- WALLET SPECIFIC MODULE -->
-                <div id="walletModule" class="hidden space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                            <span class="text-[10px] text-zinc-500 uppercase block">Trader Badge & Profile</span>
-                            <span id="wBadge" class="text-sm font-black text-brand font-syne block mt-1">--</span>
-                            <span id="wWinRate" class="text-[11px] text-zinc-400 block mt-0.5">--</span>
-                        </div>
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                            <span class="text-[10px] text-zinc-500 uppercase block">Portfolio Net Worth</span>
-                            <span id="wNetWorth" class="text-xl font-bold text-gold font-syne block mt-1">--</span>
-                            <span id="wNativeBal" class="text-[11px] text-zinc-400 block mt-0.5">--</span>
-                        </div>
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
-                            <span class="text-[10px] text-zinc-500 uppercase block">Wallet Status</span>
-                            <span id="wAge" class="text-sm font-bold text-safe font-syne block mt-1">--</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-card border-2 border-zinc-800 p-6">
-                        <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
-                            <span>Token Portfolio Holdings</span>
-                            <span class="font-mono text-xs text-zinc-400 font-normal">Live RPC State</span>
-                        </h4>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left font-mono text-xs">
-                                <thead>
-                                    <tr class="border-b border-zinc-800 text-zinc-500 uppercase">
-                                        <th class="pb-2">Asset</th>
-                                        <th class="pb-2">Balance</th>
-                                        <th class="pb-2">Est. Value (USD)</th>
-                                        <th class="pb-2">24h Trend</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="wHoldingsTable" class="divide-y divide-zinc-800/50"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- OVERALL THREAT SCORES -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                    <div class="lg:col-span-5 space-y-6">
-                        <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between items-center text-center relative overflow-hidden">
-                            <span class="font-mono text-xs font-bold text-zinc-400 uppercase mb-4 z-10">Composite Risk Index</span>
-                            <div class="flex items-baseline gap-2 mb-2 z-10">
-                                <span id="resScore" class="font-syne text-7xl sm:text-8xl font-extrabold text-ink leading-none">0</span>
+                <div id="resultPanel" class="hidden mt-8 space-y-6">
+                    
+                    <!-- DYNAMIC ENTITY HEADER -->
+                    <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-[4px_4px_0px_0px_#1b1e27]">
+                        <div>
+                            <span id="resEntityType" class="font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider block mb-1">ENTITY</span>
+                            <h3 id="resTitle" class="font-syne text-2xl font-black text-ink uppercase truncate max-w-full md:max-w-md">--</h3>
+                            <div class="font-mono text-xs text-zinc-400 mt-2 space-y-1">
+                                <p id="resAddress" class="break-all text-zinc-300">--</p>
+                                <p id="resChain" class="text-brand font-bold">--</p>
                             </div>
-                            <span class="font-mono text-sm text-zinc-500 z-10">/ 100 THREAT SCORE</span>
                         </div>
+                        <div id="resBadge" class="px-4 py-2 border-2 border-zinc-700 text-zinc-500 bg-zinc-800/50 font-mono text-xs font-bold uppercase flex items-center gap-2 whitespace-nowrap">
+                            RISK: PENDING
+                        </div>
+                    </div>
+
+                    <!-- CONTRACT SPECIFIC MODULE -->
+                    <div id="contractModule" class="hidden space-y-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block">Creation Age</span>
+                                <span id="cAge" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                            </div>
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Market Cap / FDV</span>
+                                <span id="cMarketCap" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
+                            </div>
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">24h Vol / Liquidity</span>
+                                <span id="cVolume" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
+                            </div>
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block truncate">24h Trend</span>
+                                <span id="cTrend" class="text-sm font-bold text-ink font-syne block mt-1">--</span>
+                            </div>
+                        </div>
+                        
                         <div class="bg-card border-2 border-zinc-800 p-6">
-                            <div class="space-y-4 font-mono text-sm">
-                                <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
-                                    <span class="text-zinc-400">CONTRACT RISK</span>
-                                    <span id="resContractRisk" class="font-bold text-ink">0</span>
+                            <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
+                                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand"></span>Block Explorer Forensics</span>
+                                <span class="font-mono text-xs text-zinc-500 font-normal hidden sm:block">Live RPC Telemetry</span>
+                            </h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
+                                <div>
+                                    <span class="text-[10px] text-zinc-500 uppercase block">Source Code</span>
+                                    <span id="cVerified" class="text-sm font-bold font-syne block mt-1">--</span>
                                 </div>
-                                <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
-                                    <span class="text-zinc-400">WALLET RISK</span>
-                                    <span id="resWalletRisk" class="font-bold text-ink">0</span>
+                                <div>
+                                    <span class="text-[10px] text-zinc-500 uppercase block">Compiler Version</span>
+                                    <span id="cCompiler" class="text-xs text-zinc-300 block mt-1 truncate">--</span>
                                 </div>
-                                <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
-                                    <span class="text-zinc-400">CREATOR RISK</span>
-                                    <span id="resCreatorRisk" class="font-bold text-ink">0</span>
+                                <div>
+                                    <span class="text-[10px] text-zinc-500 uppercase block">License Type</span>
+                                    <span id="cLicense" class="text-xs text-zinc-300 block mt-1">--</span>
                                 </div>
-                                <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
-                                    <span class="text-zinc-400">NETWORK RISK</span>
-                                    <span id="resNetworkRisk" class="font-bold text-ink">0</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-zinc-400">BEHAVIORAL RISK</span>
-                                    <span id="resBehavioralRisk" class="font-bold text-ink">0</span>
+                                <div>
+                                    <span class="text-[10px] text-zinc-500 uppercase block">Code Opt.</span>
+                                    <span id="cOpt" class="text-xs text-zinc-300 block mt-1">--</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 flex flex-col">
-                        <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Security & Behavioral Observations</h3>
-                        <ul id="resConcerns" class="space-y-4 font-mono text-sm text-zinc-300 flex-grow"></ul>
+
+                    <!-- WALLET SPECIFIC MODULE -->
+                    <div id="walletModule" class="hidden space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block">Trader Badge & Profile</span>
+                                <span id="wBadge" class="text-sm font-black text-brand font-syne block mt-1 truncate">--</span>
+                                <span id="wWinRate" class="text-[11px] text-zinc-400 block mt-0.5 truncate">--</span>
+                            </div>
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block">Portfolio Net Worth</span>
+                                <span id="wNetWorth" class="text-xl font-bold text-gold font-syne block mt-1 truncate">--</span>
+                                <span id="wNativeBal" class="text-[11px] text-zinc-400 block mt-0.5 truncate">--</span>
+                            </div>
+                            <div class="bg-paper border-2 border-zinc-800 p-4 font-mono">
+                                <span class="text-[10px] text-zinc-500 uppercase block">Wallet Status</span>
+                                <span id="wAge" class="text-sm font-bold text-safe font-syne block mt-1 truncate">--</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-card border-2 border-zinc-800 p-6">
+                            <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
+                                <span>Token Portfolio Holdings</span>
+                                <span class="font-mono text-xs text-zinc-400 font-normal hidden sm:block">Live RPC State</span>
+                            </h4>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left font-mono text-xs whitespace-nowrap">
+                                    <thead>
+                                        <tr class="border-b border-zinc-800 text-zinc-500 uppercase">
+                                            <th class="pb-2 pr-4">Asset</th>
+                                            <th class="pb-2 pr-4">Balance</th>
+                                            <th class="pb-2 pr-4">Est. Value (USD)</th>
+                                            <th class="pb-2">24h Trend</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="wHoldingsTable" class="divide-y divide-zinc-800/50"></tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- OVERALL THREAT SCORES -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <div class="lg:col-span-5 space-y-6">
+                            <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col justify-between items-center text-center relative overflow-hidden shadow-[4px_4px_0px_0px_#1b1e27]">
+                                <span class="font-mono text-xs font-bold text-zinc-400 uppercase mb-4 z-10">Composite Risk Index</span>
+                                <div class="flex items-baseline gap-2 mb-2 z-10">
+                                    <span id="resScore" class="font-syne text-7xl sm:text-8xl font-extrabold text-ink leading-none">0</span>
+                                </div>
+                                <span class="font-mono text-sm text-zinc-500 z-10">/ 100 THREAT SCORE</span>
+                            </div>
+                            <div class="bg-card border-2 border-zinc-800 p-6">
+                                <div class="space-y-4 font-mono text-sm">
+                                    <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
+                                        <span class="text-zinc-400">CONTRACT RISK</span>
+                                        <span id="resContractRisk" class="font-bold text-ink">0</span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
+                                        <span class="text-zinc-400">WALLET RISK</span>
+                                        <span id="resWalletRisk" class="font-bold text-ink">0</span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
+                                        <span class="text-zinc-400">CREATOR RISK</span>
+                                        <span id="resCreatorRisk" class="font-bold text-ink">0</span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
+                                        <span class="text-zinc-400">NETWORK RISK</span>
+                                        <span id="resNetworkRisk" class="font-bold text-ink">0</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-zinc-400">BEHAVIORAL RISK</span>
+                                        <span id="resBehavioralRisk" class="font-bold text-ink">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 flex flex-col shadow-[4px_4px_0px_0px_#1b1e27]">
+                            <h3 class="font-syne text-lg font-bold text-ink uppercase mb-4 border-b-2 border-zinc-800 pb-2">Security & Behavioral Observations</h3>
+                            <ul id="resConcerns" class="space-y-4 font-mono text-sm text-zinc-300 flex-grow"></ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
