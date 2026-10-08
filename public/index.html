@@ -116,7 +116,8 @@
                         <h1 class="font-syne text-2xl font-black tracking-tight text-ink uppercase flex items-center gap-2">
                             CRYPTECTION
                         </h1>
-                        <p class="font-mono text-[10px] text-zinc-400 uppercase tracking-widest">cryptectionlabs.com • V2 Beta</p>
+                        <!-- SECRET DEV MODE TOGGLE ON "V2 Beta" -->
+                        <p onclick="toggleDevMode()" class="font-mono text-[10px] text-zinc-400 uppercase tracking-widest cursor-pointer hover:text-brand transition-colors select-none" title="Click to toggle Developer Mode">cryptectionlabs.com • V2 Beta</p>
                     </div>
                 </a>
             </div>
@@ -260,88 +261,13 @@
                             class="w-full bg-paper border-2 border-zinc-700 text-ink font-mono text-sm sm:text-base py-3.5 pl-9 pr-4 focus:outline-none focus:border-brand transition-all placeholder-zinc-600"
                             placeholder="Enter 0x... BSC contract or wallet address">
                     </div>
-                    <button id="scanBtn" type="button" onclick="analyzeWallet()" 
-                        class="px-8 py-3.5 bg-brand hover:bg-orange-500 text-black font-syne font-extrabold text-base uppercase tracking-wider border-2 border-black shadow-brutal-dark transition-all flex items-center justify-center gap-2 min-w-[150px]">
-                        <span id="scanBtnText">ANALYZE</span>
-                        <div id="scanLoader" class="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin hidden"></div>
-                    </button>
-                </div>
-
-                <div class="mt-4 flex flex-wrap items-center gap-2 font-mono text-xs text-zinc-500">
-                    <span class="text-zinc-400 font-bold">Test Presets:</span>
-                    <button type="button" onclick="testAddress('0xb8c77482e45f1f44de1745f52c74426c631bdd52', 'auto')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-safe hover:text-safe transition-colors">
-                        [$BNB (ERC-20)]
-                    </button>
-                    <button type="button" onclick="testAddress('0xf47a996322710e3097bce2e543d4e00201244208', 'contract')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-accent hover:text-accent transition-colors">
-                        [Dead Token]
-                    </button>
-                    <button type="button" onclick="testAddress('0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef', 'wallet')" class="px-2.5 py-1 bg-paper border border-zinc-700 hover:border-warning hover:text-warning transition-colors">
-                        [Burner Wallet]
-                    </button>
-                </div>
-            </div>
-
-            <div id="resultPanel" class="hidden flex flex-col gap-6 pt-4 border-t-2 border-zinc-800">
-                
-                <div class="bg-paper border-2 border-zinc-800 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span id="resEntityType" class="px-2 py-0.5 bg-brand/20 border border-brand text-brand font-mono text-[10px] font-bold uppercase">ENTITY</span>
-                            <span class="font-mono text-xs uppercase tracking-widest text-zinc-500 font-bold">CRYPTECTION INTELLIGENCE SCAN</span>
-                        </div>
-                        <div class="flex items-center gap-2 mt-2">
-                            <span id="resTitle" class="font-syne text-2xl text-ink font-black">0x...</span>
-                        </div>
-                        <span id="resAddress" class="font-mono text-xs text-zinc-400 break-all block mt-1">0x...</span>
-                        <span id="resChain" class="font-mono text-[11px] text-zinc-500 uppercase mt-1 block">NETWORK: Binance Smart Chain</span>
-                    </div>
-                    <div id="resBadge" class="px-4 py-2 border-2 font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2"></div>
-                </div>
-
-                <!-- CONTRACT SPECIFIC MODULE -->
-                <div id="contractModule" class="hidden space-y-6">
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
-                            <span class="text-[10px] text-zinc-500 uppercase block truncate">Creation Age</span>
-                            <span id="cAge" class="text-sm font-bold text-safe font-syne block mt-1 truncate">--</span>
-                        </div>
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
-                            <span class="text-[10px] text-zinc-500 uppercase block truncate">Market Cap / FDV</span>
-                            <span id="cMarketCap" class="text-sm font-bold text-gold font-syne block mt-1 truncate">--</span>
-                        </div>
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
-                            <span class="text-[10px] text-zinc-500 uppercase block truncate">24h Volume / Liq</span>
-                            <span id="cVolume" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
-                        </div>
-                        <div class="bg-paper border-2 border-zinc-800 p-4 font-mono overflow-hidden">
-                            <span class="text-[10px] text-zinc-500 uppercase block truncate">24h Price Trend</span>
-                            <span id="cTrend" class="text-sm font-bold text-brand font-syne block mt-1 truncate">--</span>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-card border-2 border-zinc-800 p-6">
-                        <h4 class="font-syne text-base font-bold text-ink uppercase mb-4 flex items-center justify-between">
-                            <span>Block Explorer Forensics</span>
-                            <span class="font-mono text-xs text-zinc-400 font-normal">Live Etherscan/BscScan Telemetry</span>
-                        </h4>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
-                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Source Code</span>
-                                <span id="cVerified" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
-                            </div>
-                            <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
-                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Compiler Version</span>
-                                <span id="cCompiler" class="text-sm font-bold text-ink font-syne block mt-1 truncate" title="">--</span>
-                            </div>
-                            <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
-                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Open License</span>
-                                <span id="cLicense" class="text-sm font-bold text-ink font-syne block mt-1 truncate" title="">--</span>
-                            </div>
-                            <div class="bg-paper border border-zinc-700 p-4 font-mono overflow-hidden">
-                                <span class="text-[10px] text-zinc-500 uppercase block truncate">Optimization</span>
-                                <span id="cOpt" class="text-sm font-bold text-ink font-syne block mt-1 truncate">--</span>
-                            </div>
-                        </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <button id="scanBtn" type="button" onclick="analyzeWallet()" 
+                            class="px-8 py-3.5 bg-brand hover:bg-orange-500 text-black font-syne font-extrabold text-base uppercase tracking-wider border-2 border-black shadow-brutal-dark transition-all flex items-center justify-center gap-2 min-w-[150px]">
+                            <span id="scanBtnText">ANALYZE</span>
+                            <div id="scanLoader" class="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin hidden"></div>
+                        </button>
+                        <span id="scanCounterUI" class="font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider">5/5 SCANS REMAINING</span>
                     </div>
                 </div>
 
@@ -673,6 +599,28 @@
 
     <div id="toast-container"></div>
 
+    <!-- PAYWALL MODAL (HIDDEN BY DEFAULT) -->
+    <div id="paywall-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-card border-2 border-brand p-8 max-w-md w-full shadow-[8px_8px_0px_0px_#ff6b00] relative">
+            <button onclick="document.getElementById('paywall-modal').classList.add('hidden')" class="absolute top-4 right-4 text-zinc-500 hover:text-brand">✕</button>
+            <div class="w-12 h-12 bg-brand/20 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            </div>
+            <h3 class="font-syne text-2xl font-black text-ink uppercase mb-2">API Limit Reached</h3>
+            <p class="font-mono text-xs text-zinc-400 mb-6 leading-relaxed">
+                You have exhausted your 5 free daily scans. To continue using the Threat Terminal, please upgrade to the Pro Trader tier or connect a wallet holding at least <strong class="text-brand">50,000 $CRYPT</strong>.
+            </p>
+            <div class="space-y-3">
+                <button onclick="showToast('Wallet connection unlocks after Presale.', 'warning')" class="w-full py-3 bg-brand text-black font-bold uppercase font-mono text-xs border-2 border-black hover:bg-orange-500 transition-colors shadow-brutal-dark">
+                    Connect Web3 Wallet
+                </button>
+                <a href="#pricing" onclick="document.getElementById('paywall-modal').classList.add('hidden')" class="w-full py-3 bg-paper text-zinc-300 font-bold uppercase font-mono text-xs border border-zinc-700 hover:border-brand text-center block transition-colors">
+                    View Fiat Subscriptions
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
         const canvas = document.getElementById('network-canvas');
         const ctx = canvas.getContext('2d');
@@ -764,16 +712,58 @@
             analyzeWallet();
         }
 
+        let isDevMode = localStorage.getItem('cryptection_dev') === 'true';
+        const MAX_SCANS = 5;
+
+        function updateScanCounterUI() {
+            const count = parseInt(localStorage.getItem('cryptection_scans') || '0');
+            const remaining = Math.max(0, MAX_SCANS - count);
+            const ui = document.getElementById('scanCounterUI');
+            if (isDevMode) {
+                ui.textContent = "♾️ DEV MODE: UNLIMITED";
+                ui.className = "font-mono text-[10px] text-warning font-bold uppercase tracking-wider mt-1";
+            } else {
+                ui.textContent = `${remaining}/${MAX_SCANS} SCANS REMAINING`;
+                ui.className = "font-mono text-[10px] text-zinc-500 font-bold uppercase tracking-wider mt-1";
+            }
+        }
+        updateScanCounterUI(); // Init on load
+
+        function toggleDevMode() {
+            isDevMode = !isDevMode;
+            localStorage.setItem('cryptection_dev', isDevMode);
+            showToast(isDevMode ? '🔧 DEV MODE ENABLED: Unlimited Scans' : '🔒 DEV MODE DISABLED: Limits Active', 'warning');
+            updateScanCounterUI();
+        }
+
         async function analyzeWallet() {
+            // Check Rate Limits First!
+            if (!isDevMode) {
+                const count = parseInt(localStorage.getItem('cryptection_scans') || '0');
+                if (count >= MAX_SCANS) {
+                    document.getElementById('paywall-modal').classList.remove('hidden');
+                    return; // Stop execution
+                }
+            }
+
             const address = document.getElementById('searchInput').value.trim();
             if (!/^0x[a-fA-F0-9]{40}$/i.test(address) && !/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(address)) {
                 return showToast('Please enter a valid 0x EVM/BSC address.', 'error');
             }
+            
             setLoading(true);
             try {
                 const response = await fetch(`/api/analyze?address=${encodeURIComponent(address)}&type=${currentScanMode}`);
                 const data = await response.json();
                 if (!response.ok || data.error) throw new Error(data.message || 'Scan failed.');
+                
+                // Record the scan upon success
+                if (!isDevMode) {
+                    let newCount = parseInt(localStorage.getItem('cryptection_scans') || '0') + 1;
+                    localStorage.setItem('cryptection_scans', newCount);
+                    updateScanCounterUI();
+                }
+
                 renderResults(data);
                 showToast('Intelligence scan complete.', 'success');
             } catch (err) {
