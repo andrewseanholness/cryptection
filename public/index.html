@@ -854,13 +854,10 @@
                 document.getElementById('cVolume').textContent = `$${Number(data.volume24h || 0).toLocaleString()} / Liq: $${Number(data.liquidityUsd || 0).toLocaleString()}`;
                 document.getElementById('cTrend').textContent = `${data.priceChange24h >= 0 ? '+' : ''}${Number(data.priceChange24h||0).toFixed(1)}% (${data.trend || 'STABLE'})`;
                 
-                const isV = data.explorerData?.isVerified;
-                const vEl = document.getElementById('cVerified');
-                vEl.textContent = isV ? 'VERIFIED ✓' : 'UNVERIFIED ⚠';
-                vEl.className = `text-sm font-bold font-syne block mt-1 truncate ${isV ? 'text-safe' : 'text-accent'}`;
-                document.getElementById('cCompiler').textContent = data.explorerData?.compilerVersion || 'Unknown';
-                document.getElementById('cLicense').textContent = data.explorerData?.licenseType || 'None';
-                document.getElementById('cOpt').textContent = data.explorerData?.optimizationUsed || 'Unknown';
+                document.getElementById('cDexName').textContent = data.dexData?.dexName || 'Unknown DEX';
+                document.getElementById('cPairAddress').textContent = data.dexData?.pairAddress || 'N/A';
+                document.getElementById('cQuoteToken').textContent = data.dexData?.quoteToken || 'Unknown';
+                document.getElementById('cPairCreated').textContent = data.dexData?.pairCreatedAt || 'N/A';
             } else {
                 wMod.classList.remove('hidden'); cMod.classList.add('hidden');
                 document.getElementById('wBadge').textContent = data.traderProfile?.badge || 'ACTIVE TRADER';
