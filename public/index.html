@@ -99,10 +99,11 @@
         <div class="ticker-wrap flex items-center">
             <div class="ticker flex gap-8">
                 <span>⚡ $CRYPT BEP-20 FAIR LAUNCH: OCT 10TH, 2026 @ 11:59:59 PM EST</span>
-                <span>• BINANCE SMART CHAIN (BSC)</span>
-                <span>• 100% LIQUIDITY POOL</span>
+                <span>• 1,000,000,000 TOTAL SUPPLY</span>
+                <span>• 50% INITIAL BURN</span>
+                <span>• 3% MAX WALLET (ANTI-WHALE)</span>
+                <span>• 100% FAIR LAUNCH LP</span>
                 <span>• BUY WITH BNB</span>
-                <span>• NO PINKSALE FEES</span>
                 <span>• 100% COMMUNITY OWNED</span>
             </div>
         </div>
@@ -126,8 +127,9 @@
 
             <nav class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-xs font-bold uppercase text-zinc-300">
                 <a href="#audit-terminal" class="hover:text-brand transition-colors">Threat Terminal</a>
-                <a href="#pricing" class="hover:text-brand transition-colors text-brand">Access Tiers</a>
+                <a href="#fairlaunch" class="hover:text-brand transition-colors text-bsc">Fair Launch</a>
                 <a href="#tokenomics" class="hover:text-brand transition-colors">Tokenomics</a>
+                <a href="#pricing" class="hover:text-brand transition-colors text-brand">Pro Access</a>
                 <a href="#faq" class="hover:text-brand transition-colors">FAQ</a>
             </nav>
 
@@ -141,98 +143,50 @@
 
     <main class="w-full max-w-7xl mx-auto px-4 py-8 flex-grow flex flex-col gap-12">
 
-        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-4">
-            <div class="lg:col-span-7 bg-card border-2 border-zinc-800 p-6 sm:p-10 flex flex-col justify-between shadow-[8px_8px_0px_0px_#1b1e27] relative overflow-hidden">
-                <div>
-                    <img src="https://andrewseanholness.github.io/cryptection/logowhitenobg.png" alt="Cryptection Logo" class="w-64 sm:w-80 md:w-96 lg:w-[420px] h-auto mx-auto block mb-10 object-contain drop-shadow-lg">
-                    
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand/10 border border-brand/40 text-brand font-mono text-xs font-bold uppercase mb-6">
-                        <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
-                        V2 Multi-API Telemetry Live
-                    </div>
-
-                    <h2 class="font-syne text-3xl sm:text-5xl font-black text-ink leading-none uppercase tracking-tight mb-6">
-                        Deep Contract & Wallet Intelligence.
-                    </h2>
-
-                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-8">
-                        Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and EVM threat telemetry into an indispensable Web3 terminal.
-                    </p>
-
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6 bg-paper border-2 border-zinc-800 mb-8 font-mono">
-                        <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Engine</span>
-                            <span class="text-lg xl:text-xl font-bold text-ink font-syne truncate block">V2 MULTI</span>
-                        </div>
-                        <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Market Data</span>
-                            <span class="text-lg xl:text-xl font-bold text-brand font-syne truncate block">DexScreener</span>
-                        </div>
-                        <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Forensics</span>
-                            <span class="text-lg xl:text-xl font-bold text-safe font-syne truncate block">RPC Nodes</span>
-                        </div>
-                        <div class="overflow-hidden">
-                            <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">State Data</span>
-                            <span class="text-lg xl:text-xl font-bold text-gold font-syne truncate block">Multi-Chain</span>
-                        </div>
-                    </div>
+        <section class="mt-4">
+            <div class="w-full bg-card border-2 border-zinc-800 p-8 sm:p-12 flex flex-col items-center justify-center text-center shadow-[8px_8px_0px_0px_#1b1e27] relative overflow-hidden">
+                <!-- Centered Large Brand Logo -->
+                <img src="https://andrewseanholness.github.io/cryptection/logowhitenobg.png" alt="Cryptection Logo" class="w-64 sm:w-80 md:w-96 lg:w-[420px] h-auto mx-auto block mb-8 object-contain drop-shadow-lg">
+                
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand/10 border border-brand/40 text-brand font-mono text-xs font-bold uppercase mb-6 mx-auto">
+                    <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+                    V2 Multi-API Telemetry Live
                 </div>
 
-                <div class="flex flex-wrap items-center gap-4 pt-4 border-t-2 border-zinc-800">
-                    <a href="#audit-terminal" class="px-6 py-3 bg-brand text-black font-mono text-xs font-bold uppercase transition-all shadow-brutal-dark border-2 border-black hover:bg-orange-500">
-                        ⚡ Try Scanner
+                <h2 class="font-syne text-4xl sm:text-5xl lg:text-6xl font-black text-ink leading-none uppercase tracking-tight mb-6 max-w-4xl">
+                    Deep Contract & Wallet Intelligence.
+                </h2>
+
+                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+                    Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and EVM threat telemetry into an indispensable Web3 terminal.
+                </p>
+
+                <div class="flex flex-wrap justify-center items-center gap-4 mb-10">
+                    <a href="#audit-terminal" class="px-8 py-4 bg-brand text-black font-mono text-sm font-bold uppercase transition-all shadow-brutal-dark border-2 border-black hover:bg-orange-500">
+                        ⚡ Launch Scanner
+                    </a>
+                    <a href="#fairlaunch" class="px-8 py-4 bg-paper text-ink font-mono text-sm font-bold uppercase transition-all border-2 border-zinc-700 hover:border-brand hover:text-brand">
+                        $CRYPT Fair Launch
                     </a>
                 </div>
-            </div>
 
-            <div id="fairlaunch" class="lg:col-span-5 bg-card border-2 border-bsc p-6 sm:p-8 flex flex-col justify-between shadow-brutal-bsc glow-bsc relative">
-                <div class="flex justify-between items-start mb-4 border-b-2 border-zinc-800 pb-4">
-                    <div>
-                        <span class="font-mono text-[11px] text-bsc font-bold uppercase tracking-wider">BSC LAUNCH</span>
-                        <h3 class="font-syne text-2xl font-black text-ink uppercase">Fair Launch</h3>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6 bg-paper border-2 border-zinc-800 font-mono w-full max-w-5xl text-left">
+                    <div class="overflow-hidden">
+                        <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Engine</span>
+                        <span class="text-lg xl:text-xl font-bold text-ink font-syne truncate block">V2 MULTI</span>
                     </div>
-                    <span class="px-2.5 py-1 bg-bsc/20 border border-bsc text-bsc font-mono text-xs font-bold uppercase flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-bsc animate-pulse"></span>
-                        Live Countdown
-                    </span>
-                </div>
-
-                <div class="mb-6 space-y-3">
-                    <p class="font-mono text-xs text-zinc-400 text-center mb-2">T-MINUS UNTIL SMART CONTRACT DEPLOYMENT</p>
-                    <div class="grid grid-cols-4 gap-2 text-center">
-                        <div class="bg-paper border-2 border-zinc-800 py-3 relative overflow-hidden">
-                            <span id="cd-days" class="font-syne text-3xl font-black text-ink z-10 relative">00</span>
-                            <span class="block text-[9px] text-zinc-500 uppercase font-mono font-bold mt-1">Days</span>
-                        </div>
-                        <div class="bg-paper border-2 border-zinc-800 py-3 relative overflow-hidden">
-                            <span id="cd-hours" class="font-syne text-3xl font-black text-ink z-10 relative">00</span>
-                            <span class="block text-[9px] text-zinc-500 uppercase font-mono font-bold mt-1">Hours</span>
-                        </div>
-                        <div class="bg-paper border-2 border-zinc-800 py-3 relative overflow-hidden">
-                            <span id="cd-mins" class="font-syne text-3xl font-black text-ink z-10 relative">00</span>
-                            <span class="block text-[9px] text-zinc-500 uppercase font-mono font-bold mt-1">Mins</span>
-                        </div>
-                        <div class="bg-paper border-2 border-zinc-800 py-3 relative overflow-hidden">
-                            <span id="cd-secs" class="font-syne text-3xl font-black text-bsc z-10 relative">00</span>
-                            <span class="block text-[9px] text-zinc-500 uppercase font-mono font-bold mt-1">Secs</span>
-                        </div>
+                    <div class="overflow-hidden">
+                        <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Market Data</span>
+                        <span class="text-lg xl:text-xl font-bold text-brand font-syne truncate block">DexScreener</span>
                     </div>
-                    
-                    <div class="flex justify-between text-xs font-mono mt-4">
-                        <span class="text-zinc-400">Target: <span class="text-ink font-bold">Oct 10, 11:59:59 PM EST</span></span>
-                        <span class="text-bsc font-bold">100% LP</span>
+                    <div class="overflow-hidden">
+                        <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">Forensics</span>
+                        <span class="text-lg xl:text-xl font-bold text-safe font-syne truncate block">RPC Nodes</span>
                     </div>
-                    <div class="w-full bg-paper border border-zinc-700 h-5 p-0.5 relative overflow-hidden mt-1">
-                        <div class="h-full bg-zinc-800 w-full transition-all flex items-center justify-center font-mono text-[10px] text-zinc-500">0% FILLED</div>
+                    <div class="overflow-hidden">
+                        <span class="block text-[10px] text-zinc-500 uppercase mb-1 truncate">State Data</span>
+                        <span class="text-lg xl:text-xl font-bold text-gold font-syne truncate block">Multi-Chain</span>
                     </div>
-                </div>
-
-                <div class="space-y-3 mt-auto">
-                    <button onclick="showToast('Fair Launch unlocks precisely at Oct 10th, 11:59:59 PM EST.', 'warning')" class="w-full py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex justify-center items-center gap-2">
-                        <span>CONNECT WALLET</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    </button>
                 </div>
             </div>
         </section>
@@ -331,7 +285,7 @@
                                     <span id="cPairCreated" class="text-xs text-zinc-300 block mt-1 truncate">--</span>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] text-zinc-500 uppercase block truncate">Pair Address</span>
+                                    <span class="text-[10px] text-zinc-500 uppercase block">Pair Address</span>
                                     <span id="cPairAddress" onclick="copyToClipboard(this.innerText)" class="text-xs text-zinc-300 block mt-1 break-all cursor-pointer hover:text-brand transition-colors" title="Click to copy address">--</span>
                                 </div>
                             </div>
@@ -456,6 +410,62 @@
             </div>
         </section>
 
+        <section id="fairlaunch" class="bg-card border-2 border-bsc p-8 flex flex-col lg:flex-row justify-between items-center gap-10 shadow-brutal-bsc glow-bsc relative mt-12">
+            <div class="w-full lg:w-1/2">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 border-b-2 border-zinc-800 pb-4 gap-4">
+                    <div>
+                        <span class="font-mono text-[11px] text-bsc font-bold uppercase tracking-wider">BSC LAUNCH</span>
+                        <h3 class="font-syne text-3xl sm:text-4xl font-black text-ink uppercase">$CRYPT Fair Launch</h3>
+                    </div>
+                    <span class="px-3 py-1.5 bg-bsc/20 border border-bsc text-bsc font-mono text-xs font-bold uppercase flex items-center gap-2 whitespace-nowrap">
+                        <span class="w-2 h-2 rounded-full bg-bsc animate-pulse"></span>
+                        Live Countdown
+                    </span>
+                </div>
+                
+                <p class="font-mono text-sm text-zinc-300 mb-6 leading-relaxed">
+                    We are bypassing VC funding to launch purely for the community. 1,000,000,000 Total Supply. 50% Burned immediately at genesis. 100% of the remaining supply is paired with the launch liquidity pool. Connect your Web3 wallet to participate on launch day.
+                </p>
+                
+                <div class="space-y-3">
+                    <button onclick="showToast('Fair Launch unlocks precisely at Oct 10th, 11:59:59 PM EST.', 'warning')" class="w-full py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex justify-center items-center gap-2">
+                        <span>CONNECT WALLET TO BUY $CRYPT</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 bg-paper border-2 border-zinc-800 p-6 flex flex-col justify-center">
+                <p class="font-mono text-xs text-zinc-400 text-center mb-4 uppercase font-bold tracking-wider">T-MINUS UNTIL SMART CONTRACT DEPLOYMENT</p>
+                <div class="grid grid-cols-4 gap-3 text-center mb-6">
+                    <div class="bg-card border-2 border-zinc-800 py-4 relative overflow-hidden shadow-[2px_2px_0px_0px_#1b1e27]">
+                        <span id="cd-days" class="font-syne text-4xl font-black text-ink z-10 relative">00</span>
+                        <span class="block text-[10px] text-zinc-500 uppercase font-mono font-bold mt-1">Days</span>
+                    </div>
+                    <div class="bg-card border-2 border-zinc-800 py-4 relative overflow-hidden shadow-[2px_2px_0px_0px_#1b1e27]">
+                        <span id="cd-hours" class="font-syne text-4xl font-black text-ink z-10 relative">00</span>
+                        <span class="block text-[10px] text-zinc-500 uppercase font-mono font-bold mt-1">Hours</span>
+                    </div>
+                    <div class="bg-card border-2 border-zinc-800 py-4 relative overflow-hidden shadow-[2px_2px_0px_0px_#1b1e27]">
+                        <span id="cd-mins" class="font-syne text-4xl font-black text-ink z-10 relative">00</span>
+                        <span class="block text-[10px] text-zinc-500 uppercase font-mono font-bold mt-1">Mins</span>
+                    </div>
+                    <div class="bg-card border-2 border-zinc-800 py-4 relative overflow-hidden shadow-[2px_2px_0px_0px_#1b1e27]">
+                        <span id="cd-secs" class="font-syne text-4xl font-black text-bsc z-10 relative">00</span>
+                        <span class="block text-[10px] text-zinc-500 uppercase font-mono font-bold mt-1">Secs</span>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between text-xs font-mono">
+                    <span class="text-zinc-400">Target: <span class="text-ink font-bold">Oct 10, 11:59:59 PM EST</span></span>
+                    <span class="text-bsc font-bold">100% LP</span>
+                </div>
+                <div class="w-full bg-card border border-zinc-700 h-5 p-0.5 relative overflow-hidden mt-2">
+                    <div class="h-full bg-zinc-800 w-full transition-all flex items-center justify-center font-mono text-[10px] text-zinc-500">0% FILLED</div>
+                </div>
+            </div>
+        </section>
+
         <section id="tokenomics" class="bg-card border-2 border-zinc-800 p-6 sm:p-8 relative mt-12 shadow-[6px_6px_0px_0px_#1b1e27]">
             <div class="mb-8 border-b-2 border-zinc-800 pb-4 relative z-10">
                 <span class="font-mono text-xs text-brand font-bold uppercase tracking-wider">[ REVENUE & TOKEN METRICS ]</span>
@@ -466,14 +476,15 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 font-mono text-sm">
                 <div class="bg-paper border border-zinc-700 p-6 flex flex-col justify-between">
                     <div>
-                        <span class="text-zinc-500 font-bold uppercase block mb-1">Max Supply</span>
-                        <span class="text-3xl font-syne font-black text-ink">100,000,000</span>
+                        <span class="text-zinc-500 font-bold uppercase block mb-1">Total Supply</span>
+                        <span class="text-3xl font-syne font-black text-ink">1,000,000,000</span>
                         <span class="text-brand font-bold block mt-1">$CRYPT Tokens</span>
                     </div>
                     <div class="mt-6 pt-4 border-t border-zinc-800 space-y-2 text-xs">
-                        <div class="flex justify-between text-zinc-400"><span>Fair Launch LP:</span> <span class="text-ink">70%</span></div>
-                        <div class="flex justify-between text-zinc-400"><span>Marketing & CEX:</span> <span class="text-ink">20%</span></div>
-                        <div class="flex justify-between text-zinc-400"><span>Team (Locked):</span> <span class="text-ink">10%</span></div>
+                        <div class="flex justify-between text-zinc-400"><span>Burned at Genesis:</span> <span class="text-accent font-bold">50% (500M)</span></div>
+                        <div class="flex justify-between text-zinc-400"><span>Fair Launch LP:</span> <span class="text-ink">100% (500M)</span></div>
+                        <div class="flex justify-between text-zinc-400"><span>Team Allocation:</span> <span class="text-ink">0% (Fair Buy)</span></div>
+                        <div class="flex justify-between text-zinc-400 border-t border-zinc-800/50 pt-2 mt-2"><span>Max Wallet:</span> <span class="text-safe font-bold">3% (Anti-Whale)</span></div>
                     </div>
                 </div>
 
@@ -535,7 +546,7 @@
                         <li>✓ Automated Telegram Alerts</li>
                         <li>✓ Bypasses Rate Limits</li>
                     </ul>
-                    <button class="w-full py-3 bg-brand text-black border-2 border-black font-bold uppercase text-xs hover:bg-orange-500 transition-colors">Connect Wallet</button>
+                    <button class="w-full py-3 bg-brand text-black border-2 border-black font-bold uppercase text-xs hover:bg-orange-500 transition-colors shadow-brutal-dark">Connect Wallet</button>
                 </div>
 
                 <div class="bg-card border-2 border-zinc-800 p-6 flex flex-col">
@@ -650,7 +661,7 @@
                     <span class="block text-zinc-400 font-bold uppercase mb-3 text-[11px] border-b border-zinc-800 pb-1">Platform</span>
                     <ul class="space-y-2 text-zinc-500">
                         <li><a href="#audit-terminal" class="hover:text-brand transition-colors">Threat Terminal</a></li>
-                        <li><a href="#pricing" class="hover:text-brand transition-colors">API Tiers</a></li>
+                        <li><a href="#pricing" class="hover:text-brand transition-colors">Pro Access</a></li>
                         <li><a href="#tokenomics" class="hover:text-brand transition-colors">Tokenomics</a></li>
                     </ul>
                 </div>
@@ -667,7 +678,7 @@
 
     <div id="toast-container"></div>
 
-    <!-- PAYWALL MODAL (HIDDEN BY DEFAULT) -->
+    <!-- PAYWALL MODAL -->
     <div id="paywall-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-card border-2 border-brand p-8 max-w-md w-full shadow-[8px_8px_0px_0px_#ff6b00] relative">
             <button onclick="document.getElementById('paywall-modal').classList.add('hidden')" class="absolute top-4 right-4 text-zinc-500 hover:text-brand">✕</button>
@@ -749,6 +760,7 @@
         setInterval(updateCountdown, 1000); updateCountdown();
         setTimeout(() => { document.getElementById('burn-bar').style.width = '65%'; }, 1500);
 
+        // Mempool Radar Automation
         const radarFeed = document.getElementById('radar-feed');
         function generateDynamicLog() {
             const actions = [
@@ -787,7 +799,7 @@
 
         // Rate Limiter Logic
         let isDevMode = localStorage.getItem('cryptection_dev') === 'true';
-        const MAX_SCANS = 2; // Strict limit updated to 2
+        const MAX_SCANS = 2; // Strict limit set to 2
 
         function updateScanCounterUI() {
             const count = parseInt(localStorage.getItem('cryptection_scans') || '0');
@@ -810,6 +822,7 @@
             updateScanCounterUI();
         }
 
+        // Analysis Execution
         async function analyzeWallet() {
             if (!isDevMode) {
                 const count = parseInt(localStorage.getItem('cryptection_scans') || '0');
@@ -845,6 +858,7 @@
             }
         }
 
+        // Render UI Results
         function renderResults(data) {
             const rp = document.getElementById('resultPanel'); rp.classList.remove('hidden');
             document.getElementById('resEntityType').textContent = data.entityType || 'ENTITY';
@@ -860,7 +874,6 @@
                 document.getElementById('cVolume').textContent = `$${Number(data.volume24h || 0).toLocaleString()} / Liq: $${Number(data.liquidityUsd || 0).toLocaleString()}`;
                 document.getElementById('cTrend').textContent = `${data.priceChange24h >= 0 ? '+' : ''}${Number(data.priceChange24h||0).toFixed(1)}% (${data.trend || 'STABLE'})`;
                 
-                // New DEX Fields Mapping
                 document.getElementById('cDexName').textContent = data.dexData?.dexName || 'Unknown DEX';
                 document.getElementById('cPairAddress').textContent = data.dexData?.pairAddress || 'N/A';
                 document.getElementById('cQuoteToken').textContent = data.dexData?.quoteToken || 'Unknown';
@@ -902,6 +915,7 @@
             rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
+        // Helpers
         function setLoading(isLoading) {
             document.getElementById('scanBtnText').classList.toggle('hidden', isLoading);
             document.getElementById('scanLoader').classList.toggle('hidden', !isLoading);
