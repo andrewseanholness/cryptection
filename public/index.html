@@ -85,14 +85,15 @@
         @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #ff3e3e; } }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-brand selection:text-black">
+<body class="min-h-screen flex flex-col selection:bg-brand selection:text-black overflow-x-hidden">
 
     <canvas id="network-canvas"></canvas>
 
-    <div class="w-full bg-bsc text-black font-mono text-xs py-1.5 border-b-2 border-black font-bold uppercase tracking-wider overflow-hidden">
+    <div class="w-full bg-bsc text-black font-mono text-[10px] sm:text-xs py-1.5 border-b-2 border-black font-bold uppercase tracking-wider overflow-hidden">
         <div class="ticker-wrap flex items-center">
             <div class="ticker flex gap-8">
-                <span>⚡ $CRYPT BEP-20 FAIR LAUNCH: OCT 10TH, 2026 @ 11:59:59 PM EST</span>
+                <!-- UPDATED DATE TO OCT 14TH -->
+                <span>⚡ $CRYPT BEP-20 FAIR LAUNCH: OCT 14TH, 2026 @ 11:59:59 PM EST</span>
                 <span>• 1,000,000,000 TOTAL SUPPLY</span>
                 <span>• 50% INITIAL BURN</span>
                 <span>• 3% MAX WALLET (ANTI-WHALE)</span>
@@ -137,7 +138,7 @@
 
     <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 flex-grow flex flex-col gap-8 sm:gap-12">
 
-        <section class="mt-2 sm:mt-4">
+        <section class="mt-2 sm:mt-4 w-full">
             <div class="w-full bg-card border-2 border-zinc-800 p-4 sm:p-8 lg:p-12 flex flex-col items-center justify-center text-center shadow-[4px_4px_0px_0px_#1b1e27] sm:shadow-[8px_8px_0px_0px_#1b1e27] relative overflow-hidden">
                 
                 <img src="https://raw.githubusercontent.com/andrewseanholness/cryptection/main/logowhitenobg.png" alt="Cryptection Brand Mark" class="mx-auto block mb-6 sm:mb-8 object-contain drop-shadow-2xl w-48 sm:w-64 lg:w-[420px]">
@@ -147,8 +148,8 @@
                     V2 Multi-API Telemetry Live
                 </div>
 
-                <!-- Fully mobile-responsive heading size to prevent "Intelligence" cutoff -->
-                <h2 class="font-syne text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-ink leading-tight sm:leading-none uppercase tracking-tight mb-4 sm:mb-6 max-w-4xl px-2">
+                <!-- CLAMP FONT SCALING: Bulletproof responsive sizing so "Intelligence" never gets cut off -->
+                <h2 class="font-syne text-[clamp(1.5rem,7vw,3.75rem)] font-black text-ink leading-tight sm:leading-none uppercase tracking-tight mb-4 sm:mb-6 max-w-4xl px-2 break-words">
                     Deep Contract & Wallet Intelligence.
                 </h2>
 
@@ -156,7 +157,7 @@
                     Cryptection aggregates precise real-time contract byte-code, DexScreener market trends, holder net worth, and EVM threat telemetry into an indispensable Web3 terminal.
                 </p>
 
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-8 sm:mb-10 w-full sm:w-auto">
+                <div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10 w-full sm:w-auto">
                     <a href="#audit-terminal" class="w-full sm:w-auto px-8 py-4 bg-brand text-black font-mono text-sm font-bold uppercase transition-all shadow-[4px_4px_0px_0px_#000] border-2 border-black hover:bg-orange-500 text-center shrink-0">
                         ⚡ Launch Scanner
                     </a>
@@ -383,7 +384,6 @@
             </div>
         </section>
 
-        <!-- Wide, centered Fair Launch Banner with single timer -->
         <section id="fairlaunch" class="w-full bg-card border-2 border-bsc p-6 sm:p-8 lg:p-12 flex flex-col items-center justify-center text-center shadow-brutal-bsc glow-bsc relative mt-8 sm:mt-12">
             <span class="px-3 py-1.5 bg-bsc/20 border border-bsc text-bsc font-mono text-[10px] sm:text-xs font-bold uppercase flex items-center justify-center gap-2 whitespace-nowrap mb-4 sm:mb-6">
                 <span class="w-2 h-2 rounded-full bg-bsc animate-pulse"></span>
@@ -393,7 +393,6 @@
             <h3 class="font-syne text-3xl sm:text-4xl md:text-5xl font-black text-ink uppercase mb-2 leading-none">$CRYPT Fair Launch</h3>
             <p class="font-mono text-xs sm:text-sm text-zinc-400 mb-8 max-w-2xl px-2 uppercase font-bold tracking-wider">T-Minus Until Smart Contract Deployment</p>
             
-            <!-- Centered Unified Timer -->
             <div class="grid grid-cols-4 gap-2 sm:gap-4 lg:gap-6 text-center max-w-3xl w-full mx-auto mb-8">
                 <div class="bg-paper border-2 border-zinc-800 py-3 sm:py-5 relative overflow-hidden shadow-[2px_2px_0px_0px_#1b1e27]">
                     <span id="cd-days" class="font-syne text-2xl sm:text-4xl lg:text-5xl font-black text-ink z-10 relative">00</span>
@@ -417,7 +416,7 @@
                 We are bypassing VC funding to launch purely for the community. 1,000,000,000 Total Supply. 50% Burned immediately at genesis. 100% of the remaining supply is paired with the launch liquidity pool. Connect your Web3 wallet to participate on launch day.
             </p>
             
-            <button onclick="showToast('Fair Launch unlocks precisely at Oct 10th, 11:59:59 PM EST.', 'warning')" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-sm sm:text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex justify-center items-center gap-2 shrink-0 mx-auto">
+            <button onclick="showToast('Fair Launch unlocks precisely at Oct 14th, 11:59:59 PM EST.', 'warning')" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-sm sm:text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex justify-center items-center gap-2 shrink-0 mx-auto">
                 <span>CONNECT WALLET TO BUY $CRYPT</span>
                 <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
             </button>
@@ -434,8 +433,8 @@
                 <div class="bg-paper border border-zinc-700 p-4 sm:p-6 flex flex-col justify-between overflow-hidden">
                     <div>
                         <span class="text-zinc-500 font-bold uppercase block text-[10px] sm:text-xs">Total Supply</span>
-                        <!-- Strictly formatted to never wrap and scale perfectly across mobile/desktop grids -->
-                        <span class="text-2xl min-[375px]:text-3xl lg:text-2xl xl:text-3xl font-syne font-black text-ink tracking-tighter block w-full mt-1 mb-1 whitespace-nowrap">1,000,000,000</span>
+                        <!-- CLAMP FONT SCALING: Safely formats the massive number to dynamically fit inside any container without line wrapping -->
+                        <span class="font-syne font-black text-ink tracking-tighter block w-full mt-1 mb-1 whitespace-nowrap text-[clamp(1.25rem,7vw,2.25rem)] lg:text-2xl xl:text-3xl">1,000,000,000</span>
                         <span class="text-brand font-bold block text-xs sm:text-sm">$CRYPT Tokens</span>
                     </div>
                     <div class="mt-6 pt-4 border-t border-zinc-800 space-y-2 text-xs">
@@ -617,7 +616,6 @@
     </div>
 
     <script>
-        // Background Network Canvas Animation (Optimized for Mobile/Speed)
         const canvas = document.getElementById('network-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
@@ -628,7 +626,6 @@
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
             particles = [];
-            // Throttle particle count on mobile screens to drastically improve frame rates & battery
             const particleCount = width < 768 ? 20 : 60; 
             for (let i = 0; i < particleCount; i++) {
                 particles.push({ x: Math.random() * width, y: Math.random() * height, vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5, size: Math.random() * 2 + 1 });
@@ -662,7 +659,8 @@
         initCanvas(); animateCanvas();
 
         function updateCountdown() {
-            const target = new Date("2026-10-10T23:59:59-04:00").getTime();
+            // UPDATED COUNTDOWN TARGET TO OCTOBER 14TH
+            const target = new Date("2026-10-14T23:59:59-04:00").getTime();
             const now = new Date().getTime();
             const diff = target - now;
             if (!isNaN(diff) && diff > 0) {
@@ -717,7 +715,7 @@
         }
 
         let isDevMode = localStorage.getItem('cryptection_dev') === 'true';
-        const MAX_SCANS = 2; // Strict limit set to 2
+        const MAX_SCANS = 2;
 
         function updateScanCounterUI() {
             const count = parseInt(localStorage.getItem('cryptection_scans') || '0');
