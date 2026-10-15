@@ -104,7 +104,7 @@
     <div class="w-full bg-bsc text-black font-mono text-[10px] sm:text-xs py-1.5 border-b-2 border-black font-bold uppercase tracking-wider overflow-hidden">
         <div class="ticker-wrap flex items-center">
             <div class="ticker flex gap-8">
-                <span>⚡ $CRYPT BEP-20 FAIR LAUNCH: OCT 14TH, 2026 @ 11:59:59 PM EST</span>
+                <span>⚡ $CRYPT BEP-20 FAIR LAUNCH: OCT 15TH, 2026 @ 11:59:59 PM EST</span>
                 <span>• 1,000,000,000 TOTAL SUPPLY</span>
                 <span>• 50% INITIAL BURN</span>
                 <span>• 3% MAX WALLET (ANTI-WHALE)</span>
@@ -159,7 +159,7 @@
                     V2 Multi-API Telemetry Live
                 </div>
 
-                <h2 class="font-syne text-[clamp(1.75rem,8vw,3.75rem)] font-black text-ink leading-tight sm:leading-none uppercase tracking-tight mb-4 sm:mb-6 max-w-4xl px-2">
+                <h2 class="font-syne text-[clamp(1.5rem,6vw,3.75rem)] font-black text-ink leading-tight sm:leading-none uppercase tracking-tight mb-4 sm:mb-6 max-w-4xl px-2">
                     Deep Contract & Wallet Intelligence.
                 </h2>
 
@@ -205,20 +205,17 @@
                 </div>
             </div>
 
-            <div class="bg-paper border border-zinc-700 p-4 mb-4 font-mono text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                <strong class="text-brand">ANALYTICS ENGINE:</strong> Enter any contract or wallet address across BSC, Ethereum, Base, or Solana. The engine checks byte-code to detect threats.
-                <br><br>
-                <strong class="text-warning">⚠ DISCLAIMER:</strong> To ensure accurate telemetry and prevent the engine from accidentally misclassifying a wallet as a contract (or vice versa) and consuming a scan, please use the Force Override buttons below to explicitly declare your target.
-            </div>
-
-            <!-- LARGE DISCLAIMER INJECTED HERE -->
+            <!-- SYSTEM DISCLAIMER -->
             <div class="bg-[#12141a] border-l-4 border-brand p-4 sm:p-5 mb-6 shadow-[4px_4px_0px_0px_#ff6b00] relative">
                 <h4 class="font-syne text-brand font-bold text-sm sm:text-base uppercase mb-2 flex items-center gap-2">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                     System Limitation Notice
                 </h4>
-                <p class="font-mono text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                    Public access is strictly restricted to <strong class="text-ink bg-brand/20 px-1 py-0.5">2 FREE SCANS</strong> per day. Please use them wisely. To unlock unlimited real-time execution, deep mempool forensics, and detailed behavioral alerts, you must be a registered holder of at least <strong class="text-brand">50,000 $CRYPT</strong>.
+                <p class="font-mono text-xs sm:text-sm text-zinc-300 leading-relaxed mb-3">
+                    Public access is strictly restricted to <strong class="text-ink bg-brand/20 px-1 py-0.5">2 FREE SCANS</strong> per day. Please use them wisely. To unlock detailed analysis, unlimited real-time execution, deep mempool forensics, and behavioral alerts, you must be a registered holder of at least <strong class="text-brand">50,000 $CRYPT</strong>.
+                </p>
+                <p class="font-mono text-[10px] sm:text-xs text-warning leading-relaxed border-t border-zinc-800 pt-3">
+                    <strong>⚠ IMPORTANT:</strong> To prevent the engine from accidentally misclassifying a wallet as a contract (or vice versa) and consuming one of your limited scans, please use the Force Override buttons below to explicitly declare your target.
                 </p>
             </div>
 
@@ -263,7 +260,7 @@
                         </div>
                     </div>
 
-                    <!-- CONTRACT SPECIFIC MODULE WITH LIQUIDITY PAIR ANALYTICS -->
+                    <!-- CONTRACT SPECIFIC MODULE -->
                     <div id="contractModule" class="hidden space-y-4 sm:space-y-6">
                         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                             <div class="bg-paper border-2 border-zinc-800 p-3 sm:p-4 font-mono overflow-hidden">
@@ -435,13 +432,31 @@
             </div>
 
             <p class="font-mono text-xs sm:text-sm lg:text-base text-zinc-300 mb-8 leading-relaxed max-w-3xl px-2">
-                We are bypassing VC funding to launch purely for the community. 1,000,000,000 Total Supply. 50% Burned immediately at genesis. 100% of the remaining supply is paired with the launch liquidity pool. Connect your Web3 wallet to participate on launch day.
+                We are bypassing VC funding to launch purely for the community on the <strong class="text-bsc">Binance Smart Chain (BSC)</strong>. 1,000,000,000 Total Supply. 50% Burned immediately at genesis. 100% of the remaining supply is paired with the launch liquidity pool on <strong class="text-bsc">PancakeSwap</strong>. The official Smart Contract address will be revealed exclusively in our Telegram shortly before launch, followed by a website update.
             </p>
             
-            <button onclick="showToast('Fair Launch unlocks precisely at Oct 14th, 2026, 11:59:59 PM EST.', 'warning')" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-sm sm:text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex justify-center items-center gap-2 shrink-0 mx-auto">
-                <span>CONNECT WALLET TO BUY $CRYPT</span>
+            <button onclick="showToast('PancakeSwap link will be revealed precisely at Oct 15th, 2026, 11:59:59 PM EST.', 'warning')" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-sm sm:text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex justify-center items-center gap-2 shrink-0 mx-auto">
+                <span>BUY ON PANCAKESWAP</span>
                 <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
             </button>
+        </section>
+
+        <section id="how-to-buy" class="w-full bg-paper border-2 border-zinc-800 p-6 sm:p-8 mt-2 shadow-[4px_4px_0px_0px_#1b1e27]">
+            <h3 class="font-syne text-xl sm:text-2xl font-black text-ink uppercase mb-6 text-center tracking-wide">How To Acquire $CRYPT</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs sm:text-sm text-zinc-400">
+                <div class="space-y-2 bg-card p-4 border border-zinc-800">
+                    <span class="text-brand font-bold text-sm sm:text-base block">1. Create a Wallet</span>
+                    <p class="leading-relaxed">Download <strong class="text-ink">MetaMask</strong> or <strong class="text-ink">Trust Wallet</strong> from the app store or as a browser extension. Securely back up your recovery seed phrase.</p>
+                </div>
+                <div class="space-y-2 bg-card p-4 border border-zinc-800">
+                    <span class="text-bsc font-bold text-sm sm:text-base block">2. Acquire BNB</span>
+                    <p class="leading-relaxed">Purchase BNB directly in your wallet or send it from an exchange like Binance. Ensure it is on the <strong class="text-ink">Smart Chain (BEP-20)</strong> network to cover gas and the token swap.</p>
+                </div>
+                <div class="space-y-2 bg-card p-4 border border-zinc-800">
+                    <span class="text-safe font-bold text-sm sm:text-base block">3. Swap on PancakeSwap</span>
+                    <p class="leading-relaxed">Connect to PancakeSwap. Paste the $CRYPT contract address (once revealed). Set your slippage tolerance to <strong class="text-ink">at least 6%</strong> (to cover the 5% tax), and swap BNB for $CRYPT.</p>
+                </div>
+            </div>
         </section>
 
         <section id="tokenomics" class="bg-card border-2 border-zinc-800 p-4 sm:p-6 lg:p-8 relative mt-8 sm:mt-12 shadow-[6px_6px_0px_0px_#1b1e27]">
@@ -455,7 +470,7 @@
                 <div class="bg-paper border border-zinc-700 p-4 sm:p-6 flex flex-col justify-between overflow-hidden">
                     <div>
                         <span class="text-zinc-500 font-bold uppercase block text-[10px] sm:text-xs">Total Supply</span>
-                        <span class="font-syne font-black text-ink tracking-tight block w-full mt-1 mb-1 whitespace-nowrap text-[clamp(1.75rem,7vw,2.25rem)] sm:text-3xl lg:text-2xl xl:text-3xl">1,000,000,000</span>
+                        <span class="font-syne font-black text-ink tracking-tight block w-full mt-1 mb-1 whitespace-nowrap text-[clamp(1.5rem,7vw,2.25rem)] lg:text-3xl xl:text-4xl">1,000,000,000</span>
                         <span class="text-brand font-bold block text-xs sm:text-sm">$CRYPT Tokens</span>
                     </div>
                     <div class="mt-6 pt-4 border-t border-zinc-800 space-y-2 text-xs">
@@ -518,11 +533,11 @@
                     <span class="text-2xl sm:text-3xl font-syne font-black text-ink mb-2">50,000 <span class="text-xs sm:text-sm text-brand font-normal">$CRYPT</span></span>
                     <span class="text-[9px] sm:text-[10px] text-safe font-bold mb-4 block">HOLD TO UNLOCK FOREVER</span>
                     <ul class="space-y-3 sm:space-y-4 text-[10px] sm:text-xs text-zinc-300 mb-6 sm:mb-8 flex-grow">
-                        <li><strong class="text-ink">✓ Live Contract Tracking:</strong> Monitor newly deployed pairs across chains before UI verification.</li>
-                        <li><strong class="text-ink">✓ Smart Wallet Radar:</strong> Track whale movements, historical PnL, and extract copy-trade metrics.</li>
-                        <li><strong class="text-ink">✓ Threat Alert Webhooks:</strong> Instant Telegram & Discord notifications for malicious transactions.</li>
-                        <li><strong class="text-ink">✓ Mempool Forensics:</strong> Detect front-running and MEV sandwich attacks in real-time.</li>
-                        <li><strong class="text-ink">✓ Unlimited Execution:</strong> Zero-delay API engine access, completely bypassing rate limits.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ Live Contract Tracking</strong> Monitor newly deployed pairs across chains before UI verification.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ Smart Wallet Radar</strong> Track whale movements, historical PnL, and extract copy-trade metrics.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ Threat Alert Webhooks</strong> Instant Telegram & Discord notifications for malicious transactions.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ Mempool Forensics</strong> Detect front-running and MEV sandwich attacks in real-time.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ Unlimited Execution</strong> Zero-delay API engine access, completely bypassing rate limits.</li>
                     </ul>
                     <button class="w-full py-2.5 sm:py-3 bg-brand text-black border-2 border-black font-bold uppercase text-[10px] sm:text-xs hover:bg-orange-500 transition-colors shadow-brutal-dark">Connect Wallet</button>
                 </div>
@@ -531,11 +546,11 @@
                     <h3 class="text-base sm:text-lg font-bold text-ink uppercase mb-1">Enterprise API</h3>
                     <span class="text-2xl sm:text-3xl font-syne font-black text-ink mb-4">Custom</span>
                     <ul class="space-y-3 sm:space-y-4 text-[10px] sm:text-xs text-zinc-400 mb-6 sm:mb-8 flex-grow">
-                        <li><strong class="text-ink">✓ B2B API Infrastructure:</strong> High-throughput REST & WebSocket connection endpoints.</li>
-                        <li><strong class="text-ink">✓ Automated Tx Blocking:</strong> Inject our risk-engine directly into your dApp router.</li>
-                        <li><strong class="text-ink">✓ Institutional Monitoring:</strong> Mass-track thousands of smart contracts simultaneously.</li>
-                        <li><strong class="text-ink">✓ Custom Data Pipelines:</strong> Sub-millisecond latency tailored for Dex Aggregators.</li>
-                        <li><strong class="text-ink">✓ Dedicated SLA:</strong> 99.99% Uptime guarantee with direct engineering support.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ B2B API Infrastructure</strong> High-throughput REST & WebSocket connection endpoints.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ Automated Tx Blocking</strong> Inject our risk-engine directly into your dApp router.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ Institutional Monitoring</strong> Mass-track thousands of smart contracts simultaneously.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ Custom Data Pipelines</strong> Sub-millisecond latency tailored for Dex Aggregators.</li>
+                        <li><strong class="text-ink font-bold block mb-0.5">✓ Dedicated SLA</strong> 99.99% Uptime guarantee with direct engineering support.</li>
                     </ul>
                     <button class="w-full py-2 bg-paper border border-zinc-700 text-ink uppercase font-bold text-[10px] sm:text-xs hover:border-brand transition-colors">Contact Sales</button>
                 </div>
@@ -581,7 +596,7 @@
                     
                     <p>As an elite <strong class="text-zinc-200">Web3 threat intelligence</strong> protocol, our proprietary <strong class="text-zinc-200">token tracker</strong> and EVM scanner dissect smart contract byte-code milliseconds after deployment. Whether you are executing high-frequency arbitrage or seeking long-term multi-chain <strong class="text-zinc-200">cryptocurrency protection</strong>, our engine delivers institutional-grade security audits directly to your decentralized application.</p>
                     
-                    <p>By staking the $CRYPT token, traders unlock absolute mempool dominance, ensuring zero-day exploit detection and unparalleled on-chain safety across Binance Smart Chain, Ethereum, and beyond.</p>
+                    <p>By holding the $CRYPT token, traders unlock absolute mempool dominance, ensuring zero-day exploit detection and unparalleled on-chain safety across Binance Smart Chain, Ethereum, and beyond.</p>
                 </div>
             </div>
         </section>
@@ -618,10 +633,13 @@
                 </div>
                 <div>
                     <span class="block text-zinc-400 font-bold uppercase mb-2 sm:mb-3 text-[10px] sm:text-[11px] border-b border-zinc-800 pb-1">Community</span>
-                    <ul class="space-y-2 text-zinc-500">
+                    <ul class="space-y-2 text-zinc-500 mb-3">
                         <li><a href="https://t.me/cryptectionlabs" target="_blank" class="hover:text-brand transition-colors">Telegram Chat</a></li>
                         <li><a href="https://x.com/cryptectionlabs" target="_blank" class="hover:text-brand transition-colors">X / Twitter</a></li>
                     </ul>
+                    <div class="bg-zinc-900 border-l-2 border-brand p-2 text-[9px] text-zinc-500 leading-tight mt-2 max-w-[180px]">
+                        <strong>NOTE:</strong> Telegram is for announcements only. We will not be actively participating in conversations. This is a serious project. No time for chit-chatting, just building.
+                    </div>
                 </div>
             </div>
         </div>
@@ -629,7 +647,6 @@
 
     <div id="toast-container"></div>
 
-    <!-- PAYWALL MODAL -->
     <div id="paywall-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-card border-2 border-brand p-6 sm:p-8 max-w-md w-full shadow-[4px_4px_0px_0px_#ff6b00] sm:shadow-[8px_8px_0px_0px_#ff6b00] relative mx-4">
             <button onclick="document.getElementById('paywall-modal').classList.add('hidden')" class="absolute top-4 right-4 text-zinc-500 hover:text-brand text-xl">✕</button>
@@ -695,8 +712,8 @@
         initCanvas(); animateCanvas();
 
         function updateCountdown() {
-            // COUNTDOWN TARGET: OCTOBER 14TH 2026, 11:59:59 PM EST
-            const target = new Date("2026-10-14T23:59:59-04:00").getTime();
+            // COUNTDOWN TARGET: OCTOBER 15TH 2026, 11:59:59 PM EST
+            const target = new Date("2026-10-15T23:59:59-04:00").getTime();
             const now = new Date().getTime();
             const diff = target - now;
             if (!isNaN(diff) && diff > 0) {
@@ -740,8 +757,12 @@
             log.innerHTML = `> ${generateDynamicLog()} <span class='text-zinc-600 ml-2'>[${new Date().toLocaleTimeString()}]</span>`;
             radarFeed.appendChild(log);
             setTimeout(() => { log.classList.remove('typewriter-line'); log.style.borderRight = 'none'; }, 1000);
+            
+            // Generate a random delay between 1000ms (1s) and 9000ms (9s)
+            const randomDelay = Math.floor(Math.random() * 8000) + 1000;
+            setTimeout(addRadarLog, randomDelay);
         }
-        setInterval(addRadarLog, 2200); addRadarLog();
+        addRadarLog();
 
         let currentScanMode = 'auto';
         function setScanMode(mode) {
