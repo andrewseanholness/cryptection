@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CRYPTECTION PRO // Member Documentation</title>
+    
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/andrewseanholness/cryptection/main/lockonlynobg.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        syne: ['Syne', 'sans-serif'],
+                        grotesk: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        paper: '#090a0d',
+                        card: '#12141a',
+                        ink: '#f4f4f0',
+                        accent: '#ff3e3e',
+                        brand: '#ff6b00',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #08090c; color: #f4f4f0; background-image: radial-gradient(rgba(255, 107, 0, 0.05) 1px, transparent 0); background-size: 32px 32px; font-family: 'Space Grotesk', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-track { background: #08090c; } ::-webkit-scrollbar-thumb { background: #2a2d38; } ::-webkit-scrollbar-thumb:hover { background: #ff6b00; }
+        .doc-content h2 { font-family: 'Syne', sans-serif; font-weight: 900; text-transform: uppercase; color: #f4f4f0; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #2a2d38; padding-bottom: 0.5rem; }
+        .doc-content p { margin-bottom: 1.25rem; line-height: 1.7; color: #d4d4d8; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; }
+        .doc-content ul { list-style-type: none; padding-left: 1rem; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #d4d4d8; }
+        .doc-content li { margin-bottom: 0.5rem; position: relative; padding-left: 1.25rem; }
+        .doc-content li::before { content: '>'; position: absolute; left: 0; color: #ff6b00; font-weight: bold; }
+        .doc-content strong { color: #f4f4f0; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand selection:text-black">
+
+    <header class="sticky top-0 z-40 w-full bg-paper/95 backdrop-blur-md border-b-2 border-zinc-800">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <div class="w-8 h-8 bg-brand flex items-center justify-center border-2 border-black shadow-[2px_2px_0px_0px_#ff3e3e] p-1 shrink-0">
+                    <img src="https://raw.githubusercontent.com/andrewseanholness/cryptection/main/lockonlynobg.png" alt="Logo" class="w-full h-full object-contain">
+                </div>
+                <h1 class="font-syne text-lg sm:text-xl font-black tracking-tight text-ink uppercase">CRYPTECTION</h1>
+            </a>
+            <a href="index.html" class="font-mono text-xs font-bold text-brand uppercase hover:text-orange-500 transition-colors flex items-center gap-2">
+                ← Return to Terminal
+            </a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-4 py-12 flex-grow">
+        <div class="bg-card border-2 border-brand p-6 sm:p-10 shadow-[6px_6px_0px_0px_#ff6b00]">
+            <div class="mb-10 text-center border-b-2 border-zinc-800 pb-8 relative">
+                <span class="inline-block px-3 py-1 bg-brand/20 border border-brand text-brand font-mono text-[10px] sm:text-xs font-bold uppercase mb-4">RESTRICTED ACCESS</span>
+                <h1 class="font-syne text-4xl sm:text-5xl font-black text-ink uppercase tracking-tight mb-2">CRYPTECTION PRO</h1>
+                <p class="font-mono text-sm text-zinc-400 uppercase tracking-widest">Member Documentation & Advanced Scanner Guide</p>
+            </div>
+
+            <div class="doc-content">
+                <p>Welcome to the frontline of Web3 intelligence.</p>
+                <p>The public version of the Cryptection Threat Terminal is strictly limited to 2 basic scans per day to prevent server overload. By holding a minimum of <strong>50,000 $CRYPT</strong> in your connected Web3 wallet, you automatically bypass these limitations and unlock the full, unthrottled power of our analytical engine.</p>
+                <p>This document outlines exactly what tools you have access to as a Pro member and how to leverage them for maximum market advantage.</p>
+
+                <h2>1. The Unrestricted Threat Terminal</h2>
+                <p>As a Pro holder, the web-based terminal transforms from a basic scanner into a high-frequency intelligence dashboard.</p>
+                <ul>
+                    <li><strong>Unlimited Execution:</strong> The 2-scan daily limit is completely removed. You can scan as many contracts and wallets as you need, whenever you need.</li>
+                    <li><strong>Zero-Cache Data:</strong> Public users view data that is cached for up to 10 minutes to save server costs. Pro members trigger live, direct calls to our RPC nodes and API providers, ensuring you are seeing block-by-block, second-to-second updates.</li>
+                    <li><strong>Deep Heuristic Extraction:</strong> The scanner will output detailed behavioral warnings that are hidden from public users. This includes exact ratios of wash-trading volume and explicit warnings if a contract creator's wallet has ties to previously rugged projects.</li>
+                </ul>
+
+                <h2>2. Smart Wallet Radar (Coming Phase 2)</h2>
+                <p>Tracking the right wallets is just as profitable as tracking the right contracts. Pro members will gain access to our Wallet Radar module.</p>
+                <ul>
+                    <li><strong>Net Worth & PnL Profiling:</strong> Input any wallet address, and the engine will not just return their balance, but evaluate their historical win-rate based on on-chain entry and exit points.</li>
+                    <li><strong>Copy-Trade Extraction:</strong> The engine will highlight the specific tokens a targeted "Whale" or "Insider" wallet has been accumulating over the last 24-72 hours, allowing you to ride their momentum.</li>
+                    <li><strong>Burner Detection:</strong> Instantly identify if a wallet is a disposable address funded by an exchange (a common tactic for malicious contract deployers).</li>
+                </ul>
+
+                <h2>3. Telegram Threat Alerts (Coming Phase 2)</h2>
+                <p>You cannot stare at a web terminal 24/7. As a Pro member, you will be able to link your Web3 wallet to the official Cryptection Telegram Bot.</p>
+                <ul>
+                    <li><strong>Instant Chat Scans:</strong> Paste a contract address directly into your private chat with the bot, and it will return a simplified Threat Score and liquidity breakdown in seconds.</li>
+                    <li><strong>Targeted Wallet Tracking:</strong> Command the bot to track up to 5 specific wallets. If those wallets make a swap greater than a threshold you define, you will receive an instant push notification on your phone.</li>
+                </ul>
+
+                <h2>4. Developer Webhooks (Coming Phase 3)</h2>
+                <p>For advanced traders running their own execution bots, the web UI is too slow.</p>
+                <ul>
+                    <li><strong>Direct API Pings:</strong> Pro members will be given a unique API key that allows them to ping our backend directly via REST.</li>
+                    <li><strong>Automated Guardrails:</strong> You can pipe our 0-100 Risk Score directly into your own trading scripts. <em>Example: Program your bot to abort a buy transaction if the Cryptection Risk Score returns higher than 60.</em></li>
+                </ul>
+
+                <h2>5. Pro Member Economic Benefits</h2>
+                <p>Your 50,000 $CRYPT requirement is not a payment; it is a holding requirement. You retain full ownership of your assets.</p>
+                <p>Furthermore, as a Pro member, you directly benefit from the expansion of the Cryptection network. When we license our API infrastructure to enterprise clients (DEXs, Wallets, Trading Bots) for monthly fiat/stablecoin fees, <strong>20% of that revenue is used to market-buy $CRYPT and burn it</strong>.</p>
+                <p>As demand for our B2B tools grows, the supply of $CRYPT mathematically shrinks, rewarding the Pro members who hold the foundational supply.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full bg-paper border-t border-zinc-800 py-6 mt-8 text-center font-mono text-[10px] text-zinc-600 uppercase">
+        © 2026 Cryptection Labs • Pro Member Documentation
+    </footer>
+</body>
+</html>

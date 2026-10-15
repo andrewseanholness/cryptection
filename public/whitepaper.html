@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CRYPTECTION LABS // Official Whitepaper</title>
+    
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/andrewseanholness/cryptection/main/lockonlynobg.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        syne: ['Syne', 'sans-serif'],
+                        grotesk: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        paper: '#090a0d',
+                        card: '#12141a',
+                        ink: '#f4f4f0',
+                        accent: '#ff3e3e',
+                        brand: '#ff6b00',
+                        bsc: '#F3BA2F',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #08090c;
+            color: #f4f4f0;
+            background-image: radial-gradient(rgba(255, 107, 0, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #08090c; }
+        ::-webkit-scrollbar-thumb { background: #2a2d38; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff6b00; }
+        
+        .doc-content h2 { font-family: 'Syne', sans-serif; font-weight: 900; text-transform: uppercase; color: #f4f4f0; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #2a2d38; padding-bottom: 0.5rem; }
+        .doc-content h3 { font-family: 'Syne', sans-serif; font-weight: 800; color: #ff6b00; font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.75rem; text-transform: uppercase; }
+        .doc-content p { margin-bottom: 1.25rem; line-height: 1.7; color: #d4d4d8; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; }
+        .doc-content ul { list-style-type: none; padding-left: 1rem; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #d4d4d8; }
+        .doc-content li { margin-bottom: 0.5rem; position: relative; padding-left: 1.25rem; }
+        .doc-content li::before { content: '>'; position: absolute; left: 0; color: #ff6b00; font-weight: bold; }
+        .doc-content strong { color: #f4f4f0; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand selection:text-black">
+
+    <header class="sticky top-0 z-40 w-full bg-paper/95 backdrop-blur-md border-b-2 border-zinc-800">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <div class="w-8 h-8 bg-brand flex items-center justify-center border-2 border-black shadow-[2px_2px_0px_0px_#ff3e3e] p-1 shrink-0">
+                    <img src="https://raw.githubusercontent.com/andrewseanholness/cryptection/main/lockonlynobg.png" alt="Logo" class="w-full h-full object-contain">
+                </div>
+                <h1 class="font-syne text-lg sm:text-xl font-black tracking-tight text-ink uppercase">CRYPTECTION</h1>
+            </a>
+            <a href="index.html" class="font-mono text-xs font-bold text-zinc-500 uppercase hover:text-brand transition-colors flex items-center gap-2">
+                ← Return to Terminal
+            </a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-4 py-12 flex-grow">
+        <div class="bg-card border-2 border-zinc-800 p-6 sm:p-10 shadow-[6px_6px_0px_0px_#1b1e27]">
+            <div class="mb-10 text-center border-b-2 border-zinc-800 pb-8">
+                <span class="inline-block px-3 py-1 bg-brand/10 border border-brand/40 text-brand font-mono text-[10px] sm:text-xs font-bold uppercase mb-4">Official Documentation v1.0</span>
+                <h1 class="font-syne text-4xl sm:text-5xl font-black text-ink uppercase tracking-tight mb-2">CRYPTECTION LABS</h1>
+                <p class="font-mono text-sm text-zinc-400 uppercase tracking-widest">The Web3 Threat Intelligence Protocol</p>
+            </div>
+
+            <div class="doc-content">
+                <h2>1. The Decentralized Security Dilemma</h2>
+                <p>Decentralized Finance (DeFi) has democratized access to capital markets, but it has also created a landscape fraught with predatory behavior. Malicious actors deploy thousands of honeypots, rug pulls, and proxy-upgradeable scam contracts daily across Ethereum, Binance Smart Chain, and emerging Layer-2 networks.</p>
+                <p>While institutional market makers possess dedicated engineering teams to parse smart contract byte-code and monitor liquidity pool health in real-time, the average retail trader is forced to fly blind. They rely on delayed social media updates and fragmented, slow block explorers.</p>
+                <p><strong>Cryptection Labs</strong> was founded to bridge this gap. We are building an institutional-grade, highly scalable Web3 Threat Intelligence Protocol designed to deliver instant, actionable security metrics directly to traders and developers.</p>
+
+                <h2>2. The Cryptection Solution: A Heuristic Risk Engine</h2>
+                <p>We are not attempting to reinvent the blockchain node. Instead, Cryptection is engineered as an elite <strong>Aggregation and Heuristic Risk Engine</strong>. By operating as a high-speed intelligence layer, we can move faster and adapt quicker than bloated legacy security firms.</p>
+                <p>Our architecture operates in three distinct phases:</p>
+                <ul>
+                    <li><strong>High-Speed Data Ingestion:</strong> The Cryptection backend utilizes enterprise-grade API connections (via QuickNode, Alchemy, and DexScreener) to pull real-time JSON-RPC state data, liquidity pair metrics, and historical wallet behaviors the second a block is confirmed.</li>
+                    <li><strong>Proprietary Heuristic Analysis:</strong> Our custom-built backend engine feeds this raw data through a strict rule-based algorithm. It analyzes key threat vectors like Liquidity depth vs. Market Cap ratios, Creator wallet historical footprints, and Contract anomaly detection (flagging hidden mint functions and proxy patterns).</li>
+                    <li><strong>Terminal Delivery:</strong> The analyzed data is synthesized into a 0-100 "Composite Risk Index" and delivered to the user's web browser or via our API in milliseconds.</li>
+                </ul>
+
+                <h2>3. Protocol Tokenomics & The B2B Burn Mechanism</h2>
+                <p>Cryptection is entirely community-owned. There are no VC allocations, no presales, and zero team tokens at launch.</p>
+                <h3>Token Details:</h3>
+                <ul>
+                    <li><strong>Network:</strong> Binance Smart Chain (BEP-20)</li>
+                    <li><strong>Ticker:</strong> $CRYPT</li>
+                    <li><strong>Total Supply:</strong> 1,000,000,000</li>
+                    <li><strong>Genesis Burn:</strong> 50% (500,000,000) sent to the dead address upon contract deployment.</li>
+                    <li><strong>Initial Liquidity:</strong> 100% of the remaining supply paired with BNB on PancakeSwap.</li>
+                </ul>
+
+                <h3>Deflationary Transaction Tax (5% Buy/Sell):</h3>
+                <ul>
+                    <li><strong>2% Development:</strong> Funds server costs, API provider subscriptions, and backend infrastructure.</li>
+                    <li><strong>2% Marketing & Buybacks:</strong> Dedicated to user acquisition and strategic token buybacks.</li>
+                    <li><strong>1% Auto-Liquidity:</strong> Continuously thickens the trading pool to reduce slippage over time.</li>
+                </ul>
+
+                <h3>The Enterprise Burn Protocol:</h3>
+                <p>While Cryptection offers a Web Terminal for retail users, our ultimate goal is B2B API integration. We aim to license our Threat Engine endpoints to DEX aggregators, wallet providers, and Telegram trading bots. <strong>20% of all fiat and stablecoin revenue generated from these enterprise subscriptions is mathematically routed to market-buy $CRYPT and burn it</strong>, creating a continuous, volume-independent price floor.</p>
+
+                <h2>4. Development Roadmap</h2>
+                <p><em>Building software takes focus. We operate on a strict "no chit-chat, just building" ethos.</em></p>
+                <ul>
+                    <li><strong>Phase 1: Foundation (Current)</strong> - Deployment of the $CRYPT smart contract, Launch of the V1 Threat Terminal, Integration of core DexScreener and basic RPC heuristics.</li>
+                    <li><strong>Phase 2: The Pro Ecosystem</strong> - Web3 wallet connection gateway, Gating advanced terminal features behind the 50,000 $CRYPT holding requirement, Launch of the Cryptection Telegram Bot.</li>
+                    <li><strong>Phase 3: Automation & Alerts</strong> - Deployment of custom Webhook infrastructure for Pro users, Wallet Tracking modules.</li>
+                    <li><strong>Phase 4: B2B API Commercialization</strong> - Finalizing high-throughput REST API documentation, Onboarding enterprise clients, Initiating the Buy-Back and Burn protocol.</li>
+                </ul>
+
+                <h2>5. Conclusion</h2>
+                <p>Security in Web3 should not be a luxury reserved for venture capitalists. Through agile development, strategic API aggregation, and a hyper-deflationary utility token model, Cryptection Labs is building the definitive, accessible security layer for decentralized finance.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full bg-paper border-t border-zinc-800 py-6 mt-8 text-center font-mono text-[10px] text-zinc-600 uppercase">
+        © 2026 Cryptection Labs • Protocol Whitepaper
+    </footer>
+</body>
+</html>
