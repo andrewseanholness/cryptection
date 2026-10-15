@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cryptectionlabs.com/">
     
-    <!-- Favicon Integration (Absolute GitHub Raw Path) -->
+    <!-- Favicon Integration -->
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/andrewseanholness/cryptection/main/lockonlynobg.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,7 @@
     <div class="w-full bg-bsc text-black font-mono text-[10px] sm:text-xs py-1.5 border-b-2 border-black font-bold uppercase tracking-wider overflow-hidden">
         <div class="ticker-wrap flex items-center">
             <div class="ticker flex gap-8">
-                <span>⚡ $CRYPT BEP-20 FAIR LAUNCH: OCT 15TH, 2026 @ 11:59:59 PM EST</span>
+                <span>⚡ $CRYPT BEP-20 FAIR LAUNCH: TONIGHT @ 11:59:59 PM EST</span>
                 <span>• 1,000,000,000 TOTAL SUPPLY</span>
                 <span>• 50% INITIAL BURN</span>
                 <span>• 3% MAX WALLET (ANTI-WHALE)</span>
@@ -132,11 +132,12 @@
                 </a>
             </div>
 
-            <nav class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 font-mono text-[10px] sm:text-xs font-bold uppercase text-zinc-300">
-                <a href="#audit-terminal" class="hover:text-brand transition-colors">Threat Terminal</a>
-                <a href="#tokenomics" class="hover:text-brand transition-colors">Tokenomics</a>
+            <nav class="flex flex-wrap items-center justify-center gap-3 sm:gap-5 font-mono text-[10px] sm:text-xs font-bold uppercase text-zinc-300">
+                <a href="#audit-terminal" class="hover:text-brand transition-colors">Scanner</a>
+                <a href="whitepaper.html" class="hover:text-brand transition-colors">Whitepaper</a>
+                <a href="members.html" class="hover:text-brand transition-colors">Pro Docs</a>
                 <a href="#fairlaunch" class="hover:text-brand transition-colors text-bsc">Fair Launch</a>
-                <a href="#pricing" class="hover:text-brand transition-colors text-brand">Pro Access</a>
+                <a href="#pricing" class="hover:text-brand transition-colors text-brand">Access</a>
             </nav>
 
             <div class="hidden lg:flex items-center gap-3">
@@ -435,7 +436,7 @@
                 We are bypassing VC funding to launch purely for the community on the <strong class="text-bsc">Binance Smart Chain (BSC)</strong>. 1,000,000,000 Total Supply. 50% Burned immediately at genesis. 100% of the remaining supply is paired with the launch liquidity pool on <strong class="text-bsc">PancakeSwap</strong>. The official Smart Contract address will be revealed exclusively in our Telegram shortly before launch, followed by a website update.
             </p>
             
-            <button onclick="showToast('PancakeSwap link will be revealed precisely at Oct 15th, 2026, 11:59:59 PM EST.', 'warning')" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-sm sm:text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex justify-center items-center gap-2 shrink-0 mx-auto">
+            <button onclick="showToast('PancakeSwap routing will activate immediately after contract deployment in our Telegram.', 'info')" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-paper hover:bg-zinc-800 text-bsc font-syne font-black text-sm sm:text-base uppercase border-2 border-bsc shadow-[4px_4px_0px_0px_#F3BA2F] transition-all flex justify-center items-center gap-2 shrink-0 mx-auto">
                 <span>BUY ON PANCAKESWAP</span>
                 <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
             </button>
@@ -460,10 +461,15 @@
         </section>
 
         <section id="tokenomics" class="bg-card border-2 border-zinc-800 p-4 sm:p-6 lg:p-8 relative mt-8 sm:mt-12 shadow-[6px_6px_0px_0px_#1b1e27]">
-            <div class="mb-6 sm:mb-8 border-b-2 border-zinc-800 pb-4 relative z-10">
-                <span class="font-mono text-[10px] sm:text-xs text-brand font-bold uppercase tracking-wider">[ REVENUE & TOKEN METRICS ]</span>
-                <h2 class="font-syne text-2xl sm:text-3xl lg:text-4xl font-black text-ink uppercase mt-1">Deflationary Dashboard</h2>
-                <p class="font-mono text-xs sm:text-sm text-zinc-400 mt-2 max-w-2xl leading-relaxed">Cryptection merges a standard 5% volume tax with real-world B2B software revenue. Our API enterprise subscriptions automatically market-buy and burn $CRYPT, establishing a continuously rising price floor.</p>
+            <div class="mb-6 sm:mb-8 border-b-2 border-zinc-800 pb-4 flex flex-col md:flex-row md:justify-between md:items-end gap-4 relative z-10">
+                <div>
+                    <span class="font-mono text-[10px] sm:text-xs text-brand font-bold uppercase tracking-wider">[ REVENUE & TOKEN METRICS ]</span>
+                    <h2 class="font-syne text-2xl sm:text-3xl lg:text-4xl font-black text-ink uppercase mt-1">Deflationary Dashboard</h2>
+                    <p class="font-mono text-xs sm:text-sm text-zinc-400 mt-2 max-w-2xl leading-relaxed">Cryptection merges a standard 5% volume tax with real-world B2B software revenue. Our API enterprise subscriptions automatically market-buy and burn $CRYPT, establishing a continuously rising price floor.</p>
+                </div>
+                <a href="whitepaper.html" class="px-5 py-2.5 bg-paper border-2 border-zinc-700 hover:border-brand text-zinc-300 hover:text-brand font-mono text-[10px] sm:text-xs font-bold uppercase transition-colors shrink-0 text-center">
+                    Read Whitepaper
+                </a>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 font-mono text-sm">
@@ -532,14 +538,14 @@
                     <h3 class="text-base sm:text-lg font-bold text-brand uppercase mb-1">Pro Trader</h3>
                     <span class="text-2xl sm:text-3xl font-syne font-black text-ink mb-2">50,000 <span class="text-xs sm:text-sm text-brand font-normal">$CRYPT</span></span>
                     <span class="text-[9px] sm:text-[10px] text-safe font-bold mb-4 block">HOLD TO UNLOCK FOREVER</span>
-                    <ul class="space-y-3 sm:space-y-4 text-[10px] sm:text-xs text-zinc-300 mb-6 sm:mb-8 flex-grow">
+                    <ul class="space-y-3 sm:space-y-4 text-[10px] sm:text-xs text-zinc-300 mb-6 flex-grow">
                         <li><strong class="text-ink font-bold block mb-0.5">✓ Live Contract Tracking</strong> Monitor newly deployed pairs across chains before UI verification.</li>
                         <li><strong class="text-ink font-bold block mb-0.5">✓ Smart Wallet Radar</strong> Track whale movements, historical PnL, and extract copy-trade metrics.</li>
                         <li><strong class="text-ink font-bold block mb-0.5">✓ Threat Alert Webhooks</strong> Instant Telegram & Discord notifications for malicious transactions.</li>
                         <li><strong class="text-ink font-bold block mb-0.5">✓ Mempool Forensics</strong> Detect front-running and MEV sandwich attacks in real-time.</li>
                         <li><strong class="text-ink font-bold block mb-0.5">✓ Unlimited Execution</strong> Zero-delay API engine access, completely bypassing rate limits.</li>
                     </ul>
-                    <button class="w-full py-2.5 sm:py-3 bg-brand text-black border-2 border-black font-bold uppercase text-[10px] sm:text-xs hover:bg-orange-500 transition-colors shadow-brutal-dark">Connect Wallet</button>
+                    <a href="members.html" class="w-full py-2.5 sm:py-3 bg-brand text-black font-bold uppercase text-[10px] sm:text-xs hover:bg-orange-500 transition-colors shadow-brutal-dark text-center border-2 border-black block">Read Pro Documentation</a>
                 </div>
 
                 <div class="bg-card border-2 border-zinc-800 p-4 sm:p-6 flex flex-col">
@@ -589,7 +595,7 @@
         <section id="seo-content" class="bg-card border-2 border-zinc-800 p-6 sm:p-8 lg:p-12 relative mt-8 sm:mt-12 shadow-[6px_6px_0px_0px_#1b1e27]">
             <div class="max-w-4xl mx-auto">
                 <span class="font-mono text-[10px] sm:text-xs text-brand font-bold uppercase tracking-wider">[ WEB3 SECURITY ]</span>
-                <h2 class="font-syne text-[clamp(1.15rem,5vw,2.25rem)] font-black text-ink uppercase mt-2 mb-4 leading-tight">Comprehensive Cryptocurrency Protection</h2>
+                <h2 class="font-syne text-[clamp(1.15rem,4.5vw,2.25rem)] font-black text-ink uppercase mt-2 mb-4 leading-tight">Comprehensive Cryptocurrency Protection</h2>
                 
                 <div class="space-y-4 font-mono text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     <p>In the rapidly evolving decentralized finance landscape, strict <strong class="text-zinc-200">crypto contract security</strong> is non-negotiable. Cryptection serves as your frontline defense against rug pulls, honeypots, and malicious wallet drainers.</p>
@@ -629,6 +635,14 @@
                         <li><a href="#audit-terminal" class="hover:text-brand transition-colors">Threat Terminal</a></li>
                         <li><a href="#pricing" class="hover:text-brand transition-colors">Pro Access</a></li>
                         <li><a href="#tokenomics" class="hover:text-brand transition-colors">Tokenomics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="block text-zinc-400 font-bold uppercase mb-2 sm:mb-3 text-[10px] sm:text-[11px] border-b border-zinc-800 pb-1">Resources</span>
+                    <ul class="space-y-2 text-zinc-500 mb-3">
+                        <li><a href="whitepaper.html" class="hover:text-brand transition-colors">Whitepaper</a></li>
+                        <li><a href="members.html" class="hover:text-brand transition-colors">Pro Documentation</a></li>
+                        <li><a href="#" onclick="showToast('API Docs unlocking Phase 4.', 'info')" class="hover:text-brand transition-colors">API Docs</a></li>
                     </ul>
                 </div>
                 <div>
@@ -712,7 +726,7 @@
         initCanvas(); animateCanvas();
 
         function updateCountdown() {
-            // COUNTDOWN TARGET: OCTOBER 15TH 2026, 11:59:59 PM EST
+            // COUNTDOWN TARGET: TONIGHT, OCTOBER 15TH 2026, 11:59:59 PM EST
             const target = new Date("2026-10-15T23:59:59-04:00").getTime();
             const now = new Date().getTime();
             const diff = target - now;
@@ -758,7 +772,6 @@
             radarFeed.appendChild(log);
             setTimeout(() => { log.classList.remove('typewriter-line'); log.style.borderRight = 'none'; }, 1000);
             
-            // Generate a random delay between 1000ms (1s) and 9000ms (9s)
             const randomDelay = Math.floor(Math.random() * 8000) + 1000;
             setTimeout(addRadarLog, randomDelay);
         }
